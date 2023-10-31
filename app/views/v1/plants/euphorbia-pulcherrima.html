@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Euphorbia pulcherrima
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Euphorbia pulcherrima
+    </h1>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h2>
+    <p>
+      Poinsettia, Christmas flower </p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <p>
+      Poinsettia pulcherrima</p>
+
+    <h4 class="govuk-heading-s govuk-!-margin-bottom-0">
+      EPPO code
+    </h4>
+    <p>
+      EPHPU</p>
+
+    {% if doYouImport == 'no' %}
+    {% else %}
+    <h5 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Importing Euphorbia pulcherrima from {{data['country']}}
+    </h5>
+    <p>
+      A phytosanitary certificate is required. The additional declaration within the phytosanitary certificate will need
+      to state:
+    </p>
+    <p>
+      Pre-notification is required.
+      <br>
+      Inspections will need to be arranged at the point of entry
+    </p>
+
+    {% endif %}
+
+    <h6 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Quarantine pests and diseases
+    </h6>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="">Aleurodicus dispersus </a>
+      </li>
+      <li>
+        <a class="govuk-link" href="/{{version}}/pests/bermisia-tabaci">Bemisia tabaci</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Cactodera cacti </a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Ceroplastes sinensis</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Clover phyllody phytoplasma</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Curtobacterium flaccumfaciens pv. Poinsettiae</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Duponchelia fovealis</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Echinothrips americanus</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Eotetranychus lewisi</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Eotetranychus sexmaculatus</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Erysiphe euphorbiae</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Erysiphe euphorbiicola</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Leveillula clavata</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Opogona sacchari</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Trialeurodes abutiloneus</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Xanthomonas axonopodis pv. Poinsettiicola</a>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}

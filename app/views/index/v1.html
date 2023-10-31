@@ -1,0 +1,71 @@
+{% block content %}
+
+<div class="govuk-grid-row">
+  <h1 class="govuk-heading-l">
+    Plant Health Information Prototype
+    <span class="govuk-caption-xl">Version 1</span>
+  </h1>
+
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#service">
+          Plant Health Information Service
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#quick-links">
+          Quick links
+        </a>
+      </li>
+    </ul>
+
+    <div class="govuk-tabs__panel" id="service">
+      <h2 class="govuk-heading-s">Changelog</h2>
+      <p class="govuk-body"></p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>change log detail
+        </li>
+        <li>change log detail
+        </li>
+        <li>change log detail
+        </li>
+        <li>change log
+        </li>
+        <li>change log detail
+        </li>
+      </ul>
+
+      <br>
+
+
+      <a href="/v1/govuk/plant-health-information-start" class="govuk-button govuk-!-margin-right-2"
+        data-module="govuk-button">
+        <strong>Quick start</strong>
+      </a>
+
+    </div>
+
+
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="quick-links">
+
+      <h3 class="govuk-heading-s">V1 quick links (opens in new tab)</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="" download class="govuk-link" rel="noreferrer noopener" target="_blank">E2E flow diagram</a>
+        </li>
+        <li>
+          <a href="" class="govuk-link" target="_blank">Content document</a>
+        </li>
+        <li>
+          <a href="" class="govuk-link" target="_blank">URLs and Error messages document</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

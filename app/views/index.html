@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-quarter">
+        <h2 class="govuk-heading-m" id="index-select-version">Select a version</h2>
+        <nav class="index-nav" aria-labelledby="index-select-version">
+            <ul class="govuk-list">
+                {% set sprint = versions | length %}
+                {% for v in versions | reverse %}
+                <li><a href="/{{ v.version }}" {% if v.version==version %}aria-current="page" {% endif %}>{{ v.title
+                        }}</a> ({{ v.version }})
+                </li>
+                {% set sprint = sprint - 1 %}
+                {% endfor %}
+            </ul>
+
+        </nav>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+        {% include "./index/" + version + '.html' %}
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-# plant-health-information
+# plant-health-information-prototype
 
 ## GOV.UK Prototype kit
 

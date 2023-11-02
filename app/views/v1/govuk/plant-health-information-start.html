@@ -5,102 +5,110 @@
 {% endblock %}
 
 {% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
 
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "#"
-      },
-      {
-        text: "Section",
-        href: "#"
-      },
-      {
-        text: "Subsection"
-      }
-    ]
-  }) }}
+{{ govukBreadcrumbs({
+items: [
+{
+text: "Home",
+href: "#"
+},
+{
+text: "Plant health",
+href: "#"
+}
+]
+}) }}
 
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        {{ serviceName }}
-      </h1>
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}
+    </h1>
 
-      <p>Use this service to:</p>
+    <p>Use this service to find information about plant health, including hosts, pests, and diseases.</p>
+    <p>You can also use the service to:</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>do something else</li>
-      </ul>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>understand what to do if you find a pest</li>
+      <li>find out about prohibitions </li>
+      <li>find trade information for hosts you're importing to the UK</li>
+    </ul>
 
-      <p>Registering takes around 5 minutes.</p>
-
-      <p><a class="gem-c-button govuk-button govuk-button--start govuk-!-margin-bottom-3" role="button"
-        href="/{{version}}/service/search"> Start now<svg
-          class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
-          viewbox="0 0 33 40" role="presentation" focusable="false">
+    <p><a class="gem-c-button govuk-button govuk-button--start govuk-!-margin-top-3 govuk-!-margin-bottom-3" role="button"
+        href="/{{version}}/service/search"> Start now<svg class="govuk-button__start-icon"
+          xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation"
+          focusable="false">
           <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
         </svg></a></p>
 
-      <h2 class="govuk-heading-m">
-        Before you start
-      </h2>
+    <h2 class="govuk-heading-m">
+      Before you start
+    </h2>
 
-      <p>
-        You can also <a href="#">register by post</a>.
-      </p>
+    <p>
+      To find plant health information you'll need the name of the host, pest or disease.
+    </p>
 
-      <p>
-        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
-      </p>
+    <p>You can use:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the scientific name</li>
+      <li>common name in some cases</li>
+    </ul>
 
-      <p>
-        You can’t register for this service if you’re in the UK illegally.
-      </p>
+    <p>
+      If you require import information relating to a particular host, you'll also need the origin country.
+    </p>
 
-    </div>
+    <p>
+      This service does not provide trade information relating to exports.
+    </p>
 
-    <div class="govuk-grid-column-one-third">
+    <p>
+      The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
+    </p>
 
-      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#" class="govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
 
-    </div>
+
   </div>
+
+  <!-- <div class="govuk-grid-column-one-third">
+
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Subsection
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="#">
+              Related link
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Related link
+            </a>
+          </li>
+          <li>
+            <a href="#" class="govuk-!-font-weight-bold">
+              More <span class="govuk-visually-hidden">in Subsection</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div> -->
+</div>
 
 {% endblock %}

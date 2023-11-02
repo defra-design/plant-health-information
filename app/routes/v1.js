@@ -20,18 +20,23 @@ module.exports = function (router) {
         'erysiphe euphorbiicola': '/pests/erysiphe-euphorbiicola',
         'leveillula clavata': '/pests/leveillula-clavata',
         'opogona sacchari (banana moth, sugarcane borer, sugarcane moth)': '/pests/opogona-sacchari',
+        'xylella fastidiosa': '/pests/xylella-fastidiosa',
 
     };
 
     const plantMappings = {
-        'chrysanthemum spp. (chrysanthemums)': '/plants/chrysanthemum',
-        'dahlia spp. (dahlias)': '/plants/dahlia',
+        'amaryllis belladonna (lily)': '/plants/amaryllis',
+        'chrysanthemum carinatum (chrysanthemums)': '/plants/chrysanthemum',
+        'dahlia pinnata (dahlias)': '/plants/dahlia',
         'dianthus caryophyllus (carnations)': '/plants/dianthus-caryophyllus',
         'euphorbia pulcherrima (poinsettias)': '/plants/euphorbia-pulcherrima',
-        'geranium spp. (geraniums)': '/plants/geranium',
-        'hippeastrum spp. (Amaryllis)': '/plants/Hippeastrum',
-        'lilium spp. (Lilies)': '/plants/Lilium',
-        'orchidaceae (orchids)': '/plants/orchidaceae',
+        'geranium pilosum (geraniums)': '/plants/geranium',
+        'lilium lancifolium (devil lily, kentan, lily, tiger))': '/plants/lolium-lancifolum',
+        'orchidaceae': '/plants/orchidaceae',
+        'pelargonium x hortorum (pelargonium, zonal)': '/plants/pelargonium',
+        'quercus robur (oak)': '/plants/quercus',
+        'rosa rugosa (rosa, ramanas, rose, hedge-row)': '/plants/rosa-rugosa',
+        'tulipa (tulips)': '/plants/tuplia',
 
     };
 

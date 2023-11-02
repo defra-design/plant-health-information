@@ -1,0 +1,116 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Quercus robur
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Quercus robur
+    </h1>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h2>
+
+    <ul class="govuk-list">
+      <li>
+        Oak
+      </li>
+      <li>
+        English oak
+      </li>
+      <li>
+        Pedunculate
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <p>
+      Quercus pedunculata</p>
+
+    <h4 class="govuk-heading-s govuk-!-margin-bottom-0">
+      EPPO code
+    </h4>
+    <p>
+      QUERO</p>
+
+    {% if doYouImport == 'no' %}
+    {% else %}
+    <h5 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Importing Quercus robur from {{data['country']}}
+    </h5>
+
+    <p>You will need to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        supply a phytosanitary certificate
+      </li>
+      <li>
+        pre-notifiy the consignment
+      </li>
+      <li>
+        arrange an inspection at the point of entry
+      </li>
+    </ul>
+    <p>
+      To find special requirements for this host, <a class="govuk-link" href="">use the plants for planting additional
+        declaration tool</a>.
+    </p>
+
+    {% endif %}
+
+    <h6 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Quarantine pests and diseases
+    </h6>
+    <ul class="govuk-list">
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="">Corythucha arcuata</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="">Bretziella fagacearum</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Phylloxera quercus</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Fusarium euwallacea</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Polyphagous Shot Hole Borer (Euwallacea sp.)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Neofusicoccum luteum
+          </a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Anisandrus maiche</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Agrilus bilineatus</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/{{version}}/pests/xylella-fastidiosa">Xylella fastidiosa</a>
+        </li>
+      </ul>
+
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}

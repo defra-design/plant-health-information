@@ -6,37 +6,37 @@ module.exports = function (router) {
     const govuk = "/govuk";
 
     const pestMappings = {
-        'aleurodicus dispersus (spiralling white fly)': '/pests/spiralling-white-fly',
+        // 'aleurodicus dispersus (spiralling white fly)': '/pests/spiralling-white-fly',
         'bemisia tabaci (cassava whitefly, cotton whitefly, sweet potato whitefly, tobacco whitefly)': '/pests/bermisia-tabaci',
-        'cactodera cacti': '/pests/cactodera-cacti',
-        'ceroplastes sinensis': '/pests/ceroplastes-sinensis',
-        'clover phyllody phytoplasma': '/pests/clover-phyllody-phytoplasma',
-        'curtobacterium flaccumfaciens pv. Poinsettiae': '/pests/curtobacterium-flaccumfaciens',
-        'duponchelia fovealis (dark marbled tabby, european pepper moth, southern european marshland pyralid)': '/pests/duponchelia-fovealis',
-        'cchinothrips americanus': '/pests/echinothrips-americanus',
-        'eotetranychus lewisi (lewis spider mite)': '/pests/lewis-spider-mite',
-        'eotetranychus sexmaculatus': '/pests/eotetranychus-sexmaculatus',
-        'erysiphe euphorbiae': '/pests/erysiphe-euphorbiae',
-        'erysiphe euphorbiicola': '/pests/erysiphe-euphorbiicola',
-        'leveillula clavata': '/pests/leveillula-clavata',
-        'opogona sacchari (banana moth, sugarcane borer, sugarcane moth)': '/pests/opogona-sacchari',
+        // 'cactodera cacti': '/pests/cactodera-cacti',
+        // 'ceroplastes sinensis': '/pests/ceroplastes-sinensis',
+        // 'clover phyllody phytoplasma': '/pests/clover-phyllody-phytoplasma',
+        // 'curtobacterium flaccumfaciens pv. Poinsettiae': '/pests/curtobacterium-flaccumfaciens',
+        // 'duponchelia fovealis (dark marbled tabby, european pepper moth, southern european marshland pyralid)': '/pests/duponchelia-fovealis',
+        // 'cchinothrips americanus': '/pests/echinothrips-americanus',
+        // 'eotetranychus lewisi (lewis spider mite)': '/pests/lewis-spider-mite',
+        // 'eotetranychus sexmaculatus': '/pests/eotetranychus-sexmaculatus',
+        // 'erysiphe euphorbiae': '/pests/erysiphe-euphorbiae',
+        // 'erysiphe euphorbiicola': '/pests/erysiphe-euphorbiicola',
+        // 'leveillula clavata': '/pests/leveillula-clavata',
+        // 'opogona sacchari (banana moth, sugarcane borer, sugarcane moth)': '/pests/opogona-sacchari',
         'xylella fastidiosa': '/pests/xylella-fastidiosa',
 
     };
 
     const plantMappings = {
-        'amaryllis belladonna (lily)': '/plants/amaryllis',
-        'chrysanthemum carinatum (chrysanthemums)': '/plants/chrysanthemum',
-        'dahlia pinnata (dahlias)': '/plants/dahlia',
-        'dianthus caryophyllus (carnations)': '/plants/dianthus-caryophyllus',
+        // 'amaryllis belladonna (lily)': '/plants/amaryllis',
+        // 'chrysanthemum carinatum (chrysanthemums)': '/plants/chrysanthemum',
+        // 'dahlia pinnata (dahlias)': '/plants/dahlia',
+        // 'dianthus caryophyllus (carnations)': '/plants/dianthus-caryophyllus',
         'euphorbia pulcherrima (poinsettias)': '/plants/euphorbia-pulcherrima',
-        'geranium pilosum (geraniums)': '/plants/geranium',
-        'lilium lancifolium (devil lily, kentan, lily, tiger))': '/plants/lolium-lancifolum',
-        'orchidaceae': '/plants/orchidaceae',
-        'pelargonium x hortorum (pelargonium, zonal)': '/plants/pelargonium',
+        // 'geranium pilosum (geraniums)': '/plants/geranium',
+        // 'lilium lancifolium (devil lily, kentan, lily, tiger))': '/plants/lolium-lancifolum',
+        // 'orchidaceae': '/plants/orchidaceae',
+        // 'pelargonium x hortorum (pelargonium, zonal)': '/plants/pelargonium',
         'quercus robur (oak)': '/plants/quercus',
-        'rosa rugosa (rosa, ramanas, rose, hedge-row)': '/plants/rosa-rugosa',
-        'tulipa (tulips)': '/plants/tuplia',
+        // 'rosa rugosa (rosa, ramanas, rose, hedge-row)': '/plants/rosa-rugosa',
+        // 'tulipa (tulips)': '/plants/tuplia',
 
     };
 
@@ -73,28 +73,13 @@ module.exports = function (router) {
                 res.redirect('/' + version + pestMappings[preprocessedSearchQuery]);
             }
             else {
-                res.redirect('/' + version + '/service/no-results');
+                // currently set to redirect to itself
+                res.redirect('/' + version + '/service/search');
             }
         } else {
             res.redirect('/' + version + '/service/search?error=true');
         }
     });
-
-
-
-    router.post('/' + version + '/service/search', function (req, res) {
-
-        let searchQuery = req.session.data['searchQuery']
-
-        if (searchQuery === '') {
-            res.redirect('/' + version + '/service/search?error=true')
-        }
-        else {
-            req.session.searchQuery = searchQuery;
-            res.redirect('/' + version + '/service/do-you-import')
-
-        }
-    })
 
     // do you import?
     router.get('/' + version + '/service/do-you-import', function (req, res) {
@@ -122,7 +107,8 @@ module.exports = function (router) {
                     res.redirect('/' + version + plantMappings[searchQuery]);
                 }
                 else {
-                    res.redirect('/' + version + '/service/no-results');
+                    //currently set to redirect to itself
+                    res.redirect('/' + version + '/service/do-you-import');
                 }
             } else {
                 res.redirect('/' + version + '/service/country-select?error=true');
@@ -153,7 +139,8 @@ module.exports = function (router) {
                 res.redirect('/' + version + plantMappings[searchQuery]);
             }
             else {
-                res.redirect('/' + version + '/service/no-results');
+                //currently set to redirect to itself
+                res.redirect('/' + version + '/service/country-select');
             }
         } else {
             res.redirect('/' + version + '/service/country-select?error=true');
@@ -167,14 +154,29 @@ module.exports = function (router) {
             'version': version,
             'doYouImport': req.session.data['import']
         });
-        console.log(req.session.data['import'])
+    });
+
+    // quercus
+    router.get('/' + version + '/plants/quercus', function (req, res) {
+        res.render(version + '/plants/quercus', {
+            'version': version,
+            'doYouImport': req.session.data['import']
+        });
     });
 
 
     // Pests
-    // bermisia tabaci
+    // bermisia-tabaci
     router.get('/' + version + '/pests/bermisia-tabaci', function (req, res) {
         res.render(version + '/pests/bermisia-tabaci', {
+            'version': version,
+        });
+
+    });
+
+    // xylella-fastidiosa
+    router.get('/' + version + '/pests/xylella-fastidiosa', function (req, res) {
+        res.render(version + '/pests/xylella-fastidiosa', {
             'version': version,
         });
 

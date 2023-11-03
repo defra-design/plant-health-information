@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Are you importing this host into the United Kingdom?
+Are you importing this plant into the United Kingdom?
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,7 +24,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#import">Select yes if you are importing the host into the United Kingdom </a>
+            <a href="#import">Select yes if you are importing the plant into the United Kingdom </a>
           </li>
         </ul>
       </div>
@@ -35,13 +35,13 @@ href: "javascript:window.history.back()"
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading" id="import-h1">
-              Are you importing this host into the United Kingdom?
+              Are you importing this plant into the United Kingdom?
             </h1>
           </legend>
 
           {% if error %}
           <span id="user-type-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select yes if you are importing the host into
+            <span class="govuk-visually-hidden">Error:</span> Select yes if you are importing the plant into
             the United Kingdom
           </span>
           {% endif %}

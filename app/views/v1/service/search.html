@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Search for a host, pest or disease
+Search for a plant, pest or disease
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,7 +24,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#search">Enter a host, pest or disease to search</a>
+            <a href="#search">Enter a plant, pest or disease to search</a>
           </li>
         </ul>
       </div>
@@ -35,13 +35,13 @@ href: "javascript:window.history.back()"
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading" id="search-h1">
-              Search for a host, pest or disease
+              Search for a plant, pest or disease
             </h1>
           </legend>
 
           {% if error %}
           <span id="search-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter a host, pest or disease to search
+            <span class="govuk-visually-hidden">Error:</span> Enter a plant, pest or disease to search
           </span>
           {% endif %}
           {{ xGovukAutocomplete({

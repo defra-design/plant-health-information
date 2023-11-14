@@ -1,0 +1,302 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Xylella fastidiosa
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <span class="govuk-caption-xl">Quarantine pest</span> -->
+    <h1 class="govuk-heading-xl">
+      Xylella fastidiosa
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Xylella fastidiosa is a quarantine (or notifiable) pest, you must <a class="govuk-link"
+          href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">report any sightings
+          or suspected outbreaks</a>. 
+      </strong>
+    </div>
+
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Alfalfa dwarf
+      </li>
+      <li>
+        Anaheim disease
+      </li>
+      <li>
+        California vine disease
+      </li>
+      <li>
+        Dwarf disease of alfalfa
+      </li>
+      <li>
+        Dwarf disease of lucerne
+      </li>
+      <li>
+        Leaf scald of oleander
+      </li>
+      <li>
+        Leaf scald of plum
+      </li>
+      <li>
+        Leaf scorch
+      </li>
+      <li>
+        Phony disease of peach
+      </li>
+      <li>
+        Pierce's disease of grapevine
+      </li>
+      <li>
+        Variegated chlorosis of citrus
+      </li>
+    </ul>
+
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Citrus variegated chlorosis
+      </li>
+      <li>
+        Citrus variegated chlorosis agent
+      </li>
+      <li>
+        Citrus variegated chlorosis disease
+      </li>
+      <li>
+        Grapevine Pierce's diseae bacterium
+      </li>
+      <li>
+        Grapevine Pierce's diseae RLO
+      </li>
+      <li>
+        Grapevine Pierce's disease agent
+      </li>
+      <li>
+        Peach phony agent
+      </li>
+      <li>
+        Peach phony bacterium
+      </li>
+      <li>
+        Peach phony virus
+      </li>
+      <li>
+        Peach virus 4
+      </li>
+      <li>
+        Prunus virus 3
+      </li>
+      <li>
+        Xylella fastidiosa Peach phony strain
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Similar pests or diseases
+    </h3>
+    <p>
+      <a class="govuk-link" href="#">Trialeurodes vaporariorum (glasshouse whitefly)</a>
+    </p>
+    <br>
+    
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Documents</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Description</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">March 2023</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/factsheets/xylella_fact_sheet.pdf">View plant pest factsheet on Xylella fastidiosa <span
+                class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF, 5
+            pages)</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">November 2021</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/alerts/Pest_alert_Xylella_on_olive_trees.pdf">View pest alert: Olive trees, risk to trade
+              from
+              Xylella fastidiosa<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF, 6
+            pages)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">October 2020</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/factsheets/xylella_fact_sheet.pdf">View supplementary data on Xylella fastidiosa<span
+                class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF, 6
+            pages)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">July 2019</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/infoNote/Xylella-hostinfonote.pdf">View information note: Xylella high risk hosts <span
+                class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF, 5
+            pages)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-5">
+      Interceptions in the United Kingdom
+    </h2>
+    <p>
+      There were 156 cases of plant consignments being destroyed owing to the presence of this pest from January to
+      December 2022.
+    </p>
+
+    <h7 class="govuk-heading-s">
+     Hosts
+    </h7>
+    <ul class="govuk-list">
+      <li><a class="govuk-link" href="#">Abelmoschus esculentus (L.) Moench</a></li>
+
+      <li><a class="govuk-link" href="#">Acacia saligna (Wattle, Port Jackson; Wattle, weeping)</a></li>
+
+      <li><a class="govuk-link" href="#">Acer (Maple)</a></li>
+
+      <li><a class="govuk-link" href="#">Acer pseudoplatanus (Common sycamore; Maple, great; Maple, plane-tree)</a></li>
+
+      <li><a class="govuk-link" href="#">Aesculus (Buckeye; Chestnut, horse; Horsechestnut)</a></li>
+
+      <li><a class="govuk-link" href="#">Alnus (Alder)</a></li>
+
+      <li><a class="govuk-link" href="#">Artemisia arborescens (Wormwood, tree)</a></li>
+
+      <li><a class="govuk-link" href="#">Asparagus acutifolius (Asparagus, lesser; Asparagus, sharp-leaved)</a></li>
+
+      <li><a class="govuk-link" href="#">Catharanthus</a></li>
+
+      <li><a class="govuk-link" href="#">Catharanthus roseus (Periwinkle, Madagascar; Periwinkle, pink)</a></li>
+
+      <li><a class="govuk-link" href="#">Chenopodium album (Fat-hen; Goosefoot, white; Lambsquarters, common; Muck-weed;
+          Pigweed)</a></li>
+
+      <li><a class="govuk-link" href="#">Cistus (Cistus; Rockrose)</a></li>
+
+      <li><a class="govuk-link" href="#">Citrus sinensis (Orange, sweet)</a></li>
+
+      <li><a class="govuk-link" href="#">Coffea</a></li>
+
+      <li><a class="govuk-link" href="#">Cornus (Dogwood)</a></li>
+
+      <li><a class="govuk-link" href="#">Dodonaea viscosa (Hopbush, sticky; Switchsorrel)</a></li>
+
+      <li><a class="govuk-link" href="#">Eremophila maculata (Fuchsia-bush)</a></li>
+
+      <li><a class="govuk-link" href="#">Erigeron bonariensis (Fleabane, flaxleaf; Fleabane, hairy; Fleabane,
+          wavy-leaved; Horseweed, hairy)</a></li>
+
+      <li><a class="govuk-link" href="#">Erysimum (Wallflower)</a></li>
+
+      <li><a class="govuk-link" href="#">Euphorbia terracina (Caper, false)</a></li>
+
+      <li><a class="govuk-link" href="#">Fraxinus (Ash)</a></li>
+
+      <li><a class="govuk-link" href="#">Genista (Broom)</a></li>
+
+      <li><a class="govuk-link" href="#">Grevillea sulphurea</a></li>
+
+      <li><a class="govuk-link" href="#">Hebe</a></li>
+
+      <li><a class="govuk-link" href="#">Heliotropium europaeum (Caterpillar weed; Heliotrope, common; Heliotrope,
+          European; Turn-sole, European)</a></li>
+
+      <li><a class="govuk-link" href="#">Laurus nobilis (Bay laurel; Laurel, Grecian; Sweet-bay)</a></li>
+
+      <li><a class="govuk-link" href="#">Lavandula (Lavender)</a></li>
+
+      <li><a class="govuk-link" href="#">Ligustrum (Privet)</a></li>
+
+      <li><a class="govuk-link" href="#">Morus (Mulberrytree)</a></li>
+
+      <li><a class="govuk-link" href="#">Myoporum</a></li>
+
+      <li><a class="govuk-link" href="#">Myrtus communis (Myrtle, common)</a></li>
+
+      <li><a class="govuk-link" href="#">Nerium oleander (Oleander; Rosebay)</a></li>
+
+      <li><a class="govuk-link" href="#">Olea europaea (Olive tree)</a></li>
+
+      <li><a class="govuk-link" href="#">Pelargonium graveolens (Geranium, rose)</a></li>
+
+      <li><a class="govuk-link" href="#">Phillyrea latifolia (Mock-privet; Phillyrea, broad-leaved)</a></li>
+
+      <li><a class="govuk-link" href="#">Platanus (Plane; Sycamore)</a></li>
+
+      <li><a class="govuk-link" href="#">Poa (Bluegrass)</a></li>
+
+      <li><a class="govuk-link" href="#">Polygala myrtifolia (Milkwort, myrtleleaf; Pea-shrub, sweet)</a></li>
+
+      <li><a class="govuk-link" href="#">Prunus (Stonefruit-shrubs)</a></li>
+
+      <li><a class="govuk-link" href="#">Prunus avium ssp./var. avium (Cherry tree, sweet; Cherry tree, wild; Mazzard;
+          Wild cherry)</a></li>
+
+      <li><a class="govuk-link" href="#">Prunus cerasifera (Cherry-plum tree; Plum tree, Myrabolan)</a></li>
+
+      <li><a class="govuk-link" href="#">Prunus persica (Peach tree)</a></li>
+
+      <li><a class="govuk-link" href="#">Quercus (Oak)</a></li>
+
+      <li><a class="govuk-link" href="/{{version}}/plants/quercus">Quercus robur (English oak)</a></li>
+
+      <li><a class="govuk-link" href="#">Quercus suber (Oak, cork)</a></li>
+
+      <li><a class="govuk-link" href="#">Rhamnus alaternus (Buckthorn, Italian; Privet, barren)</a></li>
+
+      <li><a class="govuk-link" href="#">Rosmarinus officinalis (Moorwort; Rosemary, garden)</a></li>
+
+      <li><a class="govuk-link" href="#">Rubus (Blackberry; Raspberry)</a></li>
+
+      <li><a class="govuk-link" href="#">Salvia (Sage)</a></li>
+
+      <li><a class="govuk-link" href="#">Spartium junceum (Broom, rush; Broom, Spanish; Broom, weaver's)</a></li>
+
+      <li><a class="govuk-link" href="#">Streptocarpus</a></li>
+
+      <li><a class="govuk-link" href="#">Ulmus (Elm)</a></li>
+
+      <li><a class="govuk-link" href="#">Urtica (Nettle)</a></li>
+
+      <li><a class="govuk-link" href="#">Vaccinium (Blueberry)</a></li>
+
+      <li><a class="govuk-link" href="#">Veronica (Speedwell)</a></li>
+
+      <li><a class="govuk-link" href="#">Vinca (Periwinkle)</a></ </ul>
+
+
+  </div>
+</div>
+
+{% endblock %}

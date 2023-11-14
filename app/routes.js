@@ -11,6 +11,7 @@ const versions = require('./versions.js')
 // Add your routes here - above the module.exports line
 
 require('./routes/v1.js')(router);
+require('./routes/v2.js')(router);
 
 
 

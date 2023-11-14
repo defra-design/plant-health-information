@@ -1,0 +1,156 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Bemisia tabaci
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <span class="govuk-caption-xl">Quarantine pest</span> -->
+    <h1 class="govuk-heading-xl">
+      Bemisia tabaci
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Bemisia tabaci is a quarantine (or notifiable) pest, you must <a class="govuk-link"
+          href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">report any sightings
+          or suspected outbreaks</a>.
+      </strong>
+    </div>
+
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Cassava whitefly
+      </li>
+      <li>
+        Cotton whitefly
+      </li>
+      <li>
+        Sweet potato whitefly
+      </li>
+      <li>
+        Tobacco whitefly
+      </li>
+    </ul>
+
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <p>None</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Similar pests or diseases
+    </h3>
+    <p>
+      <a class="govuk-link" href="#">Trialeurodes vaporariorum (glasshouse whitefly)</a>
+    </p>
+    <br>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Documents</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Description</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">February 2017</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/factsheets/Bemisia-tabaci.pdf">View plant pest factsheet on Bemisia tabaci <span
+                class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF, 6
+            pages)</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-5">
+      Outbreaks and interceptions in the United Kingdom
+    </h2>
+    <p>
+      There were 156 cases of plant consignments being destroyed owing to the presence of this pest from January to
+      December 2022.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Hosts
+    </h2>
+    <ul class="govuk-list">
+      <li><a class="govuk-link" href="#">Abelmoschus esculentus (L.) Moench</a></li>
+      <li><a class="govuk-link" href="#">Ajuga L.</a></li>
+      <li><a class="govuk-link" href="#">Arachis hypogaea L.</a></li>
+      <li><a class="govuk-link" href="#">Begonia L.</a></li>
+      <li><a class="govuk-link" href="#">Borago officinalis L.</a></li>
+      <li><a class="govuk-link" href="#">Cajanus cajan (L.) Millsp./Huth</a></li>
+      <li><a class="govuk-link" href="#">Capsicum annuum L.</a></li>
+      <li><a class="govuk-link" href="#">Cucumis sativus L.</a></li>
+      <li><a class="govuk-link" href="#">Cucurbita pepo L.</a></li>
+      <li><a class="govuk-link" href="#">Cucurbitaceae</a></li>
+      <li><a class="govuk-link" href="#">Dipladenia A.Dc.</a></li>
+      <li><a class="govuk-link" href="/{{version}}/plants/euphorbia-pulcherrima">Euphorbia pulcherrima</a></li>
+      <li><a class="govuk-link" href="#">Ficus L.</a></li>
+      <li><a class="govuk-link" href="#">Gerbera jamesonii H.Bolus Ex Hook.F.</a></li>
+      <li><a class="govuk-link" href="#">Glycine max (L.) Merr.</a></li>
+      <li><a class="govuk-link" href="#">Gossypium L.</a></li>
+      <li><a class="govuk-link" href="#">Hibiscus L.</a></li>
+      <li><a class="govuk-link" href="#">Ipomoea batatas (L.) Poir./Lam.</a></li>
+      <li><a class="govuk-link" href="#">Lactuca sativa L.</a></li>
+      <li><a class="govuk-link" href="#">Lavandula stricta Del.</a></li>
+      <li><a class="govuk-link" href="#">Solanum lycopersicum L.</a></li>
+      <li><a class="govuk-link" href="#">Majorana hortensis Moench</a></li>
+      <li><a class="govuk-link" href="#">Mandevilla Lindl.</a></li>
+      <li><a class="govuk-link" href="#">Manihot esculenta Crantz</a></li>
+      <li><a class="govuk-link" href="#">Melissa officinalis L.</a></li>
+      <li><a class="govuk-link" href="#">Mentha L.</a></li>
+      <li><a class="govuk-link" href="#">Nerium oleander L.</a></li>
+      <li><a class="govuk-link" href="#">Nicotiana Linnaeus</a></li>
+      <li><a class="govuk-link" href="#">Nicotiana tabacum L.</a></li>
+      <li><a class="govuk-link" href="#">Ocimum basilicum L.</a></li>
+      <li><a class="govuk-link" href="#">Phaseolus L.</a></li>
+      <li><a class="govuk-link" href="#">Piper nigrum L.</a></li>
+      <li><a class="govuk-link" href="#">Salvia L.</a></li>
+      <li><a class="govuk-link" href="#">Salvia officinalis L.</a></li>
+      <li><a class="govuk-link" href="#">Sinningia Nees</a></li>
+      <li><a class="govuk-link" href="#">Sinningia speciosa (Lodd.) Hiern</a></li>
+      <li><a class="govuk-link" href="#">Solanum L.</a></li>
+      <li><a class="govuk-link" href="#">Solanum melongena L.</a></li>
+      <li><a class="govuk-link" href="#">Tagetes erecta L.</a></li>
+      <li><a class="govuk-link" href="#">Thymus serpyllum L. em. Mill.</a></li>
+      <li><a class="govuk-link" href="#">Crossandra</a></li>
+      <li><a class="govuk-link" href="#">Euphorbiaceae (family)</a></li>
+      <li><a class="govuk-link" href="#">Malvaceae (family)</a></li>
+      <li><a class="govuk-link" href="#">Solanaceae (family)</a></li>
+      <li><a class="govuk-link" href="#">Asteraceae (family)</a></li>
+      <li><a class="govuk-link" href="#">Brassicaceae (family)</a></li>
+      <li><a class="govuk-link" href="#">Convolvulaceae (family)</a></li>
+      <li><a class="govuk-link" href="#">Fabaceae (family)</a></li>
+      <li><a class="govuk-link" href="#">Gossypium hirsutum</a></li>
+    </ul>
+
+
+  </div>
+</div>
+
+{% endblock %}

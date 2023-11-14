@@ -1,0 +1,118 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBreadcrumbs({
+items: [
+{
+text: "Home",
+href: "#"
+},
+{
+text: "Plant health",
+href: "#"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}
+    </h1>
+
+    <p><br><br><br></p>
+    <p><br><br></p>
+
+    <ul class="govuk-list govuk-list--bullet color=fffff">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <p><a class="gem-c-button govuk-button govuk-button--start govuk-!-margin-top-3 govuk-!-margin-bottom-3" role="button"
+        href="/v2/govuk/plant-health-information-start"> Start now<svg class="govuk-button__start-icon"
+          xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation"
+          focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg></a></p>
+
+    <h2 class="govuk-heading-m">
+      Before you start
+    </h2>
+
+    <p>
+      To find plant health information you'll need the name of the host, pest or disease.
+    </p>
+
+    <p>You can use:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the scientific name</li>
+      <li>common name in some cases</li>
+    </ul>
+
+    <p>
+      If you require import information relating to a particular plant, you'll also need the country of origin.
+    </p>
+
+    <p>
+      This service does not provide trade information relating to exports.
+    </p>
+    <p>
+      This service does not have information about pests and diseases native to the UK.
+    </p>
+
+    <p>
+      The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
+    </p>
+
+
+
+  </div>
+
+  <!-- <div class="govuk-grid-column-one-third">
+
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Subsection
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="#">
+              Related link
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Related link
+            </a>
+          </li>
+          <li>
+            <a href="#" class="govuk-!-font-weight-bold">
+              More <span class="govuk-visually-hidden">in Subsection</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div> -->
+</div>
+
+{% endblock %}

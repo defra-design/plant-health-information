@@ -8,11 +8,11 @@
     "@govuk-prototype-kit/common-templates": "1.2.2",
     "@govuk-prototype-kit/step-by-step": "2.2.2",
     "@govuk-prototype-kit/task-list": "1.1.2",
-    "@x-govuk/govuk-prototype-components": "^2.0.3",
+    "@x-govuk/govuk-prototype-components": "2.1.0",
     "govuk-frontend": "^4.7.0",
-    "govuk-prototype-kit": "13.13.6",
-    "hmrc-frontend": "5.51.0",
+    "govuk-prototype-kit": "13.15.0",
+    "hmrc-frontend": "5.56.0",
     "jquery": "3.7.1",
-    "notifications-node-client": "7.0.3"
+    "notifications-node-client": "7.0.6"
   }
 }

@@ -33,6 +33,7 @@ module.exports = function (router) {
         // 'lilium lancifolium (devil lily, kentan, lily, tiger))': '/plants/lolium-lancifolum',
         // 'orchidaceae': '/plants/orchidaceae',
         // 'pelargonium x hortorum (pelargonium, zonal)': '/plants/pelargonium',
+        'pinus pinea (pine stone, pine umbrella)': '/plants/pinus-pinea',
         'quercus robur (oak)': '/plants/quercus',
         // 'rosa rugosa (rosa, ramanas, rose, hedge-row)': '/plants/rosa-rugosa',
         // 'tulipa (tulips)': '/plants/tuplia',
@@ -180,6 +181,18 @@ module.exports = function (router) {
         const country = req.session.data['country'] || 'Default Country';
 
         res.render(version + '/plants/quercus', {
+            'version': version,
+            'doYouImport': req.session.data['import'],
+            'country': country
+
+        });
+    });
+
+    // pinus pinea
+    router.get('/' + version + '/plants/pinus-pinea', function (req, res) {
+        const country = req.session.data['country'] || 'Default Country';
+
+        res.render(version + '/plants/pinus-pinea', {
             'version': version,
             'doYouImport': req.session.data['import'],
             'country': country

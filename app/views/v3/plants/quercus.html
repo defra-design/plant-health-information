@@ -1,0 +1,162 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Quercus robur
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Quercus robur </h1>
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+
+    <ul class="govuk-list">
+      <li>
+        Oak
+      </li>
+      <li>
+        English oak
+      </li>
+      <li>
+        Pedunculate
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <p>
+      Quercus pedunculata</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      EPPO code
+    </h3>
+    <p>
+      QUERO</p>
+
+    {% if country is not defined or country == 'Default Country'%}
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing Quercus robur into the UK
+    </h2>
+
+    <p>To find out what extra checks or documentation are needed,
+      <a class="govuk-link" href="/{{version}}/service/country-select">provide a country of origin</a>
+    </p>
+
+    <h6 class="govuk-heading-s">
+      Pest and disease risks
+    </h6>
+    <p>Quercus robur could carry the following quarantine pests and diseases into the UK. If one of these pests
+      or diseases is found on a plant, you must notify the plant health authority. If a routine inspection at the border
+      finds one of these pests or diseases, the consignment will need to be destroyed.</p>
+    <ul class="govuk-list">
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="">Corythucha arcuata</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="">Bretziella fagacearum</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Phylloxera quercus</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Fusarium euwallacea</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Polyphagous Shot Hole Borer (Euwallacea sp.)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Neofusicoccum luteum
+          </a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Anisandrus maiche</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Agrilus bilineatus</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/{{version}}/pests/xylella-fastidiosa">Xylella fastidiosa</a>
+        </li>
+      </ul>
+
+    </ul>
+
+    {% else %}
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing quercus robur from {{data['country']}}
+    </h2>
+    <p>You will need: (The following links open in a new tab)</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        a <a class="govuk-link"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">phytosanitary
+          certificate (PC)</a>
+      </li>
+      <li>
+        to <a class="govuk-link"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">pre-notify
+          the plant health authority</a>
+      </li>
+    </ul>
+    <p>
+      You may need to include an additional declaration on the phytosanitary certificate, <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check
+        what information you need to provide using the additional declaration tool</a>.</p>
+
+    <h3 class="govuk-heading-s">
+      Pest and disease risks
+    </h3>
+
+    <p>If a routine inspection at the border finds a quarantine pest or disease, the consignment will need to be
+      destroyed. 354 consignments of Quercus robur from {{data['country']}} have been destroyed from January to September 2023</p>
+
+
+    <h3 class="govuk-heading-s">
+      Quarantine pests and diseases Quercus robur could be host to
+    </h3>
+    <ul class="govuk-list">
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="">Bretziella fagacearum</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Phylloxera quercus</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Anisandrus maiche</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Agrilus bilineatus</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/{{version}}/pests/xylella-fastidiosa">Xylella fastidiosa</a>
+        </li>
+      </ul>
+
+    </ul>
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

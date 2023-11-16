@@ -48,35 +48,24 @@ href: "javascript:window.history.back()"
     <p>
       EPHPU </p>
 
-    {% if doYouImport == 'no' or doYouImport == undefined %}
-    {% else %}
+    {% if country is not defined or country == 'Default Country'%}
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing euphorbia pulcherrima from {{data['country']}}
+      Importing Euphorbia pulcherrima into the UK
     </h2>
-    <p>You will need: (The following links open in a new tab)</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>
-        a <a class="govuk-link"
-          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">phytosanitary
-          certificate (PC)</a>
-      </li>
-      <li>
-        to <a class="govuk-link"
-          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">pre-notify
-          the plant health authority</a>
-      </li>
-    </ul>
-    <p>
-      You may need to include an additional declaration on the phytosanitary certificate, <a class="govuk-link"
-        rel="noreferrer noopener" target="_blank"
-        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check
-        what information you need to provide using the additional declaration tool</a>.
-    </p>
-    {% endif %}
 
-    <h3 class="govuk-heading-m">
-      Quarantine pests and diseases
+    <p>To find out what extra checks or documentation are needed,
+      <a class="govuk-link" href="/{{version}}/service/country-select">provide a country of origin</a>
+    </p>
+
+
+    <h3 class="govuk-heading-s">
+      Quarantine pests and diseases affecting Euphorbia pulcherrima
     </h3>
+
+    <p>Euphorbia pulcherrima could carry the following quarantine pests and diseases into the UK. If one of these pests
+      or diseases is found on a plant, you must notify the plant health authority. If a routine inspection at the border
+      finds one of these pests or diseases, the consignment will need to be destroyed.</p>
+
     <ul class="govuk-list">
       <li>
         <a class="govuk-link" href="">Aleurodicus dispersus </a>
@@ -127,6 +116,79 @@ href: "javascript:window.history.back()"
         <a class="govuk-link" href="#">Xanthomonas axonopodis pv. Poinsettiicola</a>
       </li>
     </ul>
+
+    {% else %}
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing Euphorbia pulcherrima from {{data['country']}}
+    </h2>
+    <p>You will need: (The following links open in a new tab)</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        a <a class="govuk-link"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">phytosanitary
+          certificate (PC)</a>
+      </li>
+      <li>
+        to <a class="govuk-link"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">pre-notify
+          the plant health authority</a>
+      </li>
+    </ul>
+    <p>
+      You may need to include an additional declaration on the phytosanitary certificate, <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check
+        what information you need to provide using the additional declaration tool</a>.</p>
+
+    <h3 class="govuk-heading-s">
+      Pests and disease risks
+    </h3>
+
+    <p>If a routine inspection at the border finds a quarantine pest or disease, the consignment will need to be
+      destroyed. 47 consignments of Euphorbia pulcherrima from {{data['country']}} have been destroyed from January
+      to September 2023</p>
+
+
+    <h3 class="govuk-heading-s">
+      Quarantine pests and diseases Euphorbia pulcherrima could be host to
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="">Aleurodicus dispersus </a>
+      </li>
+      <li>
+        <a class="govuk-link" href="/{{version}}/pests/bemisia-tabaci">Bemisia tabaci</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Curtobacterium flaccumfaciens pv. Poinsettiae</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Duponchelia fovealis</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Echinothrips americanus</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Eotetranychus lewisi</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Eotetranychus sexmaculatus</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Erysiphe euphorbiae</a>
+      </li>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Trialeurodes abutiloneus</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Xanthomonas axonopodis pv. Poinsettiicola</a>
+      </li>
+    </ul>
+    {% endif %}
+
+
 
   </div>
 </div>

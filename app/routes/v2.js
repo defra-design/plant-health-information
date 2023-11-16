@@ -7,7 +7,7 @@ module.exports = function (router) {
 
     const pestMappings = {
         // 'aleurodicus dispersus (spiralling white fly)': '/pests/spiralling-white-fly',
-        'bemisia tabaci european populations (cassava whitefly, cotton whitefly, sweet potato whitefly, tobacco whitefly)': '/pests/bemisia-tabaci',
+        'bemisia tabaci (cassava whitefly, cotton whitefly, sweet potato whitefly, tobacco whitefly)': '/pests/bemisia-tabaci',
         // 'cactodera cacti': '/pests/cactodera-cacti',
         // 'ceroplastes sinensis': '/pests/ceroplastes-sinensis',
         // 'clover phyllody phytoplasma': '/pests/clover-phyllody-phytoplasma',
@@ -20,7 +20,7 @@ module.exports = function (router) {
         // 'erysiphe euphorbiicola': '/pests/erysiphe-euphorbiicola',
         // 'leveillula clavata': '/pests/leveillula-clavata',
         // 'opogona sacchari (banana moth, sugarcane borer, sugarcane moth)': '/pests/opogona-sacchari',
-        'xylella fastidiosa (alfalfa dwarf, anaheim disease, california vine disease, dwarf disease of alfalfa, dwarf disease of lucerne, leaf scald of oleander, leaf scald of plum, leaf scorch, phony disease of peach, pierces disease of grapevine, variegated chlorosis of citrus)': '/pests/xylella-fastidiosa', 
+        'xylella fastidiosa (alfalfa dwarf, anaheim disease, california vine disease, dwarf disease of alfalfa, dwarf disease of lucerne, leaf scald of oleander, leaf scald of plum, leaf scorch, phony disease of peach, pierces disease of grapevine, variegated chlorosis of citrus)': '/pests/xylella-fastidiosa',
     };
 
     const plantMappings = {
@@ -57,18 +57,18 @@ module.exports = function (router) {
         });
 
     });
- 
- 
+
+
     router.post('/' + version + '/service/search', function (req, res) {
         let searchQuery = req.session.data['searchQuery'];
-    
+
         if (searchQuery) {
             const match = searchQuery.match(/^(.*?)\s*\([^)]*\)/);
             const plantNameWithoutBrackets = match ? match[1].trim().toLowerCase() : searchQuery.trim().toLowerCase();
             const fullLowerCaseNameWithBrackets = searchQuery.toLowerCase();
-    
+
             req.session.data['plantName'] = plantNameWithoutBrackets;
-    
+
             if (plantMappings[fullLowerCaseNameWithBrackets]) {
                 res.redirect('/' + version + '/service/do-you-import');
             } else if (pestMappings[fullLowerCaseNameWithBrackets]) {
@@ -80,9 +80,9 @@ module.exports = function (router) {
             res.redirect('/' + version + '/service/search?error=true');
         }
     });
-    
-    
-    
+
+
+
 
     // do you import?
     router.get('/' + version + '/service/do-you-import', function (req, res) {
@@ -162,19 +162,28 @@ module.exports = function (router) {
     // Plants
     // euphorbia-pulcherrima
     router.get('/' + version + '/plants/euphorbia-pulcherrima', function (req, res) {
+        console.log("my country is set to" + " " + req.session.data['country'])
+
+        // Set a default value if 'country' is not defined or falsy
+        const country = req.session.data['country'] || 'Default Country';
+
         res.render(version + '/plants/euphorbia-pulcherrima', {
             'version': version,
-            'doYouImport': req.session.data['import']
+            'doYouImport': req.session.data['import'],
+            'country': country
         });
     });
 
     // quercus
     router.get('/' + version + '/plants/quercus', function (req, res) {
+        const country = req.session.data['country'] || 'Default Country';
+
         res.render(version + '/plants/quercus', {
             'version': version,
-            'doYouImport': req.session.data['import']
+            'doYouImport': req.session.data['import'],
+            'country': country
+
         });
-        console.log(req.session.data['import'])
     });
 
 

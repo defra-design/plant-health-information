@@ -64,7 +64,7 @@ module.exports = function (router) {
 
         if (searchQuery) {
             const match = searchQuery.match(/^(.*?)\s*\([^)]*\)/);
-            const plantNameWithoutBrackets = match ? match[1].trim().toLowerCase() : searchQuery.trim().toLowerCase();
+            const plantNameWithoutBrackets = match ? match[1].trim() : searchQuery.trim().toLowerCase();
             const fullLowerCaseNameWithBrackets = searchQuery.toLowerCase();
 
             req.session.data['plantName'] = plantNameWithoutBrackets;
@@ -83,6 +83,7 @@ module.exports = function (router) {
 
 
 
+    
 
     // do you import?
     router.get('/' + version + '/service/do-you-import', function (req, res) {

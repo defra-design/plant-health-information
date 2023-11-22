@@ -24,7 +24,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#searchQuery">Enter a plant, pest or disease to search</a>
+            <a href="#searchQuery">Enter the name of a plant, pest or disease</a>
           </li>
         </ul>
       </div>
@@ -41,7 +41,7 @@ href: "javascript:window.history.back()"
 
           {% if error %}
           <span id="search-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter a plant, pest or disease to search
+            <span class="govuk-visually-hidden">Error:</span> Enter the name of a plant, pest or disease
           </span>
           {% endif %}
           {{ xGovukAutocomplete({

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block header %}
-<!-- Blank header with no service name for the start page -->
+<!-- Blank header with no service name for this page -->
 {{ govukHeader() }}
 {% endblock %}
 
@@ -18,7 +18,11 @@ text: "Home",
 href: "#"
 },
 {
-text: "Plant health",
+text: "Environment",
+href: "#"
+},
+{
+text: "Animal and plant health",
 href: "#"
 }
 ]
@@ -31,22 +35,64 @@ href: "#"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
+    <span class="govuk-caption-xl">Guidance</span>
+    <h1 class="govuk-heading-l">
       {{ serviceName }}
     </h1>
 
-    <p>Use this service to find information on UK biosecurity controls for a plant, pest or disease.</p>
-    <p>You can also use the service to:</p>
+    <p class="govuk-body-l">Use this service to find information about plant health controls and the pest or disease
+      risks of importing a plant to Great Britain (England, Scotland and Wales).​</p>
+
+  </div>
+</div>
+<div class="govuk-grid-column-full-width">
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+</div>
+
+<div class="govuk-grid-column-two-thirds">
+  <ul class="govuk-list govuk-body-s">
+    <li>
+      From: <a class="govuk-link"
+        href="/government/organisations/department-for-environment-food-rural-affairs">Department
+        for Environment, Food &amp; Rural Affairs</a> and <a class="govuk-link"
+        href="/government/organisations/animal-and-plant-health-agency">Animal and Plant Health Agency</a>
+    </li>
+    <li>
+      Published 14 September 2023
+    </li>
+    <li>
+      Last updated 23 October 2023 — <a class="govuk-link" href="#">See all updates</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+
+    <section class="gem-c-devolved-nations">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
+        Applies to England and Wales
+      </h2>
+    </section>
+
+    <p class="govuk-body">Use this service to check:​</p>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>find out if there are any notifiable pests and diseases a plant could be a host to</li>
-      <li>understand what to do if you find a quarantine or notifiable pest or disease</li>
-      <li>find out about restrictions on the imports of some plants</li>
-      <li>find out what extra checks or documentation are needed when importing a plant into the UK</li>
+      <li>what quarantine pests and diseases a plant could be a host to</li>
+      <li>the restrictions on the imports of some plants​</li>
+      <li>what documentation and plant health controls need to be followed when importing a plant​</li>
     </ul>
 
-    <p><a class="gem-c-button govuk-button govuk-button--start govuk-!-margin-top-3 govuk-!-margin-bottom-3" role="button"
-        href="/{{version}}/service/search"> Start now<svg class="govuk-button__start-icon"
+    <p class="govuk-body">You can also:​</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>find current information on non-native plant pests and diseases that are considered a risk to the UK.​</li>
+    </ul>
+
+    <p><a class="gem-c-button govuk-button govuk-button--start govuk-!-margin-top-3 govuk-!-margin-bottom-3"
+        role="button" href="/{{version}}/service/search"> Start now<svg class="govuk-button__start-icon"
           xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewbox="0 0 33 40" role="presentation"
           focusable="false">
           <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
@@ -56,63 +102,88 @@ href: "#"
       Before you start
     </h2>
 
-    <p>
-      To find plant health information you'll need the name of the host, pest or disease.
+    <p class="govuk-body">
+      You'll need the name of the plant, pest or disease to find plant health information.
     </p>
 
     <p>You can use:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>the scientific name</li>
-      <li>common name in some cases</li>
+      <li>a common name in some cases​</li>
     </ul>
 
-    <p>
-      If you require import information relating to a particular plant, you'll also need the country of origin.
+    <p class="govuk-body">
+      If you need import information about a particular plant, you'll also need the country of origin.
     </p>
 
-    <p>
+    <p class="govuk-body">
       This service does not provide trade information relating to exports.
     </p>
-    <p>
+    <p class="govuk-body">
       This service does not have information about pests and diseases native to the UK.
     </p>
 
-    <p>
+    <p class="govuk-body">
       The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
     </p>
-
-
-
   </div>
 
-  <!-- <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-third">
 
     <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">
-        Subsection
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Related content
       </h2>
       <nav role="navigation" aria-labelledby="subsection-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li>
-            <a href="#">
-              Related link
+            <a href="https://www.gov.uk/government/publications/apply-for-export-plant-health-certification-services">
+              Export plant health phytosanitary certificate application form
             </a>
           </li>
           <li>
-            <a href="#">
-              Related link
+            <a
+              href="https://www.gov.uk/guidance/export-plants-and-plant-products-from-great-britain-and-northern-ireland">
+              Export plants and plant products from Great Britain and Northern Ireland
             </a>
           </li>
           <li>
-            <a href="#" class="govuk-!-font-weight-bold">
-              More <span class="govuk-visually-hidden">in Subsection</span>
+            <a
+              href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain-and-northern-ireland">
+              Import plants and plant products from the EU to Great Britain and Northern Ireland
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/guidance/export-wood-wood-products-and-bark-from-great-britain">
+              Export wood, wood products and bark from Great Britain
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/government/collections/importing-and-exporting-plants-and-plant-products">
+              Importing and exporting plants and plant products
             </a>
           </li>
         </ul>
       </nav>
     </aside>
-
-  </div> -->
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list govuk-body-s">
+      <li>
+        Published 14 September 2023
+      </li>
+      <li>
+        Last updated 23 October 2023 — <a class="govuk-link" href="#">See all updates</a>
+      </li>
+    </ul>
+  </div>
 </div>
 
 {% endblock %}

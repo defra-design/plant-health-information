@@ -1,8 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-What is the format of{% if plantName %} {{plantName}}?
-{% else %}this plant? {% endif %}
+What format of {{plantName}} are you importing?
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,8 +24,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#import">Select yes if you are importing{% if plantName %} {{plantName}} into the UK?
-              {% else %}this plant into the UK? {% endif %}</a>
+            <a href="#format">Select the format of {{plantName}} you are importing</a>
           </li>
         </ul>
       </div>
@@ -36,32 +34,78 @@ href: "javascript:window.history.back()"
       <div class="govuk-form-group {% if error %} govuk-form-group--error {% endif %}">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading" id="import-h1">
-              Are you importing{% if plantName %} {{plantName}} into the UK?
-              {% else %}this plant into the UK? {% endif %}
+            <h1 class="govuk-fieldset__heading" id="format-h1">
+              What format of {{plantName}} are you importing?
             </h1>
           </legend>
 
           {% if error %}
-          <span id="user-type-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select yes if you are importing{% if plantName %}
-            {{plantName}} into the UK?
-            {% else %}this plant into the UK? {% endif %}
+          <span id="format-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select the format of {{plantName}} you are importing
           </span>
           {% endif %}
-          <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="import" name="import" type="radio" value="yes" {{
-                checked("import", "yes" ) }}>
-              <label class="govuk-label govuk-radios__label" for="yes">
-                Yes
+              <input class="govuk-radios__input" id="format" name="format" type="radio" value="plants-for-planting" {{
+                checked("format", "plants-for-planting" ) }}>
+              <label class="govuk-label govuk-radios__label" for="format">
+                Plants for planting
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="import-2" name="import" type="radio" value="no" {{
-                checked("import", "no" ) }}>
-              <label class="govuk-label govuk-radios__label" for="no">
-                No
+              <input class="govuk-radios__input" id="format-2" name="format" type="radio" value="tuber" {{
+                checked("format", "tuber" ) }}>
+              <label class="govuk-label govuk-radios__label" for="format-2">
+                Tuber
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="format-3" name="format" type="radio" value="seed" {{
+                checked("format", "seed" ) }}>
+              <label class="govuk-label govuk-radios__label" for="format-3">
+                Seed
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="format-4" name="format" type="radio" value="part-of-a-plant-other-than-fruits-and-seeds" {{
+                checked("format", "part-of-a-plant-other-than-fruits-and-seeds" ) }}>
+              <label class="govuk-label govuk-radios__label" for="format-4">
+                Part of a plant other than fruits and seeds
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="format-5" name="format" type="radio" value="bark" {{
+                checked("format", "bark" ) }}>
+              <label class="govuk-label govuk-radios__label" for="format-5">
+                Bark
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="format-6" name="format" type="radio" value="wood-round-surface" {{
+                checked("format", "wood-round-surface" ) }}>
+              <label class="govuk-label govuk-radios__label" for="format-6">
+                Wood (including wood that has not kept its natural round surface)​
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="format-7" name="format" type="radio" value="wood" {{
+                checked("format", "wood" ) }}>
+              <label class="govuk-label govuk-radios__label" for="format-7">
+                Wood
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="format-8" name="format" type="radio" value="wood-bark-free" {{
+                checked("format", "wood-bark-free" ) }}>
+              <label class="govuk-label govuk-radios__label" for="format-8">
+                Wood (excluding wood which is bark free)​
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="format-9" name="format" type="radio" value="cut-flowers" {{
+                checked("format", "cut-flowers" ) }}>
+              <label class="govuk-label govuk-radios__label" for="format-9">
+                Cut flowers and branches
               </label>
             </div>
           </div>

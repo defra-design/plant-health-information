@@ -1,8 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Are you importing{% if plantName %} {{plantName}} into the UK?
-{% else %}this plant into the UK? {% endif %}
+Where are you importing {{plantName}} into?
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,8 +24,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#import">Select yes if you are importing{% if plantName %} {{plantName}} into the UK?
-              {% else %}this plant into the UK? {% endif %}</a>
+            <a href="#import">Select where you are importing {{plantName}} into</a>
           </li>
         </ul>
       </div>
@@ -37,31 +35,36 @@ href: "javascript:window.history.back()"
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading" id="import-h1">
-              Are you importing{% if plantName %} {{plantName}} into the UK?
-              {% else %}this plant into the UK? {% endif %}
+              Where are you importing {{plantName}} into?
             </h1>
           </legend>
 
           {% if error %}
           <span id="user-type-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select yes if you are importing{% if plantName %}
-            {{plantName}} into the UK?
-            {% else %}this plant into the UK? {% endif %}
+            <span class="govuk-visually-hidden">Error:</span> Select where you are importing {{plantName}} into
           </span>
           {% endif %}
-          <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="import" name="import" type="radio" value="yes" {{
-                checked("import", "yes" ) }}>
-              <label class="govuk-label govuk-radios__label" for="yes">
-                Yes
+              <input class="govuk-radios__input" id="import" name="import" type="radio" value="great-britain" {{
+                checked("import", "great-britain" ) }}>
+              <label class="govuk-label govuk-radios__label" for="great-britain">
+                Great Britain (England, Scotland and Wales)
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="import-2" name="import" type="radio" value="no" {{
-                checked("import", "no" ) }}>
-              <label class="govuk-label govuk-radios__label" for="no">
-                No
+              <input class="govuk-radios__input" id="import-2" name="import" type="radio" value="northern-ireland" {{
+                checked("import", "northern-ireland" ) }}>
+              <label class="govuk-label govuk-radios__label" for="northern-ireland">
+                Northern Ireland
+              </label>
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="import-3" name="import" type="radio" value="not-importing" {{
+                checked("import", "not-importing" ) }}>
+              <label class="govuk-label govuk-radios__label" for="not-importing">
+                I am not importing it
               </label>
             </div>
           </div>

@@ -1,3 +1,4 @@
+const { postClearDataHandler } = require("govuk-prototype-kit/lib/manage-prototype-handlers");
 const { configure } = require("nunjucks");
 
 module.exports = function (router) {
@@ -28,7 +29,7 @@ module.exports = function (router) {
         // 'chrysanthemum carinatum (chrysanthemums)': '/plants/chrysanthemum',
         // 'dahlia pinnata (dahlias)': '/plants/dahlia',
         // 'dianthus caryophyllus (carnations)': '/plants/dianthus-caryophyllus',
-        'euphorbia pulcherrima (poinsettias)': '/plants/euphorbia-pulcherrima',
+        'euphorbia pulcherrima (poinsettia)': '/plants/euphorbia-pulcherrima',
         // 'geranium pilosum (geraniums)': '/plants/geranium',
         // 'lilium lancifolium (devil lily, kentan, lily, tiger))': '/plants/lolium-lancifolum',
         // 'orchidaceae': '/plants/orchidaceae',
@@ -83,8 +84,8 @@ module.exports = function (router) {
     });
 
 
+   
 
-    
 
     // do you import?
     router.get('/' + version + '/service/do-you-import', function (req, res) {
@@ -105,9 +106,11 @@ module.exports = function (router) {
         if (doYouImport === undefined) {
             res.redirect('/' + version + '/service/do-you-import?error=true');
         }
-        else if (doYouImport === 'yes')
+        else if (doYouImport === 'great-britain')
             res.redirect('/' + version + '/service/country-select')
 
+        else if (doYouImport === 'northern-ireland')
+            res.redirect('/' + version + '/service/northern-ireland-handoff')
         else {
             const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
 
@@ -126,11 +129,12 @@ module.exports = function (router) {
     // enter a country
     router.get('/' + version + '/service/country-select', function (req, res) {
         req.session.data['country'] = ''
-        console.log(req.session.data['country'])
+        req.session.data['import'] = ("great-britain");
+
         res.render(version + '/service/country-select', {
             'version': version,
-            'error': req.query.error
-
+            'error': req.query.error,
+            'plantName': req.session.data['plantName'],
         });
 
     });
@@ -144,6 +148,30 @@ module.exports = function (router) {
         if (country === '') {
             res.redirect('/' + version + '/service/country-select?error=true');
         }
+        else
+            res.redirect('/' + version + '/service/format')
+    });
+
+     // what format?
+     router.get('/' + version + '/service/format', function (req, res) {
+        res.render(version + '/service/format', {
+            'version': version,
+            'error': req.query.error,
+            'plantName': req.session.data['plantName']
+
+        });
+
+    });
+
+    router.post('/' + version + '/service/format', function (req, res) {
+
+        let format = req.session.data['format']
+        const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
+
+
+        if (format === undefined) {
+            res.redirect('/' + version + '/service/format?error=true');
+        }
         else if (searchQuery) {
             const preprocessedSearchQuery = searchQuery.trim().toLowerCase();
 
@@ -152,12 +180,10 @@ module.exports = function (router) {
             }
             else {
                 // currently set to redirect to itself
-                res.redirect('/' + version + '/service/country-select');
+                res.redirect('/' + version + '/service/format');
             }
-        } else {
-
         }
-    });
+    })
 
 
 
@@ -176,6 +202,21 @@ module.exports = function (router) {
         });
     });
 
+    router.post('/' + version + '/plants/euphorbia-pulcherrima', function (req, res) {
+        
+        req.session.destroy(function(err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/search');
+    });
+
+    
+
     // quercus
     router.get('/' + version + '/plants/quercus', function (req, res) {
         const country = req.session.data['country'] || 'Default Country';
@@ -188,6 +229,19 @@ module.exports = function (router) {
         });
     });
 
+    router.post('/' + version + '/plants/quercus', function (req, res) {
+        
+        req.session.destroy(function(err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/search');
+    });
+
     // pinus pinea
     router.get('/' + version + '/plants/pinus-pinea', function (req, res) {
         const country = req.session.data['country'] || 'Default Country';
@@ -195,11 +249,24 @@ module.exports = function (router) {
         res.render(version + '/plants/pinus-pinea', {
             'version': version,
             'doYouImport': req.session.data['import'],
-            'country': country
+            'country': country,
+            'format': req.session.data['format'],
 
         });
     });
+    
+    router.post('/' + version + '/plants/pinus-pinea', function (req, res) {
+        
+        req.session.destroy(function(err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
 
+        res.redirect('/' + version + '/service/search');
+    });
 
     // Pests
     // bemisia-tabaci
@@ -210,11 +277,38 @@ module.exports = function (router) {
 
     });
 
+    router.post('/' + version + '/pests/bemisia-tabaci', function (req, res) {
+        
+        req.session.destroy(function(err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/search');
+    });
+
     // xylella-fastidiosa
     router.get('/' + version + '/pests/xylella-fastidiosa', function (req, res) {
         res.render(version + '/pests/xylella-fastidiosa', {
             'version': version,
+
+        });
+        
+    });
+
+    router.post('/' + version + '/pests/xylella-fastidiosa', function (req, res) {
+        
+        req.session.destroy(function(err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
         });
 
+        res.redirect('/' + version + '/service/search');
     });
 };

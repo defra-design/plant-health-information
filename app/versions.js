@@ -10,5 +10,9 @@ module.exports = [
     {
       version: 'v3',
       title: 'Version 3'
+    },
+    {
+      version: 'v4',
+      title: 'Version 4'
     }
 ]

@@ -1,0 +1,149 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Bemisia tabaci European populations
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <span class="govuk-caption-xl">Quarantine pest</span> -->
+    <h1 class="govuk-heading-xl">
+      Bemisia tabaci
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Bemisia tabaci is a quarantine pest or disease, you must <a class="govuk-link"
+          href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">report any
+          sightings</a>.
+      </strong>
+    </div>
+
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Cassava whitefly
+      </li>
+      <li>
+        Cotton whitefly
+      </li>
+      <li>
+        Sweet potato whitefly
+      </li>
+      <li>
+        Tobacco whitefly
+      </li>
+    </ul>
+
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <p>None</p>
+
+    <br>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Plant health publications related to Bemisia tabaci
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Description</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">February 2017</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/factsheets/Bemisia-tabaci.pdf">View plant pest factsheet on Bemisia tabaci <span
+                class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF, 6
+            pages)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">
+      Host plants of Bemisia tabaci
+    </h2>
+    <ul class="govuk-list">
+      <li>Abelmoschus esculentus (L.) Moench</li>
+      <li>Ajuga L.</li>
+      <li>Arachis hypogaea L.</li>
+      <li>Begonia L.</li>
+      <li>Borago officinalis L.</li>
+      <li>Cajanus cajan (L.) Millsp./Huth</li>
+      <li>Capsicum annuum L.</li>
+      <li>Cucumis sativus L.</li>
+      <li>Cucurbita pepo L.</li>
+      <li>Cucurbitaceae</li>
+      <li>Dipladenia A.Dc.</li>
+      <li>Euphorbia pulcherrima</li>
+      <li>Ficus L.</li>
+      <li>Gerbera jamesonii H.Bolus Ex Hook.F.</li>
+      <li>Glycine max (L.) Merr.</li>
+      <li>Gossypium L.</li>
+      <li>Hibiscus L.</li>
+      <li>Ipomoea batatas (L.) Poir./Lam.</li>
+      <li>Lactuca sativa L.</li>
+      <li>Lavandula stricta Del.</li>
+      <li>Solanum lycopersicum L.</li>
+      <li>Majorana hortensis Moench</li>
+      <li>Mandevilla Lindl.</li>
+      <li>Manihot esculenta Crantz</li>
+      <li>Melissa officinalis L.</li>
+      <li>Mentha L.</li>
+      <li>Nerium oleander L.</li>
+      <li>Nicotiana Linnaeus</li>
+      <li>Nicotiana tabacum L.</li>
+      <li>Ocimum basilicum L.</li>
+      <li>Phaseolus L.</li>
+      <li>Piper nigrum L.</li>
+      <li>Salvia L.</li>
+      <li>Salvia officinalis L.</li>
+      <li>Sinningia Nees</li>
+      <li>Sinningia speciosa (Lodd.) Hiern</li>
+      <li>Solanum L.</li>
+      <li>Solanum melongena L.</li>
+      <li>Tagetes erecta L.</li>
+      <li>Thymus serpyllum L. em. Mill.</li>
+      <li>Crossandra</li>
+      <li>Euphorbiaceae (family)</li>
+      <li>Malvaceae (family)</li>
+      <li>Solanaceae (family)</li>
+      <li>Asteraceae (family)</li>
+      <li>Brassicaceae (family)</li>
+      <li>Convolvulaceae (family)</li>
+      <li>Fabaceae (family)</li>
+      <li>Gossypium hirsutum</li>
+    </ul>
+
+    <br>
+    <br>
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Search again
+      </button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,257 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Euphorbia pulcherrima
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Euphorbia pulcherrima
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Poinsettia
+      </li>
+      <li>
+        Christmas flower
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <p>
+      Poinsettia pulcherrima</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      EPPO code
+    </h3>
+    <p>
+      EPHPU </p>
+
+    {% if country is not defined or country == 'Default Country'%}
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing Euphorbia pulcherrima into Great Britain
+    </h2>
+
+    <p>
+      To find out what extra checks or documentation are needed, <a class="govuk-link"
+        href="/{{version}}/service/country-select">provide where you are importing from</a>.
+    </p>
+
+    {% else %}
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing Euphorbia pulcherrima from {{data['country']}}
+    </h2>
+    <p>You will need (the following links open in a new tab):</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        to ensure the exporter supplies a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">phytosanitary
+          certificate (PC)</a>
+      </li>
+      <li>
+        to <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">register
+          and pre-notify your goods on the relevant import IT system</a>
+      </li>
+      <li>
+        to comply with documentary, <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">identity
+          and physical checks</a> at the border
+      </li>
+      <li>
+        pay <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">fees for plant health checks</a>
+      </li>
+    </ul>
+    <p>
+      You may need to include an additional declaration on the phytosanitary certificate, <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check
+        what information you need to provide using the additional declaration tool (opens in new tab)</a>.</p>
+    {% endif %}
+
+    <h2 class="govuk-heading-m">
+      Pest and disease risks
+    </h2>
+
+    {% if country is not defined or country == 'Default Country'%}
+    <p class="govuk-body">Euphorbia pulcherrima might carry the following quarantine pests or diseases.</p>
+    <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
+        these pests or diseases to APHA</a></p>
+    <p class="govuk-body">You can <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/non-compliance/">view information about the
+        occurrence of quarantine pests and diseases found during inspections at the UK border.</a></p>
+
+
+    {% else %}
+
+    <p class="govuk-body">Euphorbia pulcherrima imported from {{data['country']}} might carry the following quarantine
+      pests or
+      diseases.</p>
+    <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
+        these pests or diseases to APHA</a></p>
+    <p class="govuk-body">You can <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/non-compliance/">view information about the
+        occurrence of quarantine pests and diseases found during inspections at the UK border.</a></p>
+
+    {% endif %}
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--s">High priority pest</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Common name</th>
+          <th scope="col" class="govuk-table__header">Scientific name</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Alfalfa dwarf, Anaheim disease, California vine disease, Dwarf disease of
+            alfalfa, Dwarf disease of lucerne, Leaf scald of oleander, Leaf scald of plum, Leaf scorch, Phony disease of
+            peach, Pierce's disease of grapevine, Variegated chlorosis of citrus</td>
+          <td class="govuk-table__cell">Xylella fastidiosa</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/{{version}}/pests/xylella-fastidiosa">View</a></td>
+        </tr>
+
+      </tbody>
+    </table>
+    <br>
+    <br>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--s">Regulated non quarantine pest</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Common name</th>
+          <th scope="col" class="govuk-table__header">Scientific name</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Banana moth, Sugarcane borer, Sugarcane moth</td>
+          <td class="govuk-table__cell">Opogona sacchari</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Green petal of strawberry, Phyllody of clover</td>
+          <td class="govuk-table__cell">Clover phyllody phytoplasma</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Cauliflower disease of ornamentals, Cauliflower disease of strawberry,
+            Fasciation of strawberry, Leafy gall of ornamentals, Leafy gall of tobacco</td>
+          <td class="govuk-table__cell">Rhodococcus fascians</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--s">Quarantine pests</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Common name</th>
+          <th scope="col" class="govuk-table__header">Scientific name</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Banded-winged whitefly</td>
+          <td class="govuk-table__cell">Trialeurodes abutiloneus</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Cassava whitefly, Cotton whitefly, Sweet potato whitefly, Tobacco whitefly
+            (European populations)</td>
+          <td class="govuk-table__cell">Bemisia tabaci</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Cassava whitefly, Cotton whitefly, Sweet potato whitefly, Tobacco whitefly
+            (non-European populations)</td>
+          <td class="govuk-table__cell">Bemisia tabaci</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/{{version}}/pests/bemisia-tabaci">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Lewis spider mite</td>
+          <td class="govuk-table__cell">Eotetranychus lewisi</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Euphorbia mosaic virus</td>
+          <td class="govuk-table__cell">Euphorbia mosaic virus</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Euplatypus parallelus</td>
+          <td class="govuk-table__cell">Euplatypus parallelus</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Root-knot nematode</td>
+          <td class="govuk-table__cell">Meloidogyne enterolobii</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Citrus spider mite, Six-spotted spider mite</td>
+          <td class="govuk-table__cell">Eotetranychus sexmaculatus</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Xanthomonas axonopodis pv. poinsettiicola</td>
+          <td class="govuk-table__cell">Xanthomonas axonopodis pv. poinsettiicola</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">View</a></td>
+        </tr>
+
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Search again
+      </button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

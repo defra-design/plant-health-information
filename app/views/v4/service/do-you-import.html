@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Where are you importing {{plantName}} into?
+Where are you importing {{plantName}} to?
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,7 +24,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#import">Select where you are importing {{plantName}} into</a>
+            <a href="#import">Select where you are importing {{plantName}} to</a>
           </li>
         </ul>
       </div>
@@ -35,13 +35,13 @@ href: "javascript:window.history.back()"
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading" id="import-h1">
-              Where are you importing {{plantName}} into?
+              Where are you importing {{plantName}} to?
             </h1>
           </legend>
 
           {% if error %}
           <span id="user-type-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select where you are importing {{plantName}} into
+            <span class="govuk-visually-hidden">Error:</span> Select where you are importing {{plantName}} to
           </span>
           {% endif %}
           <div class="govuk-radios">

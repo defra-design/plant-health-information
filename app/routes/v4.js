@@ -41,6 +41,21 @@ module.exports = function (router) {
 
     };
 
+    function isCountryInEU(country) {
+        const euCountries = [
+            "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark",
+            "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland",
+            "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands",
+            "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden",
+            "Albania", "Andorra", "Armenia", "Azerbaijan", "Belarus", "Bosnia-Herzegovina",
+            "Faroe Islands", "Georgia", "Iceland", "Italy", "Liechtenstein", "Malta",
+            "Moldova", "Monaco", "Montenegro", "Norway", "Serbia", "Switzerland", "Turkey",
+            "Ukraine"
+        ];
+
+        return euCountries.includes(country);
+    }
+
     // .GOV.UK
     router.get('/' + version + govuk + '/plant-health-information-start', function (req, res) {
         res.render(version + govuk + '/plant-health-information-start', {
@@ -84,7 +99,7 @@ module.exports = function (router) {
     });
 
 
-   
+
 
 
     // do you import?
@@ -142,69 +157,46 @@ module.exports = function (router) {
 
     router.post('/' + version + '/service/country-select', function (req, res) {
         const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
-        let country = req.session.data['country']
+        let country = req.session.data['country'];
 
 
         if (country === '') {
             res.redirect('/' + version + '/service/country-select?error=true');
         }
-        else
-            res.redirect('/' + version + '/service/format')
-    });
-
-     // what format?
-     router.get('/' + version + '/service/format', function (req, res) {
-        res.render(version + '/service/format', {
-            'version': version,
-            'error': req.query.error,
-            'plantName': req.session.data['plantName']
-
-        });
-
-    });
-
-    router.post('/' + version + '/service/format', function (req, res) {
-
-        let format = req.session.data['format']
-        const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
-
-
-        if (format === undefined) {
-            res.redirect('/' + version + '/service/format?error=true');
-        }
         else if (searchQuery) {
+            const isEU = isCountryInEU(country);
+            req.session.data['isEU'] = isEU;
             const preprocessedSearchQuery = searchQuery.trim().toLowerCase();
+            console.log('Is ' + req.session.data['country'] + ' ' + 'in the EU?' + ' ' + isEU)
 
             if (plantMappings[preprocessedSearchQuery]) {
                 res.redirect('/' + version + plantMappings[searchQuery]);
             }
-            else {
-                // currently set to redirect to itself
-                res.redirect('/' + version + '/service/format');
-            }
+        } else {
+            // currently set to redirect to itself
+            res.redirect('/' + version + '/service/country-select');
         }
-    })
-
+    });
 
 
     // Plants
     // euphorbia-pulcherrima
     router.get('/' + version + '/plants/euphorbia-pulcherrima', function (req, res) {
-        console.log("my country is set to" + " " + req.session.data['country'])
-
         // Set a default value if 'country' is not defined or falsy
         const country = req.session.data['country'] || 'Default Country';
 
         res.render(version + '/plants/euphorbia-pulcherrima', {
             'version': version,
             'doYouImport': req.session.data['import'],
-            'country': country
+            'country': country,
+            'inEU' : req.session.data['isEU']
+
         });
     });
 
     router.post('/' + version + '/plants/euphorbia-pulcherrima', function (req, res) {
-        
-        req.session.destroy(function(err) {
+
+        req.session.destroy(function (err) {
             if (err) {
                 console.error('Error destroying session:', err);
             } else {
@@ -215,7 +207,7 @@ module.exports = function (router) {
         res.redirect('/' + version + '/service/search');
     });
 
-    
+
 
     // quercus
     router.get('/' + version + '/plants/quercus', function (req, res) {
@@ -224,14 +216,16 @@ module.exports = function (router) {
         res.render(version + '/plants/quercus', {
             'version': version,
             'doYouImport': req.session.data['import'],
-            'country': country
+            'country': country,
+            'inEU' : req.session.data['isEU']
+
 
         });
     });
 
     router.post('/' + version + '/plants/quercus', function (req, res) {
-        
-        req.session.destroy(function(err) {
+
+        req.session.destroy(function (err) {
             if (err) {
                 console.error('Error destroying session:', err);
             } else {
@@ -251,13 +245,14 @@ module.exports = function (router) {
             'doYouImport': req.session.data['import'],
             'country': country,
             'format': req.session.data['format'],
+            'inEU' : req.session.data['isEU']
 
         });
     });
-    
+
     router.post('/' + version + '/plants/pinus-pinea', function (req, res) {
-        
-        req.session.destroy(function(err) {
+
+        req.session.destroy(function (err) {
             if (err) {
                 console.error('Error destroying session:', err);
             } else {
@@ -278,8 +273,8 @@ module.exports = function (router) {
     });
 
     router.post('/' + version + '/pests/bemisia-tabaci', function (req, res) {
-        
-        req.session.destroy(function(err) {
+
+        req.session.destroy(function (err) {
             if (err) {
                 console.error('Error destroying session:', err);
             } else {
@@ -296,12 +291,12 @@ module.exports = function (router) {
             'version': version,
 
         });
-        
+
     });
 
     router.post('/' + version + '/pests/xylella-fastidiosa', function (req, res) {
-        
-        req.session.destroy(function(err) {
+
+        req.session.destroy(function (err) {
             if (err) {
                 console.error('Error destroying session:', err);
             } else {

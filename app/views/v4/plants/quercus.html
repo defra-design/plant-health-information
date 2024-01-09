@@ -41,8 +41,11 @@ href: "javascript:window.history.back()"
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
       Synonyms
     </h3>
-    <p>
-      Quercus pedunculata</p>
+    <ul class="govuk-list">
+      <li>
+        Quercus pedunculata
+      </li>
+    </ul>
 
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
       EPPO code
@@ -52,7 +55,7 @@ href: "javascript:window.history.back()"
 
     {% if country is not defined or country == 'Default Country'%}
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing Quercus robur into Great Britain
+      Importing quercus robur into Great Britain
     </h2>
 
     <p>
@@ -61,60 +64,17 @@ href: "javascript:window.history.back()"
     </p>
 
     <h2 class="govuk-heading-m">
-      Pest and disease risks for Quercus robur
+      Pests and diseases you must report
     </h2>
-
-    <p class="govuk-body">If a quarantine pest or disease is found during plant health inspections, action will be
-      taken. This could result in the consignment being delayed or destroyed.</p>
+    <p class="govuk-body">Quercus robur might carry the pests or diseases listed below.</p>
+    <p class="govuk-body">If one of these pests or diseases is found during plant health inspections, action will be
+      taken. This could result in plant consignments being delayed or destroyed.</p>
     <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
         href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
         these pests or diseases to APHA (Animal and Plant Health Agency).</a></p>
     <p class="govuk-body">To find out the pest and disease risk from a specific area, <a class="govuk-link"
-        href="/{{version}}/service/country-select">provide where you are importing from</a>.</p>
+          href="/{{version}}/service/country-select">provide where you are importing from</a>.</p>
 
-    <br>
-    <h3 class="govuk-heading-s">
-      Regulated non-quarantine pests and diseases
-    </h3>
-    <p class="govuk-body">These pests and diseases are only treated as quarantine pests and diseases if found on quercus
-      robur and other certain plants.</p>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Common name</th>
-          <th scope="col" class="govuk-table__header">Scientific name</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Banana moth, Sugarcane borer, Sugarcane moth</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Opogona sacchari">Opogona sacchari</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Green petal of strawberry, Phyllody of clover</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Clover phyllody phytoplasma">Clover phyllody phytoplasma</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Cauliflower disease of ornamentals, Cauliflower disease of strawberry,
-            Fasciation of strawberry, Leafy gall of ornamentals, Leafy gall of tobacco</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Rhodococcus fascians">Rhodococcus fascians</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <h3 class="govuk-heading-s">
-      Quarantine pests and diseases
-    </h3>
-    <p class="govuk-body">Quercus robur might carry the following quarantine pests or diseases.</p>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -182,11 +142,10 @@ href: "javascript:window.history.back()"
       </tbody>
     </table>
 
-
     {% else %}
 
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing Quercus robur from {{data['country']}}
+      Importing quercus robur from {{data['country']}}
     </h2>
     {% if inEU %}
     <p class="govuk-body">
@@ -215,7 +174,7 @@ href: "javascript:window.history.back()"
     <p class="govuk-body">
       You may need to include an additional declaration on the phytosanitary certificate, <a class="govuk-link"
         rel="noreferrer noopener" target="_blank"
-        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/requirement-for-additional-declarations-ads-on-phytosanitary-certificate-pcs/">check
         what information you need to provide using the additional declaration tool (opens in new tab)</a>.
     </p>
 
@@ -227,52 +186,16 @@ href: "javascript:window.history.back()"
     </p>
 
     <h2 class="govuk-heading-m">
-      Pest and disease risks for Quercus robur from {{data['country']}}
+      Pests and diseases you must report
     </h2>
-
-    <p class="govuk-body">Quercus robur imported from {{data['country']}} might carry the following quarantine
-      pests or diseases.</p>
-    <p class="govuk-body">If a quarantine pest or disease is found during plant health inspections, action will be
-      taken. This could result in the plant needing to be destroyed.​</p>
+    <p class="govuk-body">Quercus robur might carry the pests or diseases listed below from
+      {{data['country']}}.</p>
+    <p class="govuk-body">If one of these pests or diseases is found during plant health inspections, action will be
+      taken. This could result in plant consignments being delayed or destroyed.</p>
     <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
         href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
         these pests or diseases to APHA (Animal and Plant Health Agency).</a></p>
-    <br>
-    <h3 class="govuk-heading-s">
-      Regulated non-quarantine pests and diseases
-    </h3>
-    <p class="govuk-body">These pests and diseases are only treated as quarantine pests and diseases if found on quercus
-      robur and other certain plants.</p>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Common name</th>
-          <th scope="col" class="govuk-table__header">Scientific name</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Banana moth, Sugarcane borer, Sugarcane moth</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Opogona sacchari">Opogona sacchari</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Cauliflower disease of ornamentals, Cauliflower disease of strawberry,
-            Fasciation of strawberry, Leafy gall of ornamentals, Leafy gall of tobacco</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Rhodococcus fascians">Rhodococcus fascians</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <h3 class="govuk-heading-s">
-      Quarantine pests and diseases
-    </h3>
-    <p class="govuk-body">Quercus robur might carry the following quarantine pests or diseases.</p>
+
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">

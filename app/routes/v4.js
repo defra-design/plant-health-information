@@ -37,6 +37,7 @@ module.exports = function (router) {
         'pinus pinea (pine stone, pine umbrella)': '/plants/pinus-pinea',
         'quercus robur (oak)': '/plants/quercus',
         // 'rosa rugosa (rosa, ramanas, rose, hedge-row)': '/plants/rosa-rugosa',
+        'solanum lycopersicum (tomato)': '/plants/solanum',
         // 'tulipa (tulips)': '/plants/tuplia',
 
     };
@@ -125,7 +126,7 @@ module.exports = function (router) {
             res.redirect('/' + version + '/service/country-select')
 
         else if (doYouImport === 'northern-ireland')
-            res.redirect('/' + version + '/service/northern-ireland-handoff')
+            res.redirect('/' + version + '/service/handoffs/northern-ireland')
         else {
             const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
 
@@ -189,7 +190,7 @@ module.exports = function (router) {
             'version': version,
             'doYouImport': req.session.data['import'],
             'country': country,
-            'inEU' : req.session.data['isEU']
+            'inEU': req.session.data['isEU']
 
         });
     });
@@ -217,7 +218,7 @@ module.exports = function (router) {
             'version': version,
             'doYouImport': req.session.data['import'],
             'country': country,
-            'inEU' : req.session.data['isEU']
+            'inEU': req.session.data['isEU']
 
 
         });
@@ -245,12 +246,40 @@ module.exports = function (router) {
             'doYouImport': req.session.data['import'],
             'country': country,
             'format': req.session.data['format'],
-            'inEU' : req.session.data['isEU']
+            'inEU': req.session.data['isEU']
 
         });
     });
 
     router.post('/' + version + '/plants/pinus-pinea', function (req, res) {
+
+        req.session.destroy(function (err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/search');
+    });
+
+
+    // Solanum
+    router.get('/' + version + '/plants/solanum', function (req, res) {
+        const country = req.session.data['country'] || 'Default Country';
+
+        res.render(version + '/plants/solanum', {
+            'version': version,
+            'doYouImport': req.session.data['import'],
+            'country': country,
+            'format': req.session.data['format'],
+            'inEU': req.session.data['isEU']
+
+        });
+    });
+
+    router.post('/' + version + '/plants/solanum', function (req, res) {
 
         req.session.destroy(function (err) {
             if (err) {

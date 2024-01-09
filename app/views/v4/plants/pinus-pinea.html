@@ -39,8 +39,11 @@ href: "javascript:window.history.back()"
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
       Synonyms
     </h3>
-    <p>
-      None</p>
+    <ul class="govuk-list">
+      <li>
+        None
+      </li>
+    </ul>
 
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
       EPPO code
@@ -51,7 +54,7 @@ href: "javascript:window.history.back()"
 
     {% if country is not defined or country == 'Default Country'%}
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing Pinus pinea into Great Britain
+      Importing pinus pinea into Great Britain
     </h2>
 
     <p>
@@ -60,68 +63,16 @@ href: "javascript:window.history.back()"
     </p>
 
     <h2 class="govuk-heading-m">
-      Pest and disease risks for Pinus pinea
+      Pests and diseases you must report
     </h2>
-
-    <p class="govuk-body">If a quarantine pest or disease is found during plant health inspections, action will be
-      taken. This could result in the consignment being delayed or destroyed.</p>
+    <p class="govuk-body">Pinus pinea might carry the pests or diseases listed below.</p>
+    <p class="govuk-body">If one of these pests or diseases is found during plant health inspections, action will be
+      taken. This could result in plant consignments being delayed or destroyed.</p>
     <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
         href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
         these pests or diseases to APHA (Animal and Plant Health Agency).</a></p>
     <p class="govuk-body">To find out the pest and disease risk from a specific area, <a class="govuk-link"
-        href="/{{version}}/service/country-select">provide where you are importing from</a>.</p>
-
-    <br>
-    <h3 class="govuk-heading-s">
-      Regulated non-quarantine pests and diseases
-    </h3>
-    <p class="govuk-body">These pests and diseases are only treated as quarantine pests and diseases if found on pinus
-      pinea and other certain plants.</p>
-
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Common name</th>
-          <th scope="col" class="govuk-table__header">Scientific name</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Anthracnose of strawberry, Black spot of strawberry, Crown rot of anemone, Leaf
-            curl of anemone, Leaf curl of celery, Terminal crook disease of pine</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Colletotrichum acutatum">Colletotrichum acutatum</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">North American red-band needle blight</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Dothistroma pini">Dothistroma pini</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Dothistroma needle blight, Red band needle blight</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Dothistroma septosporum">Dothistroma septosporum</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Brown spot of pine, Needle blight of pine</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Lecanosticta acicola">Lecanosticta acicola</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <h3 class="govuk-heading-s">
-      Quarantine pests and diseases
-    </h3>
-    <p class="govuk-body">Pinus pinea might carry the following quarantine pests or diseases.</p>
+          href="/{{version}}/service/country-select">provide where you are importing from</a>.</p>
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
@@ -570,11 +521,11 @@ href: "javascript:window.history.back()"
             href="/{{version}}/pests/xylella-fastidiosa">Xylella fastidiosa</a></td>
       </tr>
     </table>
-
+    <br>
     {% else %}
 
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing Pinus pinea from {{data['country']}}
+      Importing pinus pinea from {{data['country']}}
     </h2>
 
     {% if inEU %}
@@ -604,7 +555,7 @@ href: "javascript:window.history.back()"
     <p class="govuk-body">
       You may need to include an additional declaration on the phytosanitary certificate, <a class="govuk-link"
         rel="noreferrer noopener" target="_blank"
-        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/requirement-for-additional-declarations-ads-on-phytosanitary-certificate-pcs/">check
         what information you need to provide using the additional declaration tool (opens in new tab)</a>.
     </p>
 
@@ -616,66 +567,16 @@ href: "javascript:window.history.back()"
     </p>
 
     <h2 class="govuk-heading-m">
-      Pest and disease risks for Pinus pinea from {{data['country']}}
+      Pests and diseases you must report
     </h2>
-
-    <p class="govuk-body">Pinus pinea imported from {{data['country']}} might carry the following quarantine
-      pests or diseases.</p>
-    <p class="govuk-body">If a quarantine pest or disease is found during plant health inspections, action will be
-      taken. This could result in the plant needing to be destroyed.​</p>
+    <p class="govuk-body">Pinus pinea might carry the pests or diseases listed below from
+      {{data['country']}}.</p>
+    <p class="govuk-body">If one of these pests or diseases is found during plant health inspections, action will be
+      taken. This could result in plant consignments being delayed or destroyed.</p>
     <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
         href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
         these pests or diseases to APHA (Animal and Plant Health Agency).</a></p>
-    <br>
-    <h3 class="govuk-heading-s">
-      Regulated non-quarantine pests and diseases
-    </h3>
-    <p class="govuk-body">These pests and diseases are only treated as quarantine pests and diseases if found on pinus
-      pinea and other certain plants.</p>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Common name</th>
-          <th scope="col" class="govuk-table__header">Scientific name</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Anthracnose of strawberry, Black spot of strawberry, Crown rot of anemone, Leaf
-            curl of anemone, Leaf curl of celery, Terminal crook disease of pine</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Colletotrichum acutatum">Colletotrichum acutatum</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">North American red-band needle blight</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Dothistroma pini">Dothistroma pini</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Dothistroma needle blight, Red band needle blight</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Dothistroma septosporum">Dothistroma septosporum</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Brown spot of pine, Needle blight of pine</td>
-          <td class="govuk-table__cell">
-            <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"
-              aria-label="View Lecanosticta acicola">Lecanosticta acicola</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <h3 class="govuk-heading-s">
-      Quarantine pests and diseases
-    </h3>
-    <p class="govuk-body">Pinus pinea might carry the following quarantine pests or diseases.</p>
+
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -745,126 +646,12 @@ href: "javascript:window.history.back()"
             aria-label="View Acleris nivisellana" href="#">Acleris nivisellana</a>
         </td>
       </tr>
-
-      <tr class="govuk-table__row" aria-label="View Aeolesthes sarta">
-        <td class="govuk-table__cell">Aeolesthes sarta</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Aeolesthes sarta" href="#">Aeolesthes sarta</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Arceuthobium divaricatum">
-        <td class="govuk-table__cell">Arceuthobium divaricatum</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Arceuthobium divaricatum" href="#">Arceuthobium divaricatum</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Ips lecontei">
-        <td class="govuk-table__cell">Ips lecontei</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Ips lecontei" href="#">Ips lecontei</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Pissodes punctatus">
-        <td class="govuk-table__cell">Pissodes punctatus</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Pissodes punctatus" href="#">Pissodes punctatus</a>
-        </td>
-      </tr>
-
       <tr class="govuk-table__row" aria-label="View Anoplophora glabripennis">
         <td class="govuk-table__cell">Anoplophora glabripennis</td>
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
             aria-label="View Anoplophora glabripennis" href="#">Anoplophora glabripennis</a>
         </td>
       </tr>
-
-      <tr class="govuk-table__row" aria-label="View Atropellis apiculata">
-        <td class="govuk-table__cell">Atropellis apiculata</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Atropellis apiculata" href="#">Atropellis apiculata</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Monochamus urossovii">
-        <td class="govuk-table__cell">Monochamus urossovii</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Monochamus urossovii" href="#">Monochamus urossovii</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Dendroctonus ponderosae">
-        <td class="govuk-table__cell">Dendroctonus ponderosae</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Dendroctonus ponderosae" href="#">Dendroctonus ponderosae</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Monochamus galloprovincialis">
-        <td class="govuk-table__cell">Monochamus galloprovincialis</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Monochamus galloprovincialis" href="#">Monochamus galloprovincialis</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Cronartium himalayense">
-        <td class="govuk-table__cell">Cronartium himalayense</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Cronartium himalayense" href="#">Cronartium himalayense</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Atropellis pinicola">
-        <td class="govuk-table__cell">Atropellis pinicola</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Atropellis pinicola" href="#">Atropellis pinicola</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Atropellis piniphila">
-        <td class="govuk-table__cell">Atropellis piniphila</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Atropellis piniphila" href="#">Atropellis piniphila</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Agrilus anxius">
-        <td class="govuk-table__cell">Agrilus anxius</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Agrilus anxius" href="#">Agrilus anxius</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Pseudocercospora pini-densiflorae">
-        <td class="govuk-table__cell">Pseudocercospora pini-densiflorae</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Pseudocercospora pini-densiflorae" href="#">Pseudocercospora pini-densiflorae</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Lecanosticta acicola">
-        <td class="govuk-table__cell">Lecanosticta acicola</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Lecanosticta acicola" href="#">Lecanosticta acicola</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Tobacco ringspot virus">
-        <td class="govuk-table__cell">Tobacco ringspot virus</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Tobacco ringspot virus" href="#">Tobacco ringspot virus</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Ips paraconfusus">
-        <td class="govuk-table__cell">Ips paraconfusus</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Ips paraconfusus" href="#">Ips paraconfusus</a>
-        </td>
-      </tr>
-
       <tr class="govuk-table__row" aria-label="View Ips plastographus">
         <td class="govuk-table__cell">Ips plastographus</td>
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
@@ -931,41 +718,6 @@ href: "javascript:window.history.back()"
         <td class="govuk-table__cell">Digger pine dwarf mistletoe</td>
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
             aria-label="View Arceuthobium occidentale" href="#">Arceuthobium occidentale</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Ips duplicatus">
-        <td class="govuk-table__cell">Double-spined bark beetle, Northern bark beetle</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Ips duplicatus" href="#">Ips duplicatus</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Acleris variana">
-        <td class="govuk-table__cell">Eastern black headed budworm, Hemlock budworm</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Acleris variana" href="#">Acleris variana</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Ips grandicollis">
-        <td class="govuk-table__cell">Eastern Five-Spined Engraver, Five-spined bark beetle, Southern pine engraver</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Ips grandicollis" href="#">Ips grandicollis</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Cronartium quercuum">
-        <td class="govuk-table__cell">Eastern gall rust, Eastern gall rust of pine, Eastern pine gall rust</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Cronartium quercuum" href="#">Cronartium quercuum</a>
-        </td>
-      </tr>
-
-      <tr class="govuk-table__row" aria-label="View Ips pini">
-        <td class="govuk-table__cell">Eastern pine engraver, Oregon pine engraver, pine engraver</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            aria-label="View Ips pini" href="#">Ips pini</a>
         </td>
       </tr>
 
@@ -1046,66 +798,6 @@ href: "javascript:window.history.back()"
           pine</td>
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
             href="#">Cronartium coleosporioides</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Sugar pine tortrix</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            href="#">Choristoneura lambertiana</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Sweet fern blister rust</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            href="#">Cronartium comptoniae</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Tea seed flies</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Adrama
-            spp.</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Two-lined chestnut borer</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Agrilus
-            bilineatus</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Western black-headed budworm</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Acleris
-            gloveranus</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Western dwarf mistletoe</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            href="#">Arceuthobium campylopodum</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Western gall rust, Western gall rust of pine</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            href="#">Cronartium harknessii</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Western hemlock wood stainer</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            href="#">Gnathotrichus sulcatus</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Western spruce budworm</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            href="#">Choristoneura occidentalis</a>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Xiphinema californicum</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Xiphinema
-            californicum</a>
         </td>
       </tr>
       <tr class="govuk-table__row">

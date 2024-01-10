@@ -22,6 +22,7 @@ module.exports = function (router) {
         // 'leveillula clavata': '/pests/leveillula-clavata',
         // 'opogona sacchari (banana moth, sugarcane borer, sugarcane moth)': '/pests/opogona-sacchari',
         'xylella fastidiosa (alfalfa dwarf, anaheim disease, california vine disease, dwarf disease of alfalfa, dwarf disease of lucerne, leaf scald of oleander, leaf scald of plum, leaf scorch, phony disease of peach, pierces disease of grapevine, variegated chlorosis of citrus)': '/pests/xylella-fastidiosa',
+        'tomato chlorotic dwarf viroid': '/pests/tcdvd',
     };
 
     const plantMappings = {
@@ -324,6 +325,28 @@ module.exports = function (router) {
     });
 
     router.post('/' + version + '/pests/xylella-fastidiosa', function (req, res) {
+
+        req.session.destroy(function (err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/search');
+    });
+
+    // Tomato chlorotic dwarf viroid
+    router.get('/' + version + '/pests/tcdvd', function (req, res) {
+        res.render(version + '/pests/tcdvd', {
+            'version': version,
+
+        });
+
+    });
+
+    router.post('/' + version + '/pests/tcdvd', function (req, res) {
 
         req.session.destroy(function (err) {
             if (err) {

@@ -1,0 +1,310 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+[Pest name]
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .right-align {
+    float: right;
+  }
+</style>
+
+<script>
+
+function toggleNotQP() {
+    var notQPContainer = document.getElementById('notQPContainer');
+    var notQPLink = document.getElementById('notQPLink');
+
+    if (notQPContainer.style.display === 'none') {
+      notQPContainer.style.display = 'block';
+      notQPLink.innerText = 'Not a QP / RNQP';
+    } else {
+      notQPContainer.style.display = 'none';
+      notQPLink.innerText = 'Pest is a QP / RNQP';
+    }
+  }
+
+  var isShowingCommonnames = true;
+
+  function toggleCommonNames() {
+    var commonNamesContainer = document.getElementById('commonNamesList');
+    var commonNamesLink = document.getElementById('commonNamesLink');
+
+    if (isShowingCommonnames) {
+      commonNamesContainer.innerHTML = '<li><p> None </p></li>';
+      commonNamesLink.innerText = 'Show common names';
+    } else {
+      commonNamesContainer.innerHTML = '<li>Common name 1</li><li>Common name 2</li><li>Common name 3</li>';
+      commonNamesLink.innerText = 'No common names returned';
+    }
+    isShowingCommonnames = !isShowingCommonnames;
+  }
+
+  var isShowingSynonyms = true;
+
+  function toggleSynonyms() {
+    var synonymContainer = document.getElementById('synonymList');
+    var synonymLink = document.getElementById('synonymLink');
+
+    if (isShowingSynonyms) {
+      synonymContainer.innerHTML = '<li><p> None </p></li>';
+      synonymLink.innerText = 'Show Synonym Names';
+    } else {
+      synonymContainer.innerHTML = '<li>Synonym 1</li><li>Synonym 2</li>';
+      synonymLink.innerText = 'No synonyms returned';
+    }
+
+    isShowingSynonyms = !isShowingSynonyms;
+  }
+
+  var isShowingHosts = true;
+
+  function toggleHosts() {
+    var hostsContainer = document.getElementById('hostsList');
+    var hostsLink = document.getElementById('hostsLink');
+
+    if (isShowingHosts) {
+      hostsContainer.innerHTML = '<p>There are no identified host plants of [pest name]</p>';
+      hostsLink.innerText = 'Show plants';
+    } else {
+      hostsContainer.innerHTML = '<ul class="govuk-list">' +
+        '   <li>Host plant 1</li>' +
+        '   <li>Host plant 2</li>' +
+        '   <li>Host plant 3</li>' +
+        '   <li>Host plant 4</li>' +
+        '   </ul>';
+      hostsLink.innerText = 'No hosts returned';
+      hostsContainer.style.display = 'block';
+    }
+
+    isShowingHosts = !isShowingHosts;
+  }
+
+  function togglePublicationsAll() {
+    var publicationsContainer = document.getElementById('publicationsContainer');
+    var publicationsLink = document.getElementById('publicationsLink');
+
+    if (publicationsContainer.style.display === 'none') {
+      publicationsContainer.style.display = 'block';
+      publicationsLink.innerText = 'No publications returned';
+    } else {
+      publicationsContainer.style.display = 'none';
+      publicationsLink.innerText = 'Show publications';
+    }
+  }
+
+  function toggleFactsheet() {
+    var factsheetContainer = document.getElementById('factsheetContainer');
+    var factsheetLink = document.getElementById('factsheetLink');
+
+    if (factsheetContainer.style.display === 'none') {
+      factsheetContainer.style.display = 'block';
+      factsheetLink.innerText = 'No factsheet returned';
+    } else {
+      factsheetContainer.style.display = 'none';
+      factsheetLink.innerText = 'Show factsheet';
+    }
+  }
+
+  function togglePubTable() {
+    var pubTableContainer = document.getElementById('pubTableContainer');
+    var pubTableLink = document.getElementById('pubTableLink');
+    var publicationHeader = document.getElementById('publicationHeader');
+
+    if (pubTableContainer.style.display === 'none') {
+      pubTableContainer.style.display = 'block';
+      if (publicationHeader) {
+        publicationHeader.style.display = 'block';
+      }
+      pubTableLink.innerText = 'No other publications returned';
+    } else {
+      pubTableContainer.style.display = 'none';
+      if (publicationHeader) {
+        publicationHeader.style.display = 'none';
+      }
+      pubTableLink.innerText = 'Show other publications';
+    }
+  }
+
+</script>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      [Pest name]
+    </h1>
+
+    <div class="govuk-warning-text" id="notQPContainer">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Warning text <a class="govuk-link"
+          href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">and warning
+          link
+          <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="commonNamesLink"
+          href="javascript:void(0);" onclick="toggleNotQP()">Not a QP / RNQP</a>
+        </a>.
+      </strong>
+    </div>
+
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+      <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="commonNamesLink"
+        href="javascript:void(0);" onclick="toggleCommonNames()">No common names returned</a>
+    </h3>
+
+    <ul class="govuk-list" id="commonNamesList">
+      <li>
+        Common name 1
+      </li>
+      <li>
+        Common name 2
+      </li>
+      <li>
+        Common name 3
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+      <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="synonymLink" href="javascript:void(0);"
+        onclick="toggleSynonyms()">No synonyms returned</a>
+    </h3>
+    <ul class="govuk-list" id="synonymList">
+      <li>
+        Synonym 1
+      </li>
+      <li>
+        Synonym 2
+      </li>
+    </ul>
+    <br>
+    <div id="publicationsContainer">
+      <h2 class="govuk-heading-m">
+        Publications about [Plant name]
+        <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="publicationsAllLink"
+          href="javascript:void(0);" onclick="togglePublicationsAll()">No docs returned</a>
+      </h2>
+      <p class="'govuk-body">These files may not be suitable for users of assistive technology.</p>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Request an accessible format
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          If you use assistive technology (such as a screen reader) and need a version of this document in a more
+          accessible format, please email plantpestsrisks@defra.gov.uk. Please tell us what format you need. It
+          will help us if you say what assistive technology you use. </div>
+      </details>
+      <div id="factsheetContainer">
+        <div class="govuk-grid-row govuk-!-margin-bottom-5">
+
+          <div class="govuk-grid-column-one-quarter">
+            <a href="#" rel="noreferrer noopener" target="_blank">
+              <img src="/public/doc_image.png" alt="View plant pest factsheet on [plant name] (PDF)">
+            </a>
+          </div>
+          <div class="govuk-grid-column-three-quarters">
+            <a href="#" class="govuk-link govuk-body-l govuk-link--no-visited-state" rel="noreferrer noopener"
+              target="_blank">Factsheet name
+              <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="factsheetLink"
+                href="javascript:void(0);" onclick="toggleFactsheet()">No factsheet returned</a>
+            </a>
+            <div id="file-hint" class="govuk-hint govuk-!-margin-top-2">
+              Date published
+              <br>
+              File type, File size, No. pages
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0" id="publicationHeader">
+            Other publications
+            <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="pubTableLink"
+              href="javascript:void(0);" onclick="togglePubTable()">No other publications returned</a>
+          </h3>
+        </div>
+      </div>
+
+      <table class="govuk-table" id="pubTableContainer">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Title</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Date published</td>
+            <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+                href="/public/alerts/Pest_alert_Xylella_on_olive_trees.pdf">Document name 1<span
+                  class="govuk-visually-hidden">(opens in new tab)</span></a><br>(File type, No. pages)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Date published</td>
+            <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+                href="/public/factsheets/xylella_fact_sheet.pdf">Document name 2<span
+                  class="govuk-visually-hidden">(opens
+                  in new tab)</span></a><br>(File type, No. pages)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 class="govuk-heading-m">
+      Host plants of [Pest name]
+      <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="hostsLink" href="javascript:void(0);"
+        onclick="toggleHosts()">No hosts returned</a>
+    </h2>
+    <ul class="govuk-list" id="hostsList">
+      <li>Host plant 1</li>
+      <li>Host plant 2</li>
+      <li>Host plant 3</li>
+      <li>Host plant 4</li>
+    </ul>
+    <br>
+
+
+    <br>
+    <br>
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Search again
+      </button>
+    </form>
+
+  </div>
+</div>
+
+<style>
+  @media only screen and (max-width: 640px) {
+    img {
+      width: 30%
+    }
+  }
+
+  @media only screen and (min-width: 641px) {
+    img {
+      width: 110%
+    }
+  }
+</style>
+
+{% endblock %}

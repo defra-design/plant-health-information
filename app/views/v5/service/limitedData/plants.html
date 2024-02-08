@@ -1,0 +1,201 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+[plant name]
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .right-align {
+    float: right;
+  }
+</style>
+
+<script>
+  var isShowingCommonnames = true;
+
+  function toggleCommonNames() {
+    var commonNamesContainer = document.getElementById('commonNamesList');
+    var commonNamesLink = document.getElementById('commonNamesLink');
+
+    if (isShowingCommonnames) {
+      commonNamesContainer.innerHTML = '<li><p> None </p></li>';
+      commonNamesLink.innerText = 'Show common names';
+    } else {
+      commonNamesContainer.innerHTML = '<li>Common name 1</li><li>Common name 2</li><li>Common name 3</li>';
+      commonNamesLink.innerText = 'No common names returned';
+    }
+    isShowingCommonnames = !isShowingCommonnames;
+  }
+
+  var isShowingSynonyms = true;
+
+  function toggleSynonyms() {
+    var synonymContainer = document.getElementById('synonymList');
+    var synonymLink = document.getElementById('synonymLink');
+
+    if (isShowingSynonyms) {
+      synonymContainer.innerHTML = '<li><p> None </p></li>';
+      synonymLink.innerText = 'Show Synonym Names';
+    } else {
+      synonymContainer.innerHTML = '<li>Synonym 1</li><li>Synonym 2</li>';
+      synonymLink.innerText = 'No synonyms returned';
+    }
+
+    isShowingSynonyms = !isShowingSynonyms;
+  }
+
+  function toggleEppoCode() {
+    var eppoCodeContainer = document.getElementById('eppoCodeContainer');
+    var eppoCodeLink = document.getElementById('eppoCodeLink');
+
+    if (eppoCodeContainer.style.display === 'none') {
+      eppoCodeContainer.style.display = 'block';
+      eppoCodeLink.innerText = 'Hide EPPO code';
+    } else {
+      eppoCodeContainer.style.display = 'none';
+      eppoCodeLink.innerText = 'Show EPPO Code';
+    }
+  }
+
+  var isShowingReporting = true;
+
+  function toggleReporting() {
+    var reportingContainer = document.getElementById('reportingList');
+    var reportingLink = document.getElementById('reportingLink');
+    var reportingTable = document.getElementById('reportingTable');
+    var reportingInfo = document.getElementById('reportingInfo');
+
+    if (isShowingReporting) {
+      reportingTable.innerHTML = '<p>There are no Quarantine pests identified for this host</p>';
+      reportingLink.innerText = 'Show pests';
+      reportingInfo.style.display = 'none';
+    } else {
+      reportingTable.innerHTML = '<tbody class="govuk-table__body">' +
+        '  <tr class="govuk-table__row">' +
+        '    <td class="govuk-table__cell">Common name 1, common name 2</td>' +
+        '    <td class="govuk-table__cell">Scientific name 3</td>' +
+        '  </tr>' +
+        '  <tr class="govuk-table__row">' +
+        '    <td class="govuk-table__cell">Common name 1, common name 2, common name 3</td>' +
+        '    <td class="govuk-table__cell">Scientific name 4</td>' +
+        '  </tr>' +
+        '</tbody>';
+      reportingLink.innerText = 'No pests returned';
+      reportingInfo.style.display = 'block';
+    }
+
+    isShowingReporting = !isShowingReporting;
+  }
+</script>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Plant name </h1>
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+      <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="commonNamesLink"
+        href="javascript:void(0);" onclick="toggleCommonNames()">No common names returned</a>
+    </h3>
+
+    <ul class="govuk-list" id="commonNamesList">
+      <li>
+        Common name 1
+      </li>
+      <li>
+        Common name 2
+      </li>
+      <li>
+        Common name 3
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+      <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="synonymLink" href="javascript:void(0);"
+        onclick="toggleSynonyms()">No synonyms returned</a>
+    </h3>
+    <ul class="govuk-list" id="synonymList">
+      <li>
+        Synonym 1
+      </li>
+      <li>
+        Synonym 2
+      </li>
+    </ul>
+    <div id="eppoCodeContainer">
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+        EPPO code
+        <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align" id="eppoCodeLink"
+          href="javascript:void(0);" onclick="toggleEppoCode()">No EPPO code returned</a>
+      </h3>
+      <p>
+        Eppo information</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing [plant name] from [country]
+    </h2>
+
+    <p class="govuk-body">
+      Useful information regarding imports - with useful link 1.
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="reportingList">
+      <h2 class="govuk-heading-m">Pests and diseases you must report
+        <a class="govuk-!-margin-left-8 govuk-tag govuk-tag--grey right-align"  id="reportingLink" href="javascript:void(0);" onclick="toggleReporting()">No pests returned</a>
+      </h2>
+      <p class="govuk-body" id="reportingInfo">Information about pests and diseases.</p>
+      <table class="govuk-table" id="reportingTable">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Common name</th>
+            <th scope="col" class="govuk-table__header">Scientific name</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Common name 1, common name 2</td>
+            <td class="govuk-table__cell">
+              Scientific name 3
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Common name 1, common name 2, common name 3</td>
+            <td class="govuk-table__cell">
+              Scientific name 4
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <br>
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Search again
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+This service does not contain import and plant health information for Northern Ireland
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      This service does not contain import and plant health information for Northern Ireland
+    </h1>
+
+    <p>
+      There are different plant health controls for Northern Ireland and Great Britain. You can <a
+        href="https://www.daera-ni.gov.uk/publications/import-requirements-plants-plant-produce-and-other-objects">view
+        import requirements for plants and plant produce for Northern Ireland</a>.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

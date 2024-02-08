@@ -1,0 +1,831 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Pinus pinea
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Pinus pinea
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Pine stone
+      </li>
+      <li>
+        Pine umbrella
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        None
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      EPPO code
+    </h3>
+    <p>
+      PIUPN </p>
+
+
+    {% if country is not defined or country == 'Default Country'%}
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing pinus pinea into Great Britain
+    </h2>
+
+    <p>
+      To find out what extra checks or documentation are needed, <a class="govuk-link"
+        href="/{{version}}/service/country-select">provide where you are importing from</a>.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Pests and diseases you must report
+    </h2>
+    <p class="govuk-body">Pinus pinea might carry the pests or diseases listed below.</p>
+    <p class="govuk-body">If one of these pests or diseases is found during plant health inspections, action will be
+      taken. This could result in plant consignments being delayed or destroyed.</p>
+    <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
+        these pests or diseases to APHA (Animal and Plant Health Agency).</a></p>
+    <p class="govuk-body">To find out the pest and disease risk from a specific area, <a class="govuk-link"
+          href="/{{version}}/service/country-select">provide where you are importing from</a>.</p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Common name</th>
+          <th scope="col" class="govuk-table__header">Scientific name</th>
+        </tr>
+      </thead>
+      <tr class="govuk-table__row" aria-label="View Acleris issikii">
+        <td class="govuk-table__cell">Acleris issikii</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acleris issikii" href="#">Acleris issikii</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acleris nishidai">
+        <td class="govuk-table__cell">Acleris nishidai</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acleris nishidai" href="#">Acleris nishidai</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acleris senescens">
+        <td class="govuk-table__cell">Acleris senescens</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acleris senescens" href="#">Acleris senescens</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acroceratitis distincta">
+        <td class="govuk-table__cell">Acroceratitis distincta</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acroceratitis distincta" href="#">Acroceratitis distincta</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acrogonia virescens">
+        <td class="govuk-table__cell">Acrogonia virescens</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acrogonia virescens" href="#">Acrogonia virescens</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Helicoverpa armigera">
+        <td class="govuk-table__cell">Helicoverpa armigera</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Helicoverpa armigera" href="#">Helicoverpa armigera</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Agrilus fleischeri">
+        <td class="govuk-table__cell">Agrilus fleischeri</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Agrilus fleischeri" href="#">Agrilus fleischeri</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Dendroctonus rufipennis">
+        <td class="govuk-table__cell">Dendroctonus rufipennis</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Dendroctonus rufipennis" href="#">Dendroctonus rufipennis</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acleris nivisellana">
+        <td class="govuk-table__cell">Acleris nivisellana</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acleris nivisellana" href="#">Acleris nivisellana</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Aeolesthes sarta">
+        <td class="govuk-table__cell">Aeolesthes sarta</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Aeolesthes sarta" href="#">Aeolesthes sarta</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Arceuthobium divaricatum">
+        <td class="govuk-table__cell">Arceuthobium divaricatum</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Arceuthobium divaricatum" href="#">Arceuthobium divaricatum</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips lecontei">
+        <td class="govuk-table__cell">Ips lecontei</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips lecontei" href="#">Ips lecontei</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Pissodes punctatus">
+        <td class="govuk-table__cell">Pissodes punctatus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Pissodes punctatus" href="#">Pissodes punctatus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Anoplophora glabripennis">
+        <td class="govuk-table__cell">Anoplophora glabripennis</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Anoplophora glabripennis" href="#">Anoplophora glabripennis</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Atropellis apiculata">
+        <td class="govuk-table__cell">Atropellis apiculata</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Atropellis apiculata" href="#">Atropellis apiculata</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Monochamus urossovii">
+        <td class="govuk-table__cell">Monochamus urossovii</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Monochamus urossovii" href="#">Monochamus urossovii</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Dendroctonus ponderosae">
+        <td class="govuk-table__cell">Dendroctonus ponderosae</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Dendroctonus ponderosae" href="#">Dendroctonus ponderosae</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Monochamus galloprovincialis">
+        <td class="govuk-table__cell">Monochamus galloprovincialis</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Monochamus galloprovincialis" href="#">Monochamus galloprovincialis</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Cronartium himalayense">
+        <td class="govuk-table__cell">Cronartium himalayense</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Cronartium himalayense" href="#">Cronartium himalayense</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Atropellis pinicola">
+        <td class="govuk-table__cell">Atropellis pinicola</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Atropellis pinicola" href="#">Atropellis pinicola</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Atropellis piniphila">
+        <td class="govuk-table__cell">Atropellis piniphila</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Atropellis piniphila" href="#">Atropellis piniphila</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Agrilus anxius">
+        <td class="govuk-table__cell">Agrilus anxius</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Agrilus anxius" href="#">Agrilus anxius</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Pseudocercospora pini-densiflorae">
+        <td class="govuk-table__cell">Pseudocercospora pini-densiflorae</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Pseudocercospora pini-densiflorae" href="#">Pseudocercospora pini-densiflorae</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Lecanosticta acicola">
+        <td class="govuk-table__cell">Lecanosticta acicola</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Lecanosticta acicola" href="#">Lecanosticta acicola</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Tobacco ringspot virus">
+        <td class="govuk-table__cell">Tobacco ringspot virus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Tobacco ringspot virus" href="#">Tobacco ringspot virus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips paraconfusus">
+        <td class="govuk-table__cell">Ips paraconfusus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips paraconfusus" href="#">Ips paraconfusus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips plastographus">
+        <td class="govuk-table__cell">Ips plastographus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips plastographus" href="#">Ips plastographus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips confusus">
+        <td class="govuk-table__cell">Ips confusus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips confusus" href="#">Ips confusus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Atropellis tingens">
+        <td class="govuk-table__cell">Atropellis tingens</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Atropellis tingens" href="#">Atropellis tingens</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row" aria-label="View Monochamus carolinensis">
+        <td class="govuk-table__cell">Carolina sawyer, Pine sawyer</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Monochamus carolinensis" href="#">Monochamus carolinensis</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips calligraphus">
+        <td class="govuk-table__cell">Coarse writing engraver, Six-spined ips, Western six-spined engraver</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips calligraphus" href="#">Ips calligraphus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Cronartium comandrae">
+        <td class="govuk-table__cell">Comandra blister rust, Comandra blister rust of pine, Stem rust of pine</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Cronartium comandrae" href="#">Cronartium comandrae</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Melampsora medusae">
+        <td class="govuk-table__cell">Conifer/poplar rust, Leaf rust of poplar, Poplar rust</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Melampsora medusae" href="#">Melampsora medusae</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Dendroctonus mesoamericanus">
+        <td class="govuk-table__cell">Dendroctonus mesoamericanus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Dendroctonus mesoamericanus" href="#">Dendroctonus mesoamericanus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Pissodes nemorensis">
+        <td class="govuk-table__cell">Deodar weevil, Northern pine weevil</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Pissodes nemorensis" href="#">Pissodes nemorensis</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Arceuthobium occidentale">
+        <td class="govuk-table__cell">Digger pine dwarf mistletoe</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Arceuthobium occidentale" href="#">Arceuthobium occidentale</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips duplicatus">
+        <td class="govuk-table__cell">Double-spined bark beetle, Northern bark beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips duplicatus" href="#">Ips duplicatus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acleris variana">
+        <td class="govuk-table__cell">Eastern black headed budworm, Hemlock budworm</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acleris variana" href="#">Acleris variana</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips grandicollis">
+        <td class="govuk-table__cell">Eastern Five-Spined Engraver, Five-spined bark beetle, Southern pine engraver</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips grandicollis" href="#">Ips grandicollis</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Cronartium quercuum">
+        <td class="govuk-table__cell">Eastern gall rust, Eastern gall rust of pine, Eastern pine gall rust</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Cronartium quercuum" href="#">Cronartium quercuum</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips pini">
+        <td class="govuk-table__cell">Eastern pine engraver, Oregon pine engraver, pine engraver</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips pini" href="#">Ips pini</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Choristoneura fumiferana">
+        <td class="govuk-table__cell">Eastern spruce budworm, Spruce budworm</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Choristoneura fumiferana" href="#">Choristoneura fumiferana</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips typographus">
+        <td class="govuk-table__cell">Eight-spined engraver, Eight-toothed spruce bark beetle, Larger eight-toothed
+          European spruce bark beetle, Spruce bark beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips typographus" href="#">Ips typographus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips amitinus">
+        <td class="govuk-table__cell">Eight-toothed spruce bark beetle, Small spruce bark beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips amitinus" href="#">Ips amitinus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Agrilus planipennis">
+        <td class="govuk-table__cell">Emerald Ash Borer</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Agrilus planipennis" href="#">Agrilus planipennis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Robinson's acleris moth</td>
+        <td class="govuk-table__cell"><a class="govuk-link"  href="#">Acleris
+            robinsoniana</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Roundheaded pine beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Dendroctonus adjunctus</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Siberian lasiocampid, larch caterpillar, Siberian conifer silk moth, Siberian
+          lappet
+          moth, Siberian moth, Siberian silk moth</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Dendrolimus sibiricus</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Southern pine beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Dendroctonus frontalis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Southwestern dwarf mistletoe</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Arceuthobium vaginatum</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Southwestern pine beetle, Western pine beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Dendroctonus brevicomis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Spotted pine sawyer</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Monochamus maculosus</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Stalactiform blister rust, Stalactiform blister rust of pine, Western gall rust of
+          pine</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Cronartium coleosporioides</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Sugar pine tortrix</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Choristoneura lambertiana</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Sweet fern blister rust</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Cronartium comptoniae</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Tea seed flies</td>
+        <td class="govuk-table__cell"><a class="govuk-link"  href="#">Adrama
+            spp.</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Two-lined chestnut borer</td>
+        <td class="govuk-table__cell"><a class="govuk-link"  href="#">Agrilus
+            bilineatus</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Western black-headed budworm</td>
+        <td class="govuk-table__cell"><a class="govuk-link"  href="#">Acleris
+            gloveranus</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Western dwarf mistletoe</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Arceuthobium campylopodum</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Western gall rust, Western gall rust of pine</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Cronartium harknessii</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Western hemlock wood stainer</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Gnathotrichus sulcatus</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Western spruce budworm</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Choristoneura occidentalis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Xiphinema californicum</td>
+        <td class="govuk-table__cell"><a class="govuk-link"  href="#">Xiphinema
+            californicum</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Yunnan pine weevil</td>
+        <td class="govuk-table__cell"><a class="govuk-link"  href="#">Pissodes
+            yunnanensis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Alfalfa dwarf, Anaheim disease, California vine disease, Dwarf disease of alfalfa,
+          Dwarf
+          disease of lucerne, Leaf scald of oleander, Leaf scald of plum, Leaf scorch, Phony disease of peach, Pierce's
+          disease of grapevine, Variegated chlorosis of citrus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="/{{version}}/pests/xylella-fastidiosa">Xylella fastidiosa</a></td>
+      </tr>
+    </table>
+    <br>
+    {% else %}
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing pinus pinea from {{data['country']}}
+    </h2>
+
+    {% if inEU %}
+    <p class="govuk-body">
+      Check how to <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain-and-northern-ireland">import
+        plants
+        and plant products from the EU (opens in new tab)</a>.
+    </p>
+
+    {% else %}
+
+    <p class="govuk-body">
+      You may not be allowed to bring this plant into Great Britain, check the <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from/prohibitions/">list of prohibited
+        commodities on the plant health portal (opens in new tab)</a>.
+    </p>
+
+    <p class="govuk-body">
+      Check how to <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk">import plants
+        and plant products from non-EU countries (opens in new tab)</a>.
+    </p>
+    {% endif %}
+
+    <p class="govuk-body">
+      You may need to include an additional declaration on the phytosanitary certificate, <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/requirement-for-additional-declarations-ads-on-phytosanitary-certificate-pcs/">check
+        what information you need to provide using the additional declaration tool (opens in new tab)</a>.
+    </p>
+
+    <p class="govuk-body">
+      You can <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/non-compliance/">find out how
+        often inspections at the border have resulted in delays or the destruction of goods</a>. This can be for many
+      reasons including having incorrect paperwork or the presence of of pests or diseases considered a threat to the UK.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Pests and diseases you must report
+    </h2>
+    <p class="govuk-body">Pinus pinea might carry the pests or diseases listed below from
+      {{data['country']}}.</p>
+    <p class="govuk-body">These pests and diseases are considered a threat to UK agriculture, horticulture or wildlife. If one of these pests or diseases is found during plant health inspections, action will be
+      taken. This could result in plant consignments being delayed or destroyed.</p>
+    <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
+        these pests or diseases to APHA (Animal and Plant Health Agency).</a></p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Common name</th>
+          <th scope="col" class="govuk-table__header">Scientific name</th>
+        </tr>
+      </thead>
+      <tr class="govuk-table__row" aria-label="View Acleris issikii">
+        <td class="govuk-table__cell">Acleris issikii</td>
+        <td class="govuk-table__cell"><a class="govuk-link"
+            aria-label="View Acleris issikii" href="#">Acleris issikii</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acleris nishidai">
+        <td class="govuk-table__cell">Acleris nishidai</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acleris nishidai" href="#">Acleris nishidai</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acleris senescens">
+        <td class="govuk-table__cell">Acleris senescens</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acleris senescens" href="#">Acleris senescens</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acroceratitis distincta">
+        <td class="govuk-table__cell">Acroceratitis distincta</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acroceratitis distincta" href="#">Acroceratitis distincta</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acrogonia virescens">
+        <td class="govuk-table__cell">Acrogonia virescens</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acrogonia virescens" href="#">Acrogonia virescens</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Helicoverpa armigera">
+        <td class="govuk-table__cell">Helicoverpa armigera</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Helicoverpa armigera" href="#">Helicoverpa armigera</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Agrilus fleischeri">
+        <td class="govuk-table__cell">Agrilus fleischeri</td>
+        <td class="govuk-table__cell"><a class="govuk-link"
+            aria-label="View Agrilus fleischeri" href="#">Agrilus fleischeri</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Dendroctonus rufipennis">
+        <td class="govuk-table__cell">Dendroctonus rufipennis</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Dendroctonus rufipennis" href="#">Dendroctonus rufipennis</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Acleris nivisellana">
+        <td class="govuk-table__cell">Acleris nivisellana</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Acleris nivisellana" href="#">Acleris nivisellana</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row" aria-label="View Anoplophora glabripennis">
+        <td class="govuk-table__cell">Anoplophora glabripennis</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Anoplophora glabripennis" href="#">Anoplophora glabripennis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row" aria-label="View Ips plastographus">
+        <td class="govuk-table__cell">Ips plastographus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips plastographus" href="#">Ips plastographus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips confusus">
+        <td class="govuk-table__cell">Ips confusus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips confusus" href="#">Ips confusus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Atropellis tingens">
+        <td class="govuk-table__cell">Atropellis tingens</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Atropellis tingens" href="#">Atropellis tingens</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row" aria-label="View Monochamus carolinensis">
+        <td class="govuk-table__cell">Carolina sawyer, Pine sawyer</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Monochamus carolinensis" href="#">Monochamus carolinensis</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips calligraphus">
+        <td class="govuk-table__cell">Coarse writing engraver, Six-spined ips, Western six-spined engraver</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips calligraphus" href="#">Ips calligraphus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Cronartium comandrae">
+        <td class="govuk-table__cell">Comandra blister rust, Comandra blister rust of pine, Stem rust of pine</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Cronartium comandrae" href="#">Cronartium comandrae</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Melampsora medusae">
+        <td class="govuk-table__cell">Conifer/poplar rust, Leaf rust of poplar, Poplar rust</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Melampsora medusae" href="#">Melampsora medusae</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Dendroctonus mesoamericanus">
+        <td class="govuk-table__cell">Dendroctonus mesoamericanus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Dendroctonus mesoamericanus" href="#">Dendroctonus mesoamericanus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Pissodes nemorensis">
+        <td class="govuk-table__cell">Deodar weevil, Northern pine weevil</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Pissodes nemorensis" href="#">Pissodes nemorensis</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Arceuthobium occidentale">
+        <td class="govuk-table__cell">Digger pine dwarf mistletoe</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Arceuthobium occidentale" href="#">Arceuthobium occidentale</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Choristoneura fumiferana">
+        <td class="govuk-table__cell">Eastern spruce budworm, Spruce budworm</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Choristoneura fumiferana" href="#">Choristoneura fumiferana</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips typographus">
+        <td class="govuk-table__cell">Eight-spined engraver, Eight-toothed spruce bark beetle, Larger eight-toothed
+          European spruce bark beetle, Spruce bark beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips typographus" href="#">Ips typographus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Ips amitinus">
+        <td class="govuk-table__cell">Eight-toothed spruce bark beetle, Small spruce bark beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Ips amitinus" href="#">Ips amitinus</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row" aria-label="View Agrilus planipennis">
+        <td class="govuk-table__cell">Emerald Ash Borer</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            aria-label="View Agrilus planipennis" href="#">Agrilus planipennis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Robinson's acleris moth</td>
+        <td class="govuk-table__cell"><a class="govuk-link"  href="#">Acleris
+            robinsoniana</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Roundheaded pine beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Dendroctonus adjunctus</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Siberian lasiocampid, larch caterpillar, Siberian conifer silk moth, Siberian
+          lappet
+          moth, Siberian moth, Siberian silk moth</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Dendrolimus sibiricus</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Southern pine beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Dendroctonus frontalis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Southwestern dwarf mistletoe</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Arceuthobium vaginatum</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Southwestern pine beetle, Western pine beetle</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Dendroctonus brevicomis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Spotted pine sawyer</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Monochamus maculosus</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Stalactiform blister rust, Stalactiform blister rust of pine, Western gall rust of
+          pine</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="#">Cronartium coleosporioides</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Yunnan pine weevil</td>
+        <td class="govuk-table__cell"><a class="govuk-link"  href="#">Pissodes
+            yunnanensis</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Alfalfa dwarf, Anaheim disease, California vine disease, Dwarf disease of alfalfa,
+          Dwarf
+          disease of lucerne, Leaf scald of oleander, Leaf scald of plum, Leaf scorch, Phony disease of peach, Pierce's
+          disease of grapevine, Variegated chlorosis of citrus</td>
+        <td class="govuk-table__cell"><a class="govuk-link" 
+            href="/{{version}}/pests/xylella-fastidiosa">Xylella fastidiosa</a></td>
+      </tr>
+    </table>
+
+    {% endif %}
+
+    <br>
+    <br>
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Search again
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

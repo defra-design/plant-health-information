@@ -1,0 +1,258 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Euphorbia pulcherrima
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Euphorbia pulcherrima
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Poinsettia
+      </li>
+      <li>
+        Christmas flower
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Poinsettia pulcherrima
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      EPPO code
+    </h3>
+    <p>
+      EPHPU </p>
+
+    {% if country is not defined or country == 'Default Country'%}
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing euphorbia pulcherrima into Great Britain
+    </h2>
+
+    <p>
+      To find out what extra checks or documentation are needed, <a class="govuk-link"
+        href="/{{version}}/service/country-select">provide where you are importing from</a>.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Pests and diseases you must report
+    </h2>
+    <p class="govuk-body">Euphorbia pulcherrima might carry the pests or diseases listed below.</p>
+    <p class="govuk-body">If one of these pests or diseases is found during plant health inspections, action will be
+      taken. This could result in plant consignments being delayed or destroyed.</p>
+    <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
+        these pests or diseases to APHA (Animal and Plant Health Agency).</a></p>
+    <p class="govuk-body">To find out the pest and disease risk from a specific country, <a class="govuk-link"
+        href="/{{version}}/service/country-select">provide where you are importing from</a>.</p>
+
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Common name</th>
+          <th scope="col" class="govuk-table__header">Scientific name</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Banded-winged whitefly</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Trialeurodes abutiloneus">Trialeurodes abutiloneus</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Cassava whitefly, Cotton whitefly, Sweet potato whitefly, Tobacco whitefly
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="/{{version}}/pests/bemisia-tabaci"
+              aria-label="View Bemisia tabaci">Bemisia tabaci</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Lewis spider mite</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Eotetranychus lewisi">Eotetranychus lewisi</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Euphorbia mosaic virus</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Euphorbia mosaic virus">Euphorbia mosaic virus</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Euplatypus parallelus</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Euplatypus parallelus">Euplatypus parallelus</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Root-knot nematode</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Meloidogyne enterolobii">Meloidogyne enterolobii</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Citrus spider mite, Six-spotted spider mite</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Eotetranychus sexmaculatus">Eotetranychus sexmaculatus</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Xanthomonas axonopodis pv. poinsettiicola</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Xanthomonas axonopodis pv. poinsettiicola">Xanthomonas axonopodis pv. poinsettiicola</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% else %}
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing euphorbia pulcherrima from {{data['country']}}
+    </h2>
+
+    {% if inEU %}
+    <p class="govuk-body">
+      Check how to <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain-and-northern-ireland">import
+        plants
+        and plant products from the EU (opens in new tab)</a>.
+    </p>
+
+    {% else %}
+
+    <p class="govuk-body">
+      You may not be allowed to bring this plant into Great Britain, check the <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from/prohibitions/">list of prohibited
+        commodities on the plant health portal (opens in new tab)</a>.
+    </p>
+
+    <p class="govuk-body">
+      Check how to <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk">import plants
+        and plant products from non-EU countries (opens in new tab)</a>.
+    </p>
+    {% endif %}
+
+    <p class="govuk-body">
+      You may need to include an additional declaration on the phytosanitary certificate, <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/requirement-for-additional-declarations-ads-on-phytosanitary-certificate-pcs/">check
+        what information you need to provide using the additional declaration tool (opens in new tab)</a>.
+    </p>
+
+    <p class="govuk-body">
+      You can <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/non-compliance/">find out how
+        often inspections at the border have resulted in delays or the destruction of goods</a>. This can be for many
+      reasons including having incorrect paperwork or the presence of of pests or diseases considered a threat to the UK.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Pests and diseases you must report
+    </h2>
+    <p class="govuk-body">Euphorbia pulcherrima might carry the pests or diseases listed below from
+      {{data['country']}}.</p>
+    <p class="govuk-body">These pests and diseases are considered a threat to UK agriculture, horticulture or wildlife. If one of these pests or diseases is found during plant health inspections, action will be
+      taken. This could result in plant consignments being delayed or destroyed.</p>
+    <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
+        these pests or diseases to APHA (Animal and Plant Health Agency).</a></p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Common name</th>
+          <th scope="col" class="govuk-table__header">Scientific name</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Cassava whitefly, Cotton whitefly, Sweet potato whitefly, Tobacco whitefly
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="/{{version}}/pests/bemisia-tabaci"
+              aria-label="View Bemisia tabaci">Bemisia tabaci</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Euphorbia mosaic virus</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Euphorbia mosaic virus">Euphorbia mosaic virus</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Euplatypus parallelus</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Euplatypus parallelus">Euplatypus parallelus</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Root-knot nematode</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Meloidogyne enterolobii">Meloidogyne enterolobii</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Citrus spider mite, Six-spotted spider mite</td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link"  href="#"
+              aria-label="View Eotetranychus sexmaculatus">Eotetranychus sexmaculatus</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
+    <br>
+    <br>
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Search again
+      </button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -24,7 +24,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#import">Select where you are importing your plant or plant product to</a>
+            <a href="#plant-purpose">Select what you what to find out</a>
           </li>
         </ul>
       </div>
@@ -35,28 +35,28 @@ href: "javascript:window.history.back()"
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading" id="import-h1">
-              Where are you importing your plant or plant product to?
+              What do you want to find out?
             </h1>
           </legend>
 
           {% if error %}
           <span id="user-type-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select where you are importing your plant or plant product to
+            <span class="govuk-visually-hidden">Error:</span> Select what you what to find out
           </span>
           {% endif %}
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="import" name="import" type="radio" value="great-britain" {{
-                checked("import", "great-britain" ) }}>
-              <label class="govuk-label govuk-radios__label" for="great-britain">
-                Great Britain (England, Scotland and Wales)
+              <input class="govuk-radios__input" id="plant-purpose" name="plant-purpose" type="radio" value="plant-journey" {{
+                checked("plant-purpose", "plant-journey" ) }}>
+              <label class="govuk-label govuk-radios__label" for="plant-journey">
+                Plant or plant product import rules
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="import-2" name="import" type="radio" value="northern-ireland" {{
-                checked("import", "northern-ireland" ) }}>
-              <label class="govuk-label govuk-radios__label" for="northern-ireland">
-                Northern Ireland
+              <input class="govuk-radios__input" id="pests-purpose" name="plant-purpose" type="radio" value="pests-journey" {{
+                checked("plant-purpose", "pests-journey" ) }}>
+              <label class="govuk-label govuk-radios__label" for="pests-journey">
+                Pest or disease information
               </label>
             </div>
             <!--
@@ -78,7 +78,10 @@ href: "javascript:window.history.back()"
       <p class="govuk-heading-s">Get help with this service</p>
       <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
       </p>
+
     </form>
   </div>
 
   {% endblock %}
+
+

@@ -42,7 +42,7 @@ module.exports = function (router) {
         // 'tulipa (tulips)': '/plants/tuplia',
 
     };
-
+/*
     function isCountryInEU(country) {
         const euCountries = [
             "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark",
@@ -57,7 +57,7 @@ module.exports = function (router) {
 
         return euCountries.includes(country);
     }
-
+*/
     // .GOV.UK
     router.get('/' + version + govuk + '/plant-health-information-start', function (req, res) {
         res.render(version + govuk + '/plant-health-information-start', {
@@ -89,7 +89,7 @@ module.exports = function (router) {
             req.session.data['plantName'] = plantNameWithoutBrackets;
 
             if (plantMappings[fullLowerCaseNameWithBrackets]) {
-                res.redirect('/' + version + '/service/do-you-import');
+                res.redirect('/' + version + '/service/country-select');
             } else if (pestMappings[fullLowerCaseNameWithBrackets]) {
                 res.redirect('/' + version + pestMappings[fullLowerCaseNameWithBrackets]);
             } else {
@@ -100,6 +100,39 @@ module.exports = function (router) {
         }
     });
 
+    // Pest-Journey
+    router.get('/' + version + '/pests/pest-journey', function (req, res) {
+        req.session.data['searchQuery'] = ''
+        res.render(version + '/pests/pest-journey', {
+            'version': version,
+            'error': req.query.error
+
+        });
+
+    });
+
+
+    router.post('/' + version + '/pests/pest-journey', function (req, res) {
+        let searchQuery = req.session.data['searchQuery'];
+
+        if (searchQuery) {
+            const match = searchQuery.match(/^(.*?)\s*\([^)]*\)/);
+            const plantNameWithoutBrackets = match ? match[1].trim() : searchQuery.trim().toLowerCase();
+            const fullLowerCaseNameWithBrackets = searchQuery.toLowerCase();
+
+            req.session.data['plantName'] = plantNameWithoutBrackets;
+
+            if (plantMappings[fullLowerCaseNameWithBrackets]) {
+                res.redirect('/' + version + '/pests/xylella-fastidiosa');
+            } else if (pestMappings[fullLowerCaseNameWithBrackets]) {
+                res.redirect('/' + version + pestMappings[fullLowerCaseNameWithBrackets]);
+            } else {
+                res.redirect('/' + version + '/pests/pest-journey');
+            }
+        } else {
+            res.redirect('/' + version + '/pests/pest-journey?error=true');
+        }
+    });
 
 
 
@@ -124,7 +157,7 @@ module.exports = function (router) {
             res.redirect('/' + version + '/service/do-you-import?error=true');
         }
         else if (doYouImport === 'great-britain')
-            res.redirect('/' + version + '/service/country-select')
+            res.redirect('/' + version + '/service/search')
 
         else if (doYouImport === 'northern-ireland')
             res.redirect('/' + version + '/service/handoffs/northern-ireland')
@@ -138,6 +171,44 @@ module.exports = function (router) {
             else {
                 //currently set to redirect to itself
                 res.redirect('/' + version + '/service/do-you-import');
+            }
+        }
+    })
+
+     // Purpose of your Journey?
+     router.get('/' + version + '/service/purpose', function (req, res) {
+        res.render(version + '/service/purpose', {
+            'version': version,
+            'error': req.query.error,
+            'plantName': req.session.data['plantName']
+
+        });
+
+    });
+
+    router.post('/' + version + '/service/purpose', function (req, res) {
+
+        let purposeOfVisit = req.session.data['plant-purpose']
+
+
+        if (purposeOfVisit === undefined) {
+            res.redirect('/' + version + '/service/purpose?error=true');
+        }
+        else if (purposeOfVisit === 'plant-journey')
+            res.redirect('/' + version + '/service/do-you-import')
+
+        else if (purposeOfVisit === 'pests-journey')
+            res.redirect('/' + version + '/pests/pest-journey')
+        else {
+            const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
+
+            if (plantMappings[searchQuery]) {
+                res.redirect('/' + version + plantMappings[searchQuery]);
+            }
+
+            else {
+                //currently set to redirect to itself
+                res.redirect('/' + version + '/service/purpose');
             }
         }
     })
@@ -159,17 +230,41 @@ module.exports = function (router) {
 
     router.post('/' + version + '/service/country-select', function (req, res) {
         const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
-        let country = req.session.data['country'];
+        let country = req.session.data['country']
 
 
         if (country === '') {
             res.redirect('/' + version + '/service/country-select?error=true');
         }
+        else
+            res.redirect('/' + version + '/service/format')
+    });
+
+     // what format?
+     router.get('/' + version + '/service/format', function (req, res) {
+        res.render(version + '/service/format', {
+            'version': version,
+            'error': req.query.error,
+            'plantName': req.session.data['plantName']
+
+        });
+
+    });
+
+    router.post('/' + version + '/service/format', function (req, res) {
+
+        let format = req.session.data['format']
+        const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
+
+
+        if (format === undefined) {
+            res.redirect('/' + version + '/service/format?error=true');
+        }
         else if (searchQuery) {
-            const isEU = isCountryInEU(country);
-            req.session.data['isEU'] = isEU;
-            const preprocessedSearchQuery = searchQuery.trim().toLowerCase();
-            console.log('Is ' + req.session.data['country'] + ' ' + 'in the EU?' + ' ' + isEU)
+          //  const isEU = isCountryInEU(country);
+          //  req.session.data['isEU'] = isEU;
+          const preprocessedSearchQuery = searchQuery.trim().toLowerCase();
+         //   console.log('Is ' + req.session.data['country'] + ' ' + 'in the EU?' + ' ' + isEU)
 
             if (plantMappings[preprocessedSearchQuery]) {
                 res.redirect('/' + version + plantMappings[searchQuery]);
@@ -178,27 +273,28 @@ module.exports = function (router) {
             // currently set to redirect to itself
             res.redirect('/' + version + '/service/country-select');
         }
-    });
+    })
 
 
     // Plants
     // euphorbia-pulcherrima
     router.get('/' + version + '/plants/euphorbia-pulcherrima', function (req, res) {
+        console.log("my country is set to" + " " + req.session.data['country'])
         // Set a default value if 'country' is not defined or falsy
         const country = req.session.data['country'] || 'Default Country';
 
         res.render(version + '/plants/euphorbia-pulcherrima', {
             'version': version,
             'doYouImport': req.session.data['import'],
-            'country': country,
-            'inEU': req.session.data['isEU']
+            'country': country
+           // 'inEU': req.session.data['isEU']
 
         });
     });
 
     router.post('/' + version + '/plants/euphorbia-pulcherrima', function (req, res) {
 
-        req.session.destroy(function (err) {
+        req.session.destroy(function(err) {
             if (err) {
                 console.error('Error destroying session:', err);
             } else {
@@ -206,7 +302,7 @@ module.exports = function (router) {
             }
         });
 
-        res.redirect('/' + version + '/service/search');
+        res.redirect('/' + version + '/service/purpose');
     });
 
 
@@ -218,8 +314,8 @@ module.exports = function (router) {
         res.render(version + '/plants/quercus', {
             'version': version,
             'doYouImport': req.session.data['import'],
-            'country': country,
-            'inEU': req.session.data['isEU']
+            'country': country
+           // 'inEU': req.session.data['isEU']
 
 
         });
@@ -227,7 +323,7 @@ module.exports = function (router) {
 
     router.post('/' + version + '/plants/quercus', function (req, res) {
 
-        req.session.destroy(function (err) {
+        req.session.destroy(function(err) {
             if (err) {
                 console.error('Error destroying session:', err);
             } else {
@@ -235,7 +331,7 @@ module.exports = function (router) {
             }
         });
 
-        res.redirect('/' + version + '/service/search');
+        res.redirect('/' + version + '/service/purpose');
     });
 
     // pinus pinea
@@ -247,7 +343,7 @@ module.exports = function (router) {
             'doYouImport': req.session.data['import'],
             'country': country,
             'format': req.session.data['format'],
-            'inEU': req.session.data['isEU']
+           // 'inEU': req.session.data['isEU']
 
         });
     });
@@ -262,7 +358,7 @@ module.exports = function (router) {
             }
         });
 
-        res.redirect('/' + version + '/service/search');
+        res.redirect('/' + version + '/service/purpose');
     });
 
 
@@ -304,7 +400,7 @@ module.exports = function (router) {
 
     router.post('/' + version + '/pests/bemisia-tabaci', function (req, res) {
 
-        req.session.destroy(function (err) {
+        req.session.destroy(function(err) {
             if (err) {
                 console.error('Error destroying session:', err);
             } else {

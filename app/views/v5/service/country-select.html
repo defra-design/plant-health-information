@@ -24,7 +24,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#country">Enter the country you are importing {{plantName}} from</a>
+            <a href="#country">Enter the name of the country you are importing {{plantName}} from</a>
           </li>
         </ul>
       </div>
@@ -37,11 +37,15 @@ href: "javascript:window.history.back()"
             <h1 class="govuk-fieldset__heading" id="country-h1">
               Which country are you importing {{plantName}} from?
             </h1>
+            <!-- <div id="event-name-hint" class="govuk-hint">
+              This is the country that issues the phytosanitary certificate
+            </div> -->
           </legend>
+          <p class="govuk-body">This is the country that issues the phytosanitary certificate, if required.</p>
 
           {% if error %}
           <span id="country-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span>Enter the country you are importing {{plantName}} from
+            <span class="govuk-visually-hidden">Error:</span>Enter the name of the country you are importing {{plantName}} from
           </span>
           {% endif %}
           {{ xGovukAutocomplete({
@@ -50,6 +54,7 @@ href: "javascript:window.history.back()"
           allowEmpty: false,
           showNoOptionsFound: true,
           items: [
+          { "text": "Xentac" },
           { "text": "[Kingdom of] eSwatini" },
           { "text": "Afghanistan" },
           { "text": "Africa" },
@@ -282,6 +287,9 @@ href: "javascript:window.history.back()"
       <button type="submit" class="govuk-button">
         Continue
       </button>
+      <p class="govuk-heading-s">Get help with this service</p>
+      <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
+      </p>
     </form>
   </div>
 

@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Pest or disease information unavailable
+      </h1>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        <p>
+          You cannot currently use this service to look up pests or diseases. We will add this information soon.
+        </p>
+
+        {{ govukButton({
+          text: "Go back",
+          href: "javascript:window.history.back()"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

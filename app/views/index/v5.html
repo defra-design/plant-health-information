@@ -1,15 +1,18 @@
 {% block content %}
 
+<!--Heading-->
 <div class="govuk-grid-row">
   <h1 class="govuk-heading-l">
     Plant Health Information Prototype
-    <span class="govuk-caption-xl">Version 5 - In design</span>
+    <span class="govuk-caption-xl">Version 5 - Beta Final</span>
   </h1>
 
   <div class="govuk-tabs" data-module="govuk-tabs">
     <h2 class="govuk-tabs__title">
       Contents
     </h2>
+
+    <!--Tabs Name-->
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
         <a class="govuk-tabs__tab" href="#service">
@@ -28,40 +31,54 @@
       </li>
     </ul>
 
+    <!--First tab details-->
     <div class="govuk-tabs__panel" id="service">
       <h2 class="govuk-heading-s">Changelog</h2>
       <p class="govuk-body"></p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>
-        </li>
-
+        <li>User journey has been simplified by asking relevant questions upfront. 
+        This helped simplified the user journey  and making sure the users get navigated away if they need NI related information. 
+          </li>
+        <li>New check point/question has been added to check the purpose of user's visit. i.e. Pest/Disease and Plant journey has been segregated.</li>
+        <li>Pest data & Plant data has been separated to simplify the data management.</li>
+        <li>Plant & pest details page has been updated with many more sections in order to support various scenarios based on business rules framed from Annex 6 and 11.</li>
+        <li>Help section has been added to every page.</li>
+        <li>Plant format list has been grouped into five headers.</li>  
+        <li>Updated and finalised content has been placed across all the pages.</li>
       </ul>
 
       <br>
 
 
-      <a href="/v4/govuk/plant-health-information-start" class="govuk-button govuk-!-margin-right-2"
+      <a href="/v5/govuk/plant-health-information-start" class="govuk-button govuk-!-margin-right-2"
         data-module="govuk-button">
         <strong>Quick start</strong>
       </a>
 
     </div>
 
+    <!--Second Tab details-->
     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="document-links">
 
       <h3 class="govuk-heading-s">V5 quick links (opens in new tab)</h3>
       <ul class="govuk-list govuk-list--bullet">
         <li>
-          <a href="/public/userFlows/V5-potential-userflow.png" download class="govuk-link" rel="noreferrer noopener"
-            target="_blank">E2E flow diagram</a>
+          <a href="/public/userFlows/PHI_V5_UserFlow.png" class="govuk-link" rel="noreferrer noopener"
+          target="_blank">E2E flow diagram</a>
         </li>
         <li>
           <a href="" class="govuk-link"
             target="_blank">Content document</a>
         </li>
+        <li>
+          <a href="/public/userFlows/PHI-IA.png" class="govuk-link" rel="noreferrer noopener"
+          target="_blank">Information Architecture</a>
+        </li>
       </ul>
     </div>
+
+    <!--Third Tab details-->
     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="page-links">
 
       <h3 class="govuk-heading-s">V5 Handoffs (opens in new tab)</h3>
@@ -70,10 +87,7 @@
           <a href="/v4/service/handoffs/service-unavailable" class="govuk-link" rel="noreferrer noopener"
             target="_blank">Service unavailable</a>
         </li>
-        <li>
-          <a href="/v4/service/handoffs/northern-ireland" class="govuk-link" rel="noreferrer noopener"
-            target="_blank">Northern Ireland handoff</a>
-        </li>
+        
         
       </ul>
 

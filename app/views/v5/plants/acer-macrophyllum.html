@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Acer Japonicum Thunberg
+Acer macrophyllum
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,7 +20,7 @@ href: "javascript:window.history.back()"
       Plant or plant product
     </span>
     <h1 class="govuk-heading-xl">
-      Acer Japonicum Thunberg
+      Acer macrophyllum
     </h1>
 
    <!-- <h2 class="govuk-heading-m">
@@ -32,10 +32,10 @@ href: "javascript:window.history.back()"
     </h3>
     <ul class="govuk-list">
       <li>
-        Full moon maple
+        Bigleaf maple
       </li>
       <li>
-        Downy japanese maple
+      Oregon maple
       </li>
     </ul>
 
@@ -49,35 +49,42 @@ href: "javascript:window.history.back()"
       EPPO code
     </h3>
     <p>
-      ACRJA </p>
+      ACRMA </p>
 
 
-    {% if country is not defined or country == 'Default Country'%}
-    <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing pinus pinea into Great Britain
-    </h2>
-
-    <p>
-      To find out what extra checks or documentation are needed, <a class="govuk-link"
-        href="/{{version}}/service/country-select">provide where you are importing from</a>.
-    </p>
+      {% if country is not defined or country == 'Default Country'%}
+      <h2 class="govuk-heading-m govuk-!-padding-top-3">
+        Importing {{data['plantName']}} into Great Britain
+      </h2>
+  
+      <p>
+        To find out what extra checks or documentation are needed, <a class="govuk-link"
+          href="/{{version}}/service/country-select">provide where you are importing from</a>.
+      </p>
 
     <!--This is Prohibited plant section-->
-    {% elif country == 'United States'%}
+    {% elif country == 'United states'%}
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing Pinus pinea from {{data['country']}}
+      Importing {{data['plantName']}} from {{data['country']}}
     </h2>
 
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-warning-text__assistive">Warning</span>
-        You must not import {{data['plantName']}} from {{data['country']}} as {{data['format']}} 
+        You must not import {{data['plantName']}} from {{data['country']}} in the above format, unless they are: 
+        <ul class="govuk-list govuk-list--bullet">
+      
+          <li>bonsai</li>
+          <li>invitro material</li>
+          <li>1 to 3 year old bare-rooted, dormant, without leaves, grafted or budded plants for planting</li>
+          <li>seeds</li>
+        </ul>
       </strong>
     </div>
 
     <p class="govuk-body">
-      Despite import restrictions, you may be able to <a class="govuk-link" href="https://www.gov.uk/guidance/moving-prohibited-plants-plant-pests-pathogens-and-soil">apply for authorisation to import your plant or plant product.</a>
+      Despite import restrictions, you may be able to<a class="govuk-link" href="https://www.gov.uk/guidance/moving-prohibited-plants-plant-pests-pathogens-and-soil">apply for authorisation to import your plant or plant product.</a>
     </p>
 
     <!--100% Prohibited - For United States scenario-->
@@ -93,9 +100,43 @@ href: "javascript:window.history.back()"
 
 <!--This is Unprohibited plant (Medium risk) scenario-->
 
-    {% elif format == 'bark'%}
+    {% elif format == 'wood'%}
+
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
       Importing {{data['plantName']}} from {{data['country']}} <!--as {{data['format']}}-->
+    </h2>
+    <p>To import {{data['plantName']}} as {{data['format']}} from {{data['country']}}, you will need to (the following links open in a new tab):</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">register to import</a> if you're a first-time importer
+      </li>
+      <li>
+        get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">phytosanitary certificate from your exporter</a>
+      </li>
+      <li>
+        meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">ISPM 15 international standard</a> for any wood packaging material you use
+      </li>
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">notify the relevant authorities about your import</a>
+      </li>
+      <li>
+        comply with documentary, <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">identity and physical checks</a> at the border
+      </li>
+      <li>
+       pay <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">fees for plant health checks</a>
+      </li>
+    </ul>
+    <div class="govuk-inset-text">
+      You may need to include an additional declaration on the phytosanitary certificate. To find out,  <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check the additional declaration tool (opens in a new tab)</a>.
+    </div>
+    <!--
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">
+      Importing {{data['plantName']}} from {{data['country']}} as {{data['format']}}
     </h2>
     <p>To import {{data['plantName']}} as {{data['format']}} from {{data['country']}}, You will need to (the following links open in a new tab:)</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -113,7 +154,7 @@ href: "javascript:window.history.back()"
       You may need to include an additional declaration on the phytosanitary certificate. To find out,  <a class="govuk-link"
         rel="noreferrer noopener" target="_blank"
         href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check the additional declaration tool (opens in a new tab)</a>.
-    </div>
+    </div>-->
 
 <!--Un Prohibited (Medium risk)-->
   
@@ -135,7 +176,7 @@ href: "javascript:window.history.back()"
     <!--This is a Unprohibited Plant (high/medium risk) scenario-->
 
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing Pinus pinea from {{data['country']}} <!--as {{data['format']}}-->
+      Importing {{data['plantName']}} from {{data['country']}} <!--as {{data['format']}}-->
     </h2>
     <p>To import {{data['plantName']}} as {{data['format']}} from {{data['country']}}, you will need to (the following links open in a new tab):</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -934,6 +975,43 @@ href: "javascript:window.history.back()"
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Asian longhorn beetle, Starry sky beetle</td>
+          <td class="govuk-table__cell"><a class="govuk-link" href="/{{version}}/pests/anoplophora-glabripennis">Anoplophora glabripennis</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Oblique banded leaf roller, Rosaceous leaf roller</td>
+          <td class="govuk-table__cell">Choristoneura rosaceana</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Citrus spider mite, six-spotted mite, six-spotted spider mite</td>
+          <td class="govuk-table__cell">Eotetranychus sexmaculatus</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Japanese long scale, japanese maple scale</td>
+          <td class="govuk-table__cell">Lopholeucaspis japonica</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Japanese beetle</td>
+          <td class="govuk-table__cell">Popillia japonica</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+
+
+
+
+        
+
+<!--
+        <tr class="govuk-table__row">
           <td class="govuk-table__cell">Black and white longhorn, Citrus longhorn, Citrus longhorn beetle, Citrus root
             cerambycid</th>
           <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
@@ -1614,7 +1692,7 @@ href: "javascript:window.history.back()"
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Pissodes yunnanensis</a>
         </td>
         <td class="govuk-table__cell"></td>
-      </tr>
+      </tr>-->
     </table>
     {% endif %}
 

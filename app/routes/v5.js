@@ -26,6 +26,7 @@ module.exports = function (router) {
     };
 
     const plantMappings = {
+        'acer macrophyllum (bigleaf maple)': '/plants/acer-macrophyllum',
         // 'amaryllis belladonna (lily)': '/plants/amaryllis',
         // 'chrysanthemum carinatum (chrysanthemums)': '/plants/chrysanthemum',
         // 'dahlia pinnata (dahlias)': '/plants/dahlia',
@@ -388,6 +389,36 @@ module.exports = function (router) {
 
         res.redirect('/' + version + '/service/search');
     });
+
+// Acer Macrophyllum
+router.get('/' + version + '/plants/acer-macrophyllum', function (req, res) {
+    const country = req.session.data['country'] || 'Default Country';
+
+    res.render(version + '/plants/acer-macrophyllum', {
+        'version': version,
+        'doYouImport': req.session.data['import'],
+        'country': country,
+        'format': req.session.data['format'],
+        'inEU': req.session.data['isEU']
+
+    });
+});
+
+router.post('/' + version + '/plants/acer-macrophyllum', function (req, res) {
+
+    req.session.destroy(function (err) {
+        if (err) {
+            console.error('Error destroying session:', err);
+        } else {
+            console.log('Session destroyed');
+        }
+    });
+
+    res.redirect('/' + version + '/service/search');
+});
+
+
+
 
     // Pests
     // bemisia-tabaci

@@ -63,7 +63,7 @@ href: "javascript:window.history.back()"
     </p>
 
     <!--This is Prohibited plant section-->
-    {% elif country == 'United States'%}
+    {% elif country == 'Russia'%}
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
       Importing Pinus pinea from {{data['country']}}
     </h2>
@@ -80,7 +80,7 @@ href: "javascript:window.history.back()"
       Despite import restrictions, you may be able to <a class="govuk-link" href="https://www.gov.uk/guidance/moving-prohibited-plants-plant-pests-pathogens-and-soil">apply for authorisation to import your plant or plant product.</a>
     </p>
 
-    <!--100% Prohibited - For United States scenario-->
+    <!--100% Prohibited - For Russia scenario-->
 
     <h2 class="govuk-heading-m">
       Pests and diseases you must report
@@ -190,7 +190,7 @@ href: "javascript:window.history.back()"
     
   <!--COPY BACK THE CODE HERE if prohibited vs unprohibited separate content logic doesn't work-->
  
-  {% if country is not defined or country != 'United States'%}
+  {% if country is not defined or country != 'Russia'%}
   
 
   
@@ -919,7 +919,7 @@ href: "javascript:window.history.back()"
 
 
 
-    {% elif country == 'United States'%}
+    {% elif country == 'Russia'%}
 
     <table class="govuk-table">
       <!--<caption class="govuk-table__caption govuk-table__caption--s">High priority pest</caption> -->
@@ -933,12 +933,17 @@ href: "javascript:window.history.back()"
         </tr>
       </thead>
       <tbody class="govuk-table__body">
+        <!--<tr class="govuk-table__row">
+          <td class="govuk-table__cell">Asian longhorn beetle, Starry sky beetle</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Anoplophora glabripennis</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Black and white longhorn, Citrus longhorn, Citrus longhorn beetle, Citrus root
-            cerambycid</th>
-          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
-              href="#">Anoplophora chinensis</a></td>
-              <td class="govuk-table__cell">Seeds</td>
+          <td class="govuk-table__cell">Black currant nematode, chrysanthemum foliar nematode, chrysanthemum leaf nematode, chrysanthemum nematode, chrysanthemum foliar eelworm</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Aphelenchoides ritzemabosi</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Coleosporium eupatorii</th>
@@ -946,6 +951,81 @@ href: "javascript:window.history.back()"
               href="#">Coleosporium eupatorii</a></td>
               <td class="govuk-table__cell">All formats</td>
         </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Japanese rust of white pine, Japanese white pine rust</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Cronartium kamtschaticum</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eastern gall rust, Eastern gall rust of pine, Eastern pine gall rust</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Cronartium quercuum</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>-->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Siberian lasiocampid, larch caterpillar, Siberian conifer silk moth, Siberian
+            lappet moth, Siberian moth, Siberian silk moth</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Dendrolimus sibiricus</a>
+          </td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eight-toothed spruce bark beetle, Small spruce bark beetle</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Ips amitinus</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Hauser's engraver, Kyrgyz mountain engraver</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Ips hauseri</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eight-spined engraver, Eight-toothed spruce bark beetle, Larger eight-toothed
+            European spruce bark beetle, Spruce bark beetle</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Ips typographus</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Brown spot of pine, Needle blight of pine</th>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">Lecanosticta acicola</a></td>
+              <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">black pine sawyer beetle, Pine sawyer</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Monochamus galloprovincialis</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">black fir sawyer, black fir swayer, White mottled sawyer</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Monochamus urossovii</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Deodar weevil, Northern pine weevil</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Pissodes nemorensis</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+       
+
+
+<!--Below pest list has been disbaled per latest update for UR testing-->
+<!--
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Black and white longhorn, Citrus longhorn, Citrus longhorn beetle, Citrus root
+            cerambycid</th>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">Anoplophora chinensis</a></td>
+              <td class="govuk-table__cell">Seeds</td>
+        </tr>
+     
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Coleosporium phellodendri</th>
           <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
@@ -1110,12 +1190,7 @@ href: "javascript:window.history.back()"
         </td>
         <td class="govuk-table__cell"></td>
       </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Asian longhorn beetle, Starry sky beetle</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Anoplophora glabripennis</a>
-        </td>
-        <td class="govuk-table__cell"></td>
-      </tr>
+      
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Atropellis apiculata</td>
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Atropellis apiculata</a>
@@ -1267,12 +1342,7 @@ href: "javascript:window.history.back()"
         </td>
         <td class="govuk-table__cell"></td>
       </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Eastern gall rust, Eastern gall rust of pine, Eastern pine gall rust</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Cronartium quercuum</a>
-        </td>
-        <td class="govuk-table__cell"></td>
-      </tr>
+     
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Eastern pine engraver, Oregon pine engraver, pine engraver</td>
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Ips pini</a>
@@ -1367,12 +1437,7 @@ href: "javascript:window.history.back()"
         </td>
         <td class="govuk-table__cell"></td>
       </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Japanese rust of white pine, Japanese white pine rust</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Cronartium kamtschaticum</a>
-        </td>
-        <td class="govuk-table__cell"></td>
-      </tr>
+     
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Larch dwarf mistletoe</td>
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Arceuthobium laricis</a>
@@ -1403,12 +1468,7 @@ href: "javascript:window.history.back()"
         </td>
         <td class="govuk-table__cell"></td>
       </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Monochamus guttulatus</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Monochamus guttulatus</a>
-        </td>
-        <td class="govuk-table__cell"></td>
-      </tr>
+      
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Monochamus sartor</td>
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Monochamus sartor</a>
@@ -1511,13 +1571,7 @@ href: "javascript:window.history.back()"
         </td>
         <td class="govuk-table__cell"></td>
       </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Siberian lasiocampid, larch caterpillar, Siberian conifer silk moth, Siberian
-          lappet moth, Siberian moth, Siberian silk moth</td>
-        <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Dendrolimus sibiricus</a>
-        </td>
-        <td class="govuk-table__cell"></td>
-      </tr>
+     
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Southern pine beetle</td>
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Dendroctonus frontalis</a>
@@ -1614,7 +1668,7 @@ href: "javascript:window.history.back()"
         <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">Pissodes yunnanensis</a>
         </td>
         <td class="govuk-table__cell"></td>
-      </tr>
+      </tr>-->
     </table>
     {% endif %}
 

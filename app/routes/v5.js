@@ -8,6 +8,7 @@ module.exports = function (router) {
 
     const pestMappings = {
         // 'aleurodicus dispersus (spiralling white fly)': '/pests/spiralling-white-fly',
+        'Anoplophora glabripennis (Asian longhorn beetle, Starry sky beetle)': '/pests/anoplophora-glabripennis',
         'bemisia tabaci (cassava whitefly, cotton whitefly, sweet potato whitefly, tobacco whitefly)': '/pests/bemisia-tabaci',
         // 'cactodera cacti': '/pests/cactodera-cacti',
         // 'ceroplastes sinensis': '/pests/ceroplastes-sinensis',
@@ -315,10 +316,9 @@ module.exports = function (router) {
         res.render(version + '/plants/quercus', {
             'version': version,
             'doYouImport': req.session.data['import'],
-            'country': country
-           // 'inEU': req.session.data['isEU']
-
-
+            'country': country,
+            'format': req.session.data['format'],
+            //'inEU': req.session.data['isEU']
         });
     });
 

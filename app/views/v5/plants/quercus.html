@@ -153,7 +153,7 @@ href: "javascript:window.history.back()"
       {{data['plantName']}} from {{data['country']}} as {{data['format']}} does not need to go through any plant health controls.
 
     </p>
-
+    
     <h2 class="govuk-heading-m">
       Pests and diseases you must report
     </h2>
@@ -177,7 +177,7 @@ href: "javascript:window.history.back()"
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">NA</td>
-          <td class="govuk-table__cell"><a class="govuk-link"  href="#" aria-label="View Trialeurodes abutiloneus">Parabemisia myricae</a>
+          <td class="govuk-table__cell"><a class="govuk-link"  href="/{{version}}/pests/parabemisia-myricae" aria-label="View Trialeurodes abutiloneus">Parabemisia myricae</a>
           </td>
           <td class="govuk-table__cell"></td>
         </tr>
@@ -250,19 +250,118 @@ href: "javascript:window.history.back()"
     </table>
 
 
+{% elif format == 'wood'%}
 
+<h2 class="govuk-heading-m govuk-!-padding-top-3">
+ Importing {{data['plantName']}} from {{data['country']}}
+</h2>
 
+<h3 class="govuk-heading-s" >
+  Wood where Agrilus bilineatus is known to be present
+</h3>
 
+<p>To import {{data['plantName']}} from {{data['country']}} in the above format, you will need to (the following links open in a new tab):</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">register to import</a> if you're importing for the first time
+      </li>
+      <li>
+        get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">phytosanitary certificate from your exporter</a>
+      </li>
+      <li>
+        meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">ISPM 15 international standard</a> for any wood packaging material you use
+      </li>
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">notify the relevant authorities about your import</a>
+      </li>
+      <li>
+        comply with documentary, <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">identity and physical checks</a> at the border
+      </li>
+      <li>
+       pay <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">fees for plant health checks</a>
+      </li>
+    </ul>
+    <div class="govuk-inset-text">
+      You may need to include an additional declaration on the phytosanitary certificate. To find out,  <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check the additional declaration tool (opens in a new tab).</a>
+    </div>
 
+    <h3 class="govuk-heading-s" >
+      Wood packaging or wood where Agrilus bilineatus is not known to be present 
+    </h3>
+    
+    <p>To import {{data['plantName']}} from {{data['country']}} in the above formats, you will need to (the following links open in a new tab):</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">phytosanitary certificate from your exporter</a>
+          </li>
+          <li>
+            meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+            href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">ISPM 15 international standard</a> for any wood packaging material you use
+          </li>
+          
+        </ul>
+        <div class="govuk-inset-text">
+          You may need to include an additional declaration on the phytosanitary certificate. To find out,  <a class="govuk-link"
+            rel="noreferrer noopener" target="_blank"
+            href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check the additional declaration tool (opens in a new tab).</a>
+        </div>
 
-
-
+        <h2 class="govuk-heading-m govuk-!-padding-top-3">
+        Pests and diseases you must report
+      </h2>
+      <p class="govuk-body">Different formats of {{data['plantName']}} might carry the pests or diseases from {{data['country']}} listed at the bottom of the page.
+        These pests and diseases are considered a risk to Great Britain's agriculture, horticulture or wildlife. If one of these pests or diseases is found during plant health inspections, action will be taken. This could result in consignments being delayed or destroyed.
+        </p>
+      <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
+          these pests or diseases to the relevant authority</a></p>
+      <p class="govuk-body">You can <a class="govuk-link"
+            href="/{{version}}/service/country-select">find out how often inspections at the border have resulted in the destruction of goods (opens in a new tab).</a></p>
+  
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Common name</th>
+            <th scope="col" class="govuk-table__header">Scientific name</th>
+            <th scope="col" class="govuk-table__header">Affected formats of {{data['plantName']}}</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Two-lined chestnut borer</td>
+            <td class="govuk-table__cell"><a class="govuk-link"  href="/{{version}}/pests/agrilus-bilineatus" aria-label="View Agrilus bilineatus">Agrilus bilineatus</a>
+            </td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Oak timberworm	</td>
+            <td class="govuk-table__cell">Arrhenodes minutus</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Oak wilt, wilt of oak</td>
+            <td class="govuk-table__cell">Bretziella fagacearum</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Eastern gall rust of pine	</td>
+            <td class="govuk-table__cell">Cronartium quercuum</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          </tbody>
+        </table>
 
 
 
     {% else %}
 
-    <h2 class="govuk-heading-m govuk-!-padding-top-3">Importing quercus robur from {{data['country']}}
+    <h2 class="govuk-heading-m govuk-!-padding-top-3">HHHH Importing quercus robur from {{data['country']}}
     </h2>
     {% if inEU %}
     <p class="govuk-body">Check how to <a class="govuk-link" rel="noreferrer noopener" target="_blank"
@@ -272,12 +371,16 @@ href: "javascript:window.history.back()"
     </p>
 
 
+    
+
+  
+
 
     {% else %}
 
 <!--Quercus robur (oak), Any country, Any format-->
 
-    <p class="govuk-body">You may not be allowed to bring this plant into Great Britain, check the <a class="govuk-link"
+    <p class="govuk-body">XX You may not be allowed to bring this plant into Great Britain, check the <a class="govuk-link"
         rel="noreferrer noopener" target="_blank"
         href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from/prohibitions/">list of prohibited
         commodities on the plant health portal (opens in new tab)</a>.
@@ -361,6 +464,9 @@ href: "javascript:window.history.back()"
       <button class="govuk-button" data-module="govuk-button">
         Find another plant or pest
       </button>
+      <p class="govuk-heading-s">Get help with this service</p>
+      <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
+      </p>
     </form>
   </div>
 </div>

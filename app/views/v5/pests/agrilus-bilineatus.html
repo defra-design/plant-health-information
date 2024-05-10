@@ -5,6 +5,16 @@ Anoplophora glabripennis
 {% endblock %}
 
 {% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
@@ -60,7 +70,6 @@ href: "javascript:window.history.back()"
       Buprestis flavolineatus
       </li>
     </ul>
-<br>
 
     <!--<div class="govuk-grid-row govuk-!-margin-top-2">
       <div class="govuk-grid-column-one-half govuk-body">
@@ -70,7 +79,7 @@ href: "javascript:window.history.back()"
       </div>
    
     </div>-->
-    <div class="govuk-body">You can
+    <div class="govuk-inset-text">You can
       <a href="https://gd.eppo.int/taxon/AGRLBL/photos" class="govuk-link govuk-body govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">view photos of Anoplophora glabripennis in the EPPO Global Database.
       </a>
     </div>
@@ -150,7 +159,7 @@ href: "javascript:window.history.back()"
       Plants that can carry Agrilus bilineatus
     </h2>
     <p class="govuk-list">
-    <ul class="govuk-list">
+    <ul class="govuk-list govuk-!-margin-bottom-7">
       <li>Castanea dentata</li>
       <li>Quercus alba</li>
       <li>Quercus coccinea</li>

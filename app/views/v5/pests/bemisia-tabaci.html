@@ -5,6 +5,16 @@ Bemisia tabaci
 {% endblock %}
 
 {% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
@@ -117,7 +127,7 @@ href: "javascript:window.history.back()"
       If Bemisia tabaci is found on any of the listed plant-format combinations during routine plant health inspections, you will be asked to take action.
       </p>
 
-      <table class="govuk-table">
+      <table class="govuk-table govuk-!-margin-bottom-7">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             

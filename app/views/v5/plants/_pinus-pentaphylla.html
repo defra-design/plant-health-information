@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Quercus robur
+Pinus pentaphylla
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,20 +28,20 @@ href: "javascript:window.history.back()"
     <span class="govuk-caption-l">
       Plant or plant product
     </span>    <h1 class="govuk-heading-xl">
-      Quercus robur </h1>
+      Pinus pentaphylla </h1>
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
       Common names
     </h3>
 
     <ul class="govuk-list">
       <li>
-        Oak
+        Abele
       </li>
       <li>
-        English oak
+        Silver leaved poplar
       </li>
       <li>
-        Pedunculate
+        White poplar
       </li>
     </ul>
 
@@ -50,19 +50,18 @@ href: "javascript:window.history.back()"
     </h3>
     <ul class="govuk-list">
       <li>
-        Quercus pedunculata
+        None
       </li>
     </ul>
 
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
       EPPO code
     </h3>
-    <p>
-      QUERO</p>
+    <p>POPAL</p>
 
     {% if country is not defined or country == 'Default Country'%}
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing {{data['plantName']}} into Great Britain
+      Importing quercus robur into Great Britain
     </h2>
 
     <p>
@@ -152,58 +151,32 @@ href: "javascript:window.history.back()"
 
 
 
-<!--Unprohibited plants: low risk -->
-
-    {% elif country == 'France'%}
-    <h2 class="govuk-heading-m govuk-!-padding-top-3">
-      Importing {{data['plantName']}} from {{data['country']}}
-    </h2>
-
-    <p>
-      {{data['plantName']}} from {{data['country']}} as {{data['format']}} does not need to go through any plant health controls.
-
-    </p>
-    
-    <h2 class="govuk-heading-m">
-      Pests and diseases you must report
-    </h2>
-    <p class="govuk-body">Different formats of {{data['plantName']}} might carry the pests or diseases from {{data['country']}} listed at the bottom of the page.
-      These pests and diseases are considered a risk to Great Britain's agriculture, horticulture or wildlife. If one of these pests or diseases is found during plant health inspections, action will be taken. This could result in consignments being delayed or destroyed.
-      </p>
-    <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-        href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
-        these pests or diseases to the relevant authority</a></p>
-    <p class="govuk-body">You can <a class="govuk-link"
-          href="/{{version}}/service/country-select">find out how often inspections at the border have resulted in the destruction of goods (opens in a new tab).</a></p>
-
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Common name</th>
-          <th scope="col" class="govuk-table__header">Scientific name</th>
-          <th scope="col" class="govuk-table__header">Affected formats of {{data['plantName']}}</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Japanese bayberry whitefly, myrica whitefly	</td>
-          <td class="govuk-table__cell"><a class="govuk-link"  href="/{{version}}/pests/parabemisia-myricae" aria-label="View Trialeurodes abutiloneus">Parabemisia myricae</a>
-          </td>
-          <td class="govuk-table__cell">All formats</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-{% elif format == 'wood'%}
+{% elif format == 'plants-for-planting'%}
 
 <h2 class="govuk-heading-m govuk-!-padding-top-3">
  Importing {{data['plantName']}} from {{data['country']}}
 </h2>
 
 <h3 class="govuk-heading-s" >
-  Wood where Agrilus bilineatus is known to be present
+  Plants for planting
 </h3>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    You must not import {{data['plantName']}} from {{data['country']}} in the above format unless they are:
+    <ul class="govuk-list--bullet">
+      <li>seeds</li>
+      <li>in vitro material</li>
+      <li>naturally or artificially dwarfed woody plants for planting​</li>
+    </ul> 
+  </strong>
+</div>
+
+<p class="govuk-body">Despite import restrictions, you may be able to <a class='govuk-link' href="#"> apply for authorisation to import your plant or plant product.</a></p>
+
+<h3 class='govuk-heading-s'>In vitro material or naturally or artificially dwarfed woody plants for planting</h3>
 
 <p>To import {{data['plantName']}} from {{data['country']}} in the above format, you will need to (the following links open in a new tab):</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -236,7 +209,7 @@ href: "javascript:window.history.back()"
     </div>
 
     <h3 class="govuk-heading-s" >
-      Wood packaging or wood where Agrilus bilineatus is not known to be present 
+      Seeds  
     </h3>
     
     <p>To import {{data['plantName']}} from {{data['country']}} in the above formats, you will need to (the following links open in a new tab):</p>
@@ -279,8 +252,8 @@ href: "javascript:window.history.back()"
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Two-lined chestnut borer</td>
-            <td class="govuk-table__cell"><a class="govuk-link"  href="/{{version}}/pests/agrilus-bilineatus" aria-label="View Agrilus bilineatus">Agrilus bilineatus</a>
+            <td class="govuk-table__cell">Asian longhorn beetle, Starry sky beetle</td>
+            <td class="govuk-table__cell"><a class="govuk-link"  href="/{{version}}/pests/anoplophora-glabripennis" aria-label="View Agrilus bilineatus">Anoplophora glabripennis</a>
             </td>
             <td class="govuk-table__cell">All formats</td>
           </tr>
@@ -290,13 +263,28 @@ href: "javascript:window.history.back()"
             <td class="govuk-table__cell">All formats</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Oak wilt, wilt of oak</td>
-            <td class="govuk-table__cell">Bretziella fagacearum</td>
+            <td class="govuk-table__cell">Aspen borer, Aspen tortrix, large, large aspen tortrix</td>
+            <td class="govuk-table__cell">Choristoneura conflictana</td>
             <td class="govuk-table__cell">All formats</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Eastern gall rust of pine	</td>
-            <td class="govuk-table__cell">Cronartium quercuum</td>
+            <td class="govuk-table__cell">Oblique-banded leafroller, rosaceous leaf roller</td>
+            <td class="govuk-table__cell">Choristoneura rosaceana</td>
+            <td class="govuk-table__cell">All formats</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Conifer/poplar rust, leaf rust of poplar, poplar rust</td>
+            <td class="govuk-table__cell">Melampsora medusae</td>
+            <td class="govuk-table__cell">All formats</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Japanese beetle</td>
+            <td class="govuk-table__cell">Popillia japonica</td>
+            <td class="govuk-table__cell">All formats</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Septoria canker of poplar</td>
+            <td class="govuk-table__cell">Sphaerulina musiva</td>
             <td class="govuk-table__cell">All formats</td>
           </tr>
           </tbody>
@@ -403,10 +391,9 @@ href: "javascript:window.history.back()"
 
   
     {% endif %}
-    <br>
-    <br>
+   
     <form class="form" method="post">
-      <button class="govuk-button" data-module="govuk-button" >
+      <button class="govuk-button" data-module="govuk-button">
         Find another plant or pest
       </button>
       <p class="govuk-heading-s">Get help with this service</p>

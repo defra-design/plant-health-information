@@ -37,7 +37,9 @@ module.exports = function (router) {
         // 'lilium lancifolium (devil lily, kentan, lily, tiger))': '/plants/lolium-lancifolum',
         // 'orchidaceae': '/plants/orchidaceae',
         // 'pelargonium x hortorum (pelargonium, zonal)': '/plants/pelargonium',
+        'pinus pentaphylla': '/plants/pinus-pentaphylla',
         'pinus pinea (pine stone, pine umbrella)': '/plants/pinus-pinea',
+        'populus alba (white poplar)': '/plants/populus-alba',
         'quercus robur (oak)': '/plants/quercus',
         // 'rosa rugosa (rosa, ramanas, rose, hedge-row)': '/plants/rosa-rugosa',
         'solanum lycopersicum (tomato)': '/plants/solanum',
@@ -335,6 +337,32 @@ module.exports = function (router) {
         res.redirect('/' + version + '/service/purpose');
     });
 
+     // Populus Alba
+     router.get('/' + version + '/plants/populus-alba', function (req, res) {
+        const country = req.session.data['country'] || 'Default Country';
+
+        res.render(version + '/plants/populus-alba', {
+            'version': version,
+            'doYouImport': req.session.data['import'],
+            'country': country,
+            'format': req.session.data['format'],
+            //'inEU': req.session.data['isEU']
+        });
+    });
+
+    router.post('/' + version + '/plants/populus-alba', function (req, res) {
+
+        req.session.destroy(function(err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/purpose');
+    });
+
     // pinus pinea
     router.get('/' + version + '/plants/pinus-pinea', function (req, res) {
         const country = req.session.data['country'] || 'Default Country';
@@ -387,7 +415,7 @@ module.exports = function (router) {
             }
         });
 
-        res.redirect('/' + version + '/service/search');
+        res.redirect('/' + version + '/service/purpose');
     });
 
 // Acer Macrophyllum
@@ -414,9 +442,34 @@ router.post('/' + version + '/plants/acer-macrophyllum', function (req, res) {
         }
     });
 
-    res.redirect('/' + version + '/service/search');
+    res.redirect('/' + version + '/service/purpose');
 });
 
+// Pinus Pentaphylla
+router.get('/' + version + '/plants/pinus-pentaphylla', function (req, res) {
+    const country = req.session.data['country'] || 'Default Country';
+
+    res.render(version + '/plants/pinus-pentaphylla', {
+        'version': version,
+        'doYouImport': req.session.data['import'],
+        'country': country,
+        'format': req.session.data['format'],
+        //'inEU': req.session.data['isEU']
+    });
+});
+
+router.post('/' + version + '/plants/pinus-pentaphylla', function (req, res) {
+
+    req.session.destroy(function(err) {
+        if (err) {
+            console.error('Error destroying session:', err);
+        } else {
+            console.log('Session destroyed');
+        }
+    });
+
+    res.redirect('/' + version + '/service/purpose');
+});
 
 
 
@@ -439,7 +492,7 @@ router.post('/' + version + '/plants/acer-macrophyllum', function (req, res) {
             }
         });
 
-        res.redirect('/' + version + '/service/search');
+        res.redirect('/' + version + '/service/purpose');
     });
 
     // xylella-fastidiosa
@@ -461,7 +514,7 @@ router.post('/' + version + '/plants/acer-macrophyllum', function (req, res) {
             }
         });
 
-        res.redirect('/' + version + '/service/search');
+        res.redirect('/' + version + '/service/purpose');
     });
 
     // Tomato chlorotic dwarf viroid
@@ -483,6 +536,97 @@ router.post('/' + version + '/plants/acer-macrophyllum', function (req, res) {
             }
         });
 
-        res.redirect('/' + version + '/service/search');
+        res.redirect('/' + version + '/service/purpose');
     });
+
+    // Anoplophora Glabripennis
+    router.get('/' + version + '/pests/anoplophora-glabripennis', function (req, res) {
+        res.render(version + '/pests/anoplophora-glabripennis', {
+            'version': version,
+
+        });
+
+    });
+
+    router.post('/' + version + '/pests/anoplophora-glabripennis', function (req, res) {
+
+        req.session.destroy(function (err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/purpose');
+    });
+
+    // Agrilus bilineatus
+    router.get('/' + version + '/pests/agrilus-bilineatus', function (req, res) {
+        res.render(version + '/pests/agrilus-bilineatus', {
+            'version': version,
+
+        });
+
+    });
+
+    router.post('/' + version + '/pests/agrilus-bilineatus', function (req, res) {
+
+        req.session.destroy(function (err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/purpose');
+    });
+
+    // IPS Typographus
+    router.get('/' + version + '/pests/ips-typographus', function (req, res) {
+        res.render(version + '/pests/ips-typographus', {
+            'version': version,
+
+        });
+
+    });
+
+    router.post('/' + version + '/pests/ips-typographus', function (req, res) {
+
+        req.session.destroy(function (err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/purpose');
+    });
+
+    // Parabemisia Myricae
+    router.get('/' + version + '/pests/parabemisia-myricae', function (req, res) {
+        res.render(version + '/pests/parabemisia-myricae', {
+            'version': version,
+
+        });
+
+    });
+
+    router.post('/' + version + '/pests/parabemisia-myricae', function (req, res) {
+
+        req.session.destroy(function (err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/purpose');
+    });
+
+    
 };
+

@@ -1,0 +1,256 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Pinus pentaphylla
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">
+      Plant or plant product
+    </span>    <h1 class="govuk-heading-xl">
+      Pinus pentaphylla </h1>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+
+    <ul class="govuk-list">
+      <li>
+        None
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        None
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      EPPO code
+    </h3>
+    <p>PIUPP</p>
+
+
+
+
+<!--FIRST IF STATEMENT AFTER DEFAULT COUNTRY-->
+
+
+
+<h2 class="govuk-heading-m govuk-!-padding-top-3">
+ Importing {{data['plantName']}} from {{data['country']}}
+</h2>
+
+<h3 class="govuk-heading-s" >
+  Plants for planting
+</h3>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    You must not import {{data['plantName']}} from {{data['country']}} in the above format unless they are:
+    <ul class="govuk-list--bullet">
+      <li>bonsai</li>
+      <li>invitro material</li>
+      <li>1 to 3 year old bare-rooted, dormant, without leaves, grafted or budded plants for planting</li>
+      <li>seeds</li>
+    </ul> 
+  </strong>
+</div>
+
+<p class="govuk-body">Despite import restrictions, you may be able to <a class='govuk-link' href="#"> apply for authorisation to import your plant or plant product.</a></p>
+
+<h3 class='govuk-heading-s'>Bonsai, invitro material or 1 to 3 year old bare-rooted, dormant, without leaves, grafted or budded plants for planting</h3>
+
+<p>To import {{data['plantName']}} from {{data['country']}} in the above formats, you will need to (the following links open in a new tab):</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">register to import</a> if you're importing for the first time
+      </li>
+      <li>
+        get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">phytosanitary certificate from your exporter</a>
+      </li>
+      <li>
+        meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">ISPM 15 international standard</a> for any wood packaging material you use
+      </li>
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">notify the relevant authorities about your import</a>
+      </li>
+      <li>
+        comply with documentary, <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">identity and physical checks</a> at the border
+      </li>
+      <li>
+       pay <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">fees for plant health checks</a>
+      </li>
+    </ul>
+    <div class="govuk-inset-text">
+      You may need to include an additional declaration on the phytosanitary certificate. To find out,  <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check the additional declaration tool (opens in a new tab).</a>
+    </div>
+
+    <h3 class="govuk-heading-s" >
+      Seeds  
+    </h3>
+    
+    <p>To import {{data['plantName']}} from {{data['country']}} in the above format, you will need to (the following links open in a new tab):</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">phytosanitary certificate from your exporter</a>
+          </li>
+          <li>
+            meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+            href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">ISPM 15 international standard</a> for any wood packaging material you use
+          </li>
+          
+        </ul>
+        <div class="govuk-inset-text">
+          You may need to include an additional declaration on the phytosanitary certificate. To find out,  <a class="govuk-link"
+            rel="noreferrer noopener" target="_blank"
+            href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check the additional declaration tool (opens in a new tab).</a>
+        </div>
+
+        <h2 class="govuk-heading-m govuk-!-padding-top-3">
+        Pests and diseases you must report
+      </h2>
+      <p class="govuk-body">Different formats of {{data['plantName']}} might carry the pests or diseases from {{data['country']}} listed at the bottom of the page.
+        These pests and diseases are considered a risk to Great Britain's agriculture, horticulture or wildlife. If one of these pests or diseases is found during plant health inspections, action will be taken. This could result in consignments being delayed or destroyed.
+        </p>
+      <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
+          these pests or diseases to the relevant authority</a></p>
+      <p class="govuk-body">You can <a class="govuk-link"
+            href="/{{version}}/service/country-select">find out how often inspections at the border have resulted in the destruction of goods (opens in a new tab).</a></p>
+  
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Common name</th>
+            <th scope="col" class="govuk-table__header">Scientific name</th>
+            <th scope="col" class="govuk-table__header">Affected formats of {{data['plantName']}}</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pine wilt disease, Pine wood nematode</td>
+            <td class="govuk-table__cell">Bursaphelenchus xylophilus</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Japanese rust of white pine, japanese white pine rust</td>
+            <td class="govuk-table__cell">Cronartium kamtschaticum</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Eastern gall rust, eastern gall rust of pine, eastern pine gall rust</td>
+            <td class="govuk-table__cell">Cronartium quercuum</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pitch canker of pine</td>
+            <td class="govuk-table__cell">Fusarium circinatum</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Eight-spined engraver, Eight-toothed spruce bark beetle, Larger eight-toothed European spruce bark beetle, Spruce bark beetle</td>
+            <td class="govuk-table__cell">Ips typographus</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Brown spot of pine, Needle blight of pine</td>
+            <td class="govuk-table__cell">Lecanosticta acicola</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Conifer/poplar rust, Leaf rust of poplar, Poplar rust</td>
+            <td class="govuk-table__cell">Melampsora medusae</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Japanese pine sawyer, Pine sawyer, Japanese</td>
+            <td class="govuk-table__cell">Monochamus alternatus</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Black fir sawyer, black fir swayer, White mottled sawyer</td>
+            <td class="govuk-table__cell">Monochamus urossovii</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Deodar weevil, Northern pine weevil</td>
+            <td class="govuk-table__cell">Pissodes nemorensis</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Yellow spotted pine weevil</td>
+            <td class="govuk-table__cell">Pissodes nitidus</td>
+            <td class="govuk-table__cell">Seeds</td>
+          </tr>
+          </tbody>
+        </table>
+
+<!--PAGINATION COMPONENT-->
+
+        {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{{ govukPagination({
+  previous: {
+    href: "data-list-table-1"
+  },
+  next: {
+    href: ""
+  },
+  items: [
+    {
+      number: 1,
+      href: "data-list-table-1"
+    },
+    {
+      number: 2,
+      current: true,
+      href: "#"
+    }
+  ]
+}) }}
+
+   
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button" >
+        Find another plant or pest
+      </button>
+      <p class="govuk-heading-s">Get help with this service</p>
+      <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

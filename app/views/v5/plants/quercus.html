@@ -68,6 +68,10 @@ href: "javascript:window.history.back()"
     <p>
       QUERO</p>
 
+
+<!--DEFAULT COUNTRY-->
+
+
     {% if country is not defined or country == 'Default Country'%}
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
       Importing {{data['plantName']}} into Great Britain
@@ -93,66 +97,75 @@ href: "javascript:window.history.back()"
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Common name</th>
           <th scope="col" class="govuk-table__header">Scientific name</th>
+          <th scope="col" class="govuk-table__header">Common name</th>
+          
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Banded-winged whitefly</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Trialeurodes abutiloneus">Trialeurodes abutiloneus</a>
           </td>
+          <td class="govuk-table__cell">Banded-winged whitefly</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Cassava whitefly, Cotton whitefly, Sweet potato whitefly, Tobacco whitefly</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="/{{version}}/pests/bemisia-tabaci"
               aria-label="View Bemisia tabaci">Bemisia tabaci</a>
           </td>
+          <td class="govuk-table__cell">Cassava whitefly, Cotton whitefly, Sweet potato whitefly, Tobacco whitefly</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Lewis spider mite</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Eotetranychus lewisi">Eotetranychus lewisi</a>
           </td>
+          <td class="govuk-table__cell">Lewis spider mite</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Euphorbia mosaic virus</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Euphorbia mosaic virus">Euphorbia mosaic virus</a>
           </td>
+          <td class="govuk-table__cell">Euphorbia mosaic virus</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Euplatypus parallelus</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Euplatypus parallelus">Euplatypus parallelus</a>
           </td>
+          <td class="govuk-table__cell">Euplatypus parallelus</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Root-knot nematode</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Meloidogyne enterolobii">Meloidogyne enterolobii</a>
           </td>
+          <td class="govuk-table__cell">Root-knot nematode</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Citrus spider mite, Six-spotted spider mite</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Eotetranychus sexmaculatus">Eotetranychus sexmaculatus</a>
           </td>
+          <td class="govuk-table__cell">Citrus spider mite, Six-spotted spider mite</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Xanthomonas axonopodis pv. poinsettiicola</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Xanthomonas axonopodis pv. poinsettiicola">Xanthomonas axonopodis pv. poinsettiicola</a>
           </td>
+          <td class="govuk-table__cell">Xanthomonas axonopodis pv. poinsettiicola</td>
         </tr>
       </tbody>
     </table>
@@ -161,6 +174,7 @@ href: "javascript:window.history.back()"
 
 
 <!--Unprohibited plants: low risk -->
+
 
     {% elif country == 'France'%}
     <h2 class="govuk-heading-m govuk-!-padding-top-3">
@@ -187,21 +201,24 @@ href: "javascript:window.history.back()"
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Common name</th>
           <th scope="col" class="govuk-table__header">Scientific name</th>
+          <th scope="col" class="govuk-table__header">Common name</th>
           <th scope="col" class="govuk-table__header">Affected formats of {{data['plantName']}}</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Japanese bayberry whitefly, myrica whitefly	</td>
+          
           <td class="govuk-table__cell"><a class="govuk-link"  href="/{{version}}/pests/parabemisia-myricae" aria-label="View Trialeurodes abutiloneus">Parabemisia myricae</a>
           </td>
+          <td class="govuk-table__cell">Japanese bayberry whitefly, myrica whitefly	</td>
           <td class="govuk-table__cell">All formats</td>
         </tr>
       </tbody>
     </table>
 
+
+<!--FORMAT IS WOOD-->
 
 {% elif format == 'wood'%}
 
@@ -217,7 +234,7 @@ href: "javascript:window.history.back()"
     <ul class="govuk-list govuk-list--bullet">
       <li>
         <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">register to import</a> if you're importing for the first time
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">register to import</a> if you're a first-time reporter
       </li>
       <li>
         get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
@@ -244,7 +261,7 @@ href: "javascript:window.history.back()"
     </div>
 
     <h3 class="govuk-heading-s" >
-      Wood packaging or wood where Agrilus bilineatus is not known to be present 
+      Wood packaging or wood where Agrilus bilineatus is known not to be present 
     </h3>
     
     <p>To import {{data['plantName']}} from {{data['country']}} in the above formats, you will need to (the following links open in a new tab):</p>
@@ -280,31 +297,36 @@ href: "javascript:window.history.back()"
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Common name</th>
+            
             <th scope="col" class="govuk-table__header">Scientific name</th>
+            <th scope="col" class="govuk-table__header">Common name</th>
             <th scope="col" class="govuk-table__header">Affected formats of {{data['plantName']}}</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Two-lined chestnut borer</td>
+            
             <td class="govuk-table__cell"><a class="govuk-link"  href="/{{version}}/pests/agrilus-bilineatus" aria-label="View Agrilus bilineatus">Agrilus bilineatus</a>
             </td>
+            <td class="govuk-table__cell">Two-lined chestnut borer</td>
             <td class="govuk-table__cell">All formats</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Oak timberworm</td>
+            
             <td class="govuk-table__cell">Arrhenodes minutus</td>
+            <td class="govuk-table__cell">Oak timberworm</td>
             <td class="govuk-table__cell">All formats</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Oak wilt, wilt of oak</td>
+            
             <td class="govuk-table__cell">Bretziella fagacearum</td>
+            <td class="govuk-table__cell">Oak wilt, wilt of oak</td>
             <td class="govuk-table__cell">All formats</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Eastern gall rust of pine	</td>
+            
             <td class="govuk-table__cell">Cronartium quercuum</td>
+            <td class="govuk-table__cell">Eastern gall rust of pine	</td>
             <td class="govuk-table__cell">All formats</td>
           </tr>
           </tbody>
@@ -373,38 +395,43 @@ href: "javascript:window.history.back()"
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Common name</th>
           <th scope="col" class="govuk-table__header">Scientific name</th>
+          <th scope="col" class="govuk-table__header">Common name</th>
+          
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Banded-winged whitefly</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Trialeurodes abutiloneus">Trialeurodes abutiloneus</a>
           </td>
+          <td class="govuk-table__cell">Banded-winged whitefly</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Cassava whitefly, Cotton whitefly, Sweet potato whitefly, Tobacco whitefly</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="/{{version}}/pests/bemisia-tabaci"
               aria-label="View Bemisia tabaci">Bemisia tabaci</a>
           </td>
+          <td class="govuk-table__cell">Cassava whitefly, Cotton whitefly, Sweet potato whitefly, Tobacco whitefly</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Euplatypus parallelus</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Euplatypus parallelus">Euplatypus parallelus</a>
           </td>
+          <td class="govuk-table__cell">Euplatypus parallelus</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Root-knot nematode</td>
+          
           <td class="govuk-table__cell">
             <a class="govuk-link"  href="#"
               aria-label="View Meloidogyne enterolobii">Meloidogyne enterolobii</a>
           </td>
+          <td class="govuk-table__cell">Root-knot nematode</td>
         </tr>
       </tbody>
     </table>

@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Anoplophora bilineatus
+Anoplophora bilineatus - Check plant health information and import rules — GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -164,31 +164,102 @@ href: "javascript:window.history.back()"
       </tbody>
     </table>-->
 
+
     <h2 class="govuk-heading-m">
       Plants that are known to carry Agrilus bilineatus
     </h2>
-    <p class="govuk-list">
-    <ul class="govuk-list">
-      <li>Castanea dentata</li>
-      <li>Quercus alba</li>
-      <li>Quercus coccinea</li>
-      <li>Quercus ellipsoidalis</li>
-      <li>Quercus lyrata</li>
-      <li>Quercus macrocarpa</li>
-      <li>Quercus marilandica</li>
-      <li>Quercus michauxii</li>
-      <li>Quercus muehlenbergii</li>
-      <li>Quercus nigra</li>
-      <li>Quercus palustris</li>
-      <li>Quercus prinus</li>
-      <li>Quercus robur</li>
-      <li>Quercus rubra</li>
-      <li>Quercus shumardii var. texana</li>
-      <li>Quercus stellata</li>
-      <li>Quercus velutina</li>
-      <li>Quercus virginiana</li>
-    </ul>
-  </p>
+
+<!--PLANT LIST-->
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Scientific name</th>
+      <th scope="col" class="govuk-table__header">Common names</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Castanea dentata</td>
+      <td class="govuk-table__cell">American chestnut	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus alba</td>
+      <td class="govuk-table__cell">eastern white oak, white oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus coccinea</td>
+      <td class="govuk-table__cell">scarlet oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus ellipsoidalis</td>
+      <td class="govuk-table__cell">Hill's oak, jack oak, northern pin oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus lyrata</td>
+      <td class="govuk-table__cell">overcup oak, water white oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus macrocarpa</td>
+      <td class="govuk-table__cell">bur oak, mossy-cup oak, scrub oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus marilandica</td>
+      <td class="govuk-table__cell">blackjack oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus michauxii</td>
+      <td class="govuk-table__cell">basket oak, cow oak, swamp chestnut oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus muehlenbergii</td>
+      <td class="govuk-table__cell">chinkapin oak, chinquapin oak, yellow chestnut oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus nigra</td>
+      <td class="govuk-table__cell">water oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus palustris</td>
+      <td class="govuk-table__cell">pin oak, swamp oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus prinus</td>
+      <td class="govuk-table__cell">basket oak, chestnut oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus robur</td>
+      <td class="govuk-table__cell">common oak, English oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus rubra</td>
+      <td class="govuk-table__cell">American red oak, northern red oak, red oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus shumardii var. texana</td>
+      <td class="govuk-table__cell">Nuttall's oak, 
+        southern red oak, 
+        Texas oak, 
+        Texas red oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus stellata</td>
+      <td class="govuk-table__cell">post oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus velutina</td>
+      <td class="govuk-table__cell">black oak, dyer's oak, 
+        eastern black oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus virginiana</td>
+      <td class="govuk-table__cell">live oak, 
+        southern live oak</td>
+    </tr>
+    </tbody>
+</table>
+
     
     <form class="form" method="post">
       <button class="govuk-button" data-module="govuk-button" href="purpose">

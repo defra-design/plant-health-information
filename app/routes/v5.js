@@ -8,8 +8,11 @@ module.exports = function (router) {
 
     const pestMappings = {
         // 'aleurodicus dispersus (spiralling white fly)': '/pests/spiralling-white-fly',
-        'Anoplophora glabripennis (Asian longhorn beetle, Starry sky beetle)': '/pests/anoplophora-glabripennis',
+        'agrilus bilineatus (two-lined chestnut borer)': '/pests/agrilus-bilineatus',
+        'anoplophora glabripennis (asian longhorn beetle, starry sky beetle)': '/pests/anoplophora-glabripennis',
         'bemisia tabaci (cassava whitefly, cotton whitefly, sweet potato whitefly, tobacco whitefly)': '/pests/bemisia-tabaci',
+        'ips typographus (eight-spined engraver, eight-toothed spruce bark beetle, larger eight-toothed european spruce bark beetle, spruce bark beetle)': '/pests/ips-typographus',
+        'parabemisia myricae (japanese bayberry whitefly)': '/pests/parabemisia-myricae',
         // 'cactodera cacti': '/pests/cactodera-cacti',
         // 'ceroplastes sinensis': '/pests/ceroplastes-sinensis',
         // 'clover phyllody phytoplasma': '/pests/clover-phyllody-phytoplasma',
@@ -629,4 +632,5 @@ router.post('/' + version + '/plants/pinus-pentaphylla', function (req, res) {
 
     
 };
+
 

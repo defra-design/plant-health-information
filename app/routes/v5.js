@@ -236,8 +236,9 @@ module.exports = function (router) {
 
 
     router.post('/' + version + '/service/country-select', function (req, res) {
-        const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
         let country = req.session.data['country']
+        const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
+        
 
 
         if (country === '') {

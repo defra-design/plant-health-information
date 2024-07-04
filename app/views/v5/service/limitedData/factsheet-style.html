@@ -1,0 +1,544 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Anoplophora glabripennis - Check plant health information and import rules — GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">
+      Pest or disease
+    </span>
+    <h1 class="govuk-heading-xl">
+      Anoplophora glabripennis
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must <a class="govuk-link"
+        href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">report any
+        suspicions</a> of Anoplophora glabripennis, wherever found.
+        </strong>
+    </div>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Preferred name
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Anoplophora glabripennis
+      </li>
+    </ul>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Asian long-horned beetle	
+      </li>
+      <li>
+        Asian longhorn beetle	
+      </li>
+      <li>
+        basicosta white-spotted longicorn beetle	
+      </li>
+      <li>
+        starry sky beetle	
+      </li>
+      
+    </ul>
+
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <ul class="govuk-list">
+      <li>
+      Anoplophora glabripennis
+      </li>
+      <li>
+      Anoplophora nobilis
+      </li>
+      <li>
+      Cerosterna glabripennis
+      </li>
+      <li>
+        Cerosterna laevigator
+      </li>
+      <li>
+        Melanauster angustatus
+      </li>
+      <li>
+        Melanauster glabripennis var. lagaisei
+      </li>
+      <li>
+        Melanauster leuteonotatus
+      </li>
+      <li>
+        Melanauster nankineus
+      </li>
+      <li>
+        Melanauster nobilis
+      </li>
+    </ul>
+
+
+
+
+    <div class="govuk-inset-text">You can
+      <a href="https://gd.eppo.int/taxon/ANOLGL" class="govuk-link govuk-body govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">view photos of Anoplophora glabripennis in the EPPO Global Database (opens in a new tab).
+      </a>
+    </div>
+
+
+    *********************  Original Design  *********************
+    <br>
+    <br>
+    <h2 class="govuk-heading-l">
+      Plant health publications about Anoplophora glabripennis
+    </h2>
+    <p class="'govuk-body">These files may not be suitable for users of assistive technology.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Request an accessible format
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you use assistive technology (such as a screen reader) and need a version of this document in a more
+        accessible format, please email plantpestsrisks@defra.gov.uk. Please tell us what format you need. It
+        will help us if you say what assistive technology you use. </div>
+    </details>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
+
+      <div class="govuk-grid-column-one-quarter">
+        <a href="/public/factsheets/xylella_fact_sheet.pdf" rel="noreferrer noopener" target="_blank">
+          <img src="/public/doc_image.png" alt="View plant pest factsheet on Xylella fastidiosa (PDF)">
+        </a>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <a href="/public/factsheets/anolgl_fact_sheet.pdf"
+          class="govuk-link govuk-body-l govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Plant pest factsheet
+        </a>
+        <div id="file-hint" class="govuk-hint govuk-!-margin-top-2">
+          March 2023
+          <br>
+          PDF, 303KB
+        </div>
+      </div>
+    </div>
+    <h3 class="govuk-heading-m">Other publications</h3>
+    <table class="govuk-table">
+      <!-- <caption class="govuk-table__caption govuk-table__caption--s">Other publications</caption> -->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Title</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">November 2021</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/alerts/Pest-alert-Anoplophora-glabripennis-final.pdf">Pest Alert: Asian longhorn beetle (Anoplophora glabripennis)<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">October 2020</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/alerts/Anoplophora-glabripennis.pdf">Pest specific plant health response
+              plan:<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF)</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <!-- **************  FACT SHEET STYLE 1 *************** -->
+    *********************  New Design 1  *********************
+    <br>
+    <br>
+    <h2 class="govuk-heading-l">
+      Plant health publications about Anoplophora glabripennis
+    </h2>
+    <p class="'govuk-body">These files may not be suitable for users of assistive technology.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Request an accessible format
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you use assistive technology (such as a screen reader) and need a version of this document in a more
+        accessible format, please email plantpestsrisks@defra.gov.uk. Please tell us what format you need. It
+        will help us if you say what assistive technology you use. 
+      </div>
+    </details>
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
+
+      <!-- <div class="govuk-grid-column-one-quarter">
+          <img src="/public/doc_image.png" alt="View plant pest factsheet on Xylella fastidiosa (PDF)">
+      </div> -->
+      <div class="govuk-grid-column-three-quarters govuk-link govuk-body govuk-link--no-visited-state" >
+        <a href="/public/factsheets/anolgl_fact_sheet.pdf" rel="noreferrer noopener" target="_blank">Plant pest factsheet 1</a>
+        <div id="file-hint" class="govuk-hint govuk-!-margin-top-2">
+          March 2023
+          <br>
+          PDF, 303KB
+        </div>
+      </div>
+        <div class="govuk-grid-column-three-quarters govuk-link govuk-body govuk-link--no-visited-state">
+          <a href="/public/factsheets/anolgl_fact_sheet.pdf" rel="noreferrer noopener" target="_blank">Plant pest factsheet 2</a>
+          <div id="file-hint" class="govuk-hint govuk-!-margin-top-2">
+            March 2023          
+            <br>
+            PDF, 303KB
+          </div>
+        </div>
+
+       <!-- **************  OTHER PUBLICATION SECTION STARTS HERE *************** -->
+
+      </div>
+      <h3 class="govuk-heading-m">Other publications</h3>
+      <table class="govuk-table">
+        <!-- <caption class="govuk-table__caption govuk-table__caption--s">Other publications</caption> -->
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Title</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">November 2021</td>
+            <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+                href="/public/alerts/Pest-alert-Anoplophora-glabripennis-final.pdf">Pest Alert: Asian longhorn beetle (Anoplophora glabripennis)<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">October 2020</td>
+            <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+                href="/public/alerts/Anoplophora-glabripennis.pdf">Pest specific plant health response
+                plan:<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF)</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    
+    <!-- **************  FACT SHEET STYLE 1 ENDS HERE *************** -->
+
+
+    <!-- **************  FACT SHEET STYLE 2 STARTS HERE *************** -->
+
+    *********************  New Design 2  *********************
+    <br>
+    <br>
+    <h2 class="govuk-heading-l">
+      Plant health publications about Anoplophora glabripennis
+    </h2>
+    <p class="'govuk-body">These files may not be suitable for users of assistive technology.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Request an accessible format
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you use assistive technology (such as a screen reader) and need a version of this document in a more
+        accessible format, please email plantpestsrisks@defra.gov.uk. Please tell us what format you need. It
+        will help us if you say what assistive technology you use. 
+      </div>
+    </details>
+    <!-- <caption class="govuk-table__caption govuk-table__caption--s">Factsheet</caption> -->
+    <h3 class="govuk-heading-m">Factsheet</h3>
+    <table class="govuk-table">
+     
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Title</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Mar 2023</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/factsheets/anolgl_fact_sheet.pdf">Plant pest factsheet 1<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>PDF, 303KB</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">October 2020</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank" 
+              href="/public/factsheets/anolgl_fact_sheet.pdf">Plant pest factsheet 2<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>PDF, 343KB</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    
+
+
+    <!-- **************  OTHER PUBLICATION SECTION STARTS HERE *************** -->
+
+    <h3 class="govuk-heading-m">Other publications</h3>
+    <table class="govuk-table">
+      <!-- <caption class="govuk-table__caption govuk-table__caption--s">Other publications</caption> -->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Title</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">November 2021</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/alerts/Pest-alert-Anoplophora-glabripennis-final.pdf">Pest Alert: Asian longhorn beetle (Anoplophora glabripennis)<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">October 2020</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/alerts/Anoplophora-glabripennis.pdf">Pest specific plant health response
+              plan:<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF)</td>
+        </tr>
+        
+      </tbody>
+    </table>
+<!-- **************  FACT SHEET STYLE 2 ENDS HERE *************** -->
+
+    <h2 class="govuk-heading-l">
+      Plants that are known to carry Anoplophora glabripennis
+    </h2>
+
+<!--PLANT LIST-->
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Scientific name</th>
+      <th scope="col" class="govuk-table__header">Common names</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Acer</td>
+      <td class="govuk-table__cell">big-leaf maple, 
+        Oregon maple	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Acer negundo</td>
+      <td class="govuk-table__cell">ash-leaf maple,
+        ash-leaved maple,
+        box elder,
+        Manitoba maple</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Acer platanoides</td>
+      <td class="govuk-table__cell">Norway maple, 
+        plane maple</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Acer pseudoplatanus</td>
+      <td class="govuk-table__cell">common sycamore, 
+        great maple, 
+        plane maple, 
+        sycamore</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Acer saccharinum</td>
+      <td class="govuk-table__cell">silver maple	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Acer saccharum</td>
+      <td class="govuk-table__cell">hard maple, 
+        rock maple, 
+        rocki maple, 
+        sugar maple	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Acer tegmentosum </td>
+      <td class="govuk-table__cell">East Asian stripe maple	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Acer truncatum </td>
+      <td class="govuk-table__cell">shantung maple	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Aesculus </td>
+      <td class="govuk-table__cell">Texas buckeye		</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Aesculus hippocastanum </td>
+      <td class="govuk-table__cell">common horse chestnut, 
+        horse chestnut		</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Albizia julibrissin </td>
+      <td class="govuk-table__cell">Persian acacia, 
+        pink siris, 
+        silk tree, 
+        varay cotton	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Alnus </td>
+      <td class="govuk-table__cell">American green alder		</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Betula </td>
+      <td class="govuk-table__cell">Chinese red-barked birch			</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Carpinus </td>
+      <td class="govuk-table__cell">common hornbeam, hornbeam	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Cercidiphyllum </td>
+      <td class="govuk-table__cell">katsura</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Corylus </td>
+      <td class="govuk-table__cell">American hazel, 
+        American filbert, 
+        American hazelnut</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Corylus colurna </td>
+      <td class="govuk-table__cell">Constantinople hazel, 
+        Turkish filbert, 
+        Turkish hazel, 
+        Turkish hazel nut</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Elaeagnus angustifolia </td>
+      <td class="govuk-table__cell">oleaster, 
+        Russian olive, 
+        Trebizond date, 
+        wild olive</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Fagus </td>
+      <td class="govuk-table__cell">Japanese beech, Siebold's beech</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Fagus sylvatica </td>
+      <td class="govuk-table__cell">beech, 
+        European beech</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Fraxinus, Koelreuteria </td>
+      <td class="govuk-table__cell">Texas ash	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Koelreuteria </td>
+      <td class="govuk-table__cell">bougainvillea golden-rain tree, 
+        Chinese flame tree	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Koelreuteria paniculata </td>
+      <td class="govuk-table__cell">Chinese varnish tree, 
+        golden rain, 
+        pride of India</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Malus domestica </td>
+      <td class="govuk-table__cell">apple</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Morus alba </td>
+      <td class="govuk-table__cell">apsilkworm mulberry, 
+        white mulberryple</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Platanus </td>
+      <td class="govuk-table__cell">uttonwood, 
+        American plane, 
+        American sycamore</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Populus </td>
+      <td class="govuk-table__cell">abele, 
+        silver-leaved poplar, 
+        white poplar</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Prunus </td>
+      <td class="govuk-table__cell">red stinkwood	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Prunus serrulata </td>
+      <td class="govuk-table__cell">Japanese cherry, 
+        Japanese flowering cherry, 
+        oriental cherry, 
+        Prunus (Sato-zakura cultivars)	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Pyrus bretschneideri </td>
+      <td class="govuk-table__cell">yali pear		</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Salix </td>
+      <td class="govuk-table__cell">sharp-leaved willow, Siberian violet willow</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Tilia </td>
+      <td class="govuk-table__cell">American basswood, 
+        American lime, 
+        American linden</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Ulmus </td>
+      <td class="govuk-table__cell">winged elm, 
+        wahoo elm</td>
+    </tr>
+  </tbody>
+</table>
+
+    
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button" >
+        Find another plant or pest
+      </button>
+      <p class="govuk-heading-s">Get help with this service</p>
+      <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+<style>
+  @media only screen and (max-width: 640px) {
+    img {
+      width: 30%
+    }
+  }
+
+  @media only screen and (min-width: 641px) {
+    img {
+      width: 110%
+    }
+  }
+</style>
+
+{% endblock %}

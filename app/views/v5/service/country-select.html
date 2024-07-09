@@ -35,7 +35,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#country">Enter the name of the country you are importing {{plantName}} from</a>
+            <a href="#country">Enter the name of the country, state or territory you are importing {{plantName}} from</a>
           </li>
         </ul>
       </div>
@@ -46,17 +46,21 @@ href: "javascript:window.history.back()"
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading" id="country-h1">
-              Which country are you importing {{plantName}} from?
+              Which country, state or territory are you importing {{plantName}} from?
             </h1>
             <!-- <div id="event-name-hint" class="govuk-hint">
               This is the country that issues the phytosanitary certificate
             </div> -->
           </legend>
-          <p class="govuk-body">This is the country that issues the phytosanitary certificate, if required.</p>
+          <div id="dob-hint" class="govuk-hint">This is where the phytosanitary certificate is issued, if one is needed. If the country, state or territory is not part of the Intergovernmental Panel on Climate Change, it is not included in this service.</div>
+          <!-- <p class="govuk-body">This is where the phytosanitary certificate is issued, if one is needed.</p>
+
+          <p class="govuk-body">If the country, state or territory is not part of the Intergovernmental Panel on Climate Change, it is not included in this service.
+            </p> -->
 
           {% if error %}
           <span id="country-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span>Enter the name of the country you are importing {{plantName}} from
+            <span class="govuk-visually-hidden">Error:</span>Enter the name of the country, state or territory you are importing {{plantName}} from
           </span>
           {% endif %}
           {{ xGovukAutocomplete({

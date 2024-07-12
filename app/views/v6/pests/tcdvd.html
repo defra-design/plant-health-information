@@ -1,0 +1,143 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Tomato chlorotic dwarf viroid - Check plant health information and import rules — GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Tomato chlorotic dwarf viroid
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must <a class="govuk-link"
+          href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">report any
+          sightings or suspicions</a> of Tomato chlorotic dwarf viroid on certain host plants. See below for the list of
+        these plants.
+      </strong>
+    </div>
+
+    <h2 class="govuk-heading-m">
+      Identity
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <p class="govuk-body">None</p>
+
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <p class="govuk-body">None</p>
+
+    <br>
+
+    <h2 class="govuk-heading-m">
+      Plant health publications about Tomato chlorotic dwarf viroid
+    </h2>
+    <p class="'govuk-body">These files may not be suitable for users of assistive technology.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Request an accessible format
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you use assistive technology (such as a screen reader) and need a version of this document in a more
+        accessible format, please email plantpestsrisks@defra.gov.uk. Please tell us what format you need. It
+        will help us if you say what assistive technology you use. </div>
+    </details>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
+
+      <div class="govuk-grid-column-one-quarter">
+        <a href="/public/factsheets/Pests-of-tomato.pdf" rel="noreferrer noopener" target="_blank">
+          <img src="/public/doc_image.png" alt="View plant pest factsheet on Pests of tomato crops (PDF)">
+        </a>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <a href="/public/factsheets/Pests-of-tomato.pdf" class="govuk-link govuk-body-l govuk-link--no-visited-state"
+          rel="noreferrer noopener" target="_blank">Plant pest factsheet on Pests of tomato crops
+        </a>
+        <div id="file-hint" class="govuk-hint govuk-!-margin-top-2">
+          June 2019
+          <br>
+          PDF, 585KB, 16 pages
+        </div>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">
+      Reporting the presence of Tomato chlorotic dwarf viroid
+    </h2>
+    <p class="'govuk-body">You only need to report sightings or suspicions of Tomato chlorotic dwarf viroid if found on
+      the host plants below. You do not need to report this pest if you find it on other plants.</p>
+    <p class="'govuk-body">If Tomato chlorotic dwarf viroid is found on any of these host plants during routine plant health inspections,
+      you will be asked to take action.</p>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Host plants
+    </h3>
+    <ul class="govuk-list govuk-!-margin-bottom-7">
+      <li>Brugmansia</li>
+      <li>Cestrum (Jessamine)</li>
+      <li>Petunia (Petunia)</li>
+      <li>Solanum lycopersicum (Tomato)</li>
+      <li>Solanum melongena (Aubergine; Eggplant)</li>
+      <li>Verbena (Vervain)</li>
+      <li>Vinca minor (Periwinkle, common; Periwinkle, lesser)</li>
+
+    </ul>
+
+    <br>
+    <br>
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Search again
+      </button>
+    </form>
+
+  </div>
+</div>
+
+
+<style>
+  @media only screen and (max-width: 640px) {
+    img {
+      width: 30%
+    }
+  }
+
+  @media only screen and (min-width: 641px) {
+    img {
+      width: 110%
+    }
+  }
+</style>
+{% endblock %}

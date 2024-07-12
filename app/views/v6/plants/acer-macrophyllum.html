@@ -1,0 +1,319 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Acer macrophyllum - Check plant health information and import rules — GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">
+      Plant or plant product
+    </span>
+    <h1 class="govuk-heading-xl">
+      Acer macrophyllum
+    </h1>
+
+   <!-- <h2 class="govuk-heading-m">
+      Identity
+    </h2> -->
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+      Preferred name
+    </h2>
+    <p>
+      Acer macrophyllum </p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+      Common names
+    </h2>
+    <ul class="govuk-list">
+      <li>
+        Bigleaf maple
+      </li>
+      <li>
+      Oregon maple
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+      Synonyms
+    </h2>
+    <p>
+      None</p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
+      EPPO code
+    </h2>
+    <p>
+      ACRMA </p>
+
+
+      {% if country is not defined or country == 'Default Country'%}
+      <h2 class="govuk-heading-l govuk-!-padding-top-3">
+        Importing {{data['plantName']}} into Great Britain
+      </h2>
+  
+      <p>
+        To find out what extra checks or documentation are needed, <a class="govuk-link"
+          href="/{{version}}/service/country-select">provide where you are importing from</a>.
+      </p>
+
+    
+
+<!--This is Unprohibited plant (high/Medium A risk) scenario-->
+
+    {% elif format == 'wood'%}
+
+    <h2 class="govuk-heading-l govuk-!-padding-top-3">
+      Importing {{data['plantName']}} from {{data['country']}} <!--as {{data['format']}}-->
+    </h2>
+
+    <h3 class="govuk-heading-m">Import rules</h2>
+
+    <p>To import {{data['plantName']}} from {{data['country']}} as {{data['format']}}, you will need to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">register to import</a> if you're a first-time importer
+      </li>
+      <li>
+        get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">phytosanitary certificate from the National Plant Protection Organisation of the exporting country</a>
+      </li>
+      <li>
+        meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">ISPM 15 international standard</a> for any wood packaging material you use
+      </li>
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">notify the relevant authorities about your import</a>
+      </li>
+      <li>
+        comply with<a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"> documentary, identity and physical checks</a> at the border
+      </li>
+      <li>
+        pay fees, which will include <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">plant health checks</a>
+      </li>
+    </ul>
+    <div class="govuk-inset-text">
+      The phytosanitary certificate may need an additional declaration. To find out,  <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/requirement-for-additional-declarations-ads-on-phytosanitary-certificate-pcs/">check the additional declaration tool</a>.
+    </div>
+    <p class="govuk-body">You can  <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+      href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">find out how often inspections at the border have resulted in the destruction of goods.</a>
+    </p>
+  
+   <h2 class="govuk-heading-l">
+    Pests and diseases you must report
+    </h2>
+    <!--<p class="govuk-body-l">TEST</p>-->
+    <p class="govuk-body">Different formats of {{data['plantName']}} might carry the pests or diseases from {{data['country']}} listed at the bottom of the page. These pests and diseases are considered a risk to Great Britain's agriculture, horticulture, wildlife or forestry. If one of these pests or diseases is found during plant health inspections, action will be taken. This could result in consignments being delayed or destroyed.</p>
+    
+      <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/non-compliance/">report any suspicions</a> of the pests or diseases to the relevant authority.</p>
+      
+    {% else %}
+
+
+    <!--This is a Unprohibited Plant (high/medium risk) scenario-->
+
+    <h2 class="govuk-heading-l govuk-!-padding-top-3">
+      Importing {{data['plantName']}} from {{data['country']}} <!--as {{data['format']}}-->
+    </h2>
+
+    <h2 class="govuk-heading-m">Import rules</h2>
+
+    <p>To import {{data['plantName']}} as {{data['format']}} from {{data['country']}}, you will need to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">register to import</a> if you're a first-time importer
+      </li>
+      <li>
+        get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">phytosanitary certificate from your exporter</a>
+      </li>
+      <li>
+        meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">ISPM 15 international standard</a> for any wood packaging material you use
+      </li>
+      <li>
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">notify the relevant authorities about your import</a>
+      </li>
+      <li>
+        comply with documentary, <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">identity and physical checks</a> at the border
+      </li>
+      <li>
+       pay <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">fees for plant health checks</a>
+      </li>
+    </ul>
+    <div class="govuk-inset-text">
+      You may need to include an additional declaration on the phytosanitary certificate. To find out,  <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/requirement-for-additional-declarations-ads-on-phytosanitary-certificate-pcs/">check the additional declaration tool</a>.
+    </div>
+
+<!--Un Prohibited scenario-->
+
+    <h2 class="govuk-heading-l">
+     Pests and diseases you must report
+    </h2>
+    <!--<p class="govuk-body-l">TEST</p>-->
+    <p class="govuk-body">Different formats of {{data['plantName']}} might carry the pests or diseases from {{data['country']}} listed at the bottom of the page. These pests and diseases are considered a risk to Great Britain's agriculture, horticulture, wildlife or forestry. If one of these pests or diseases is found during plant health inspections, action will be taken. This could result in consignments being delayed or destroyed.</p>
+    <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of these pests or diseases to the relevant authority.
+      </a></p>
+      <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+        href="https://planthealthportal.defra.gov.uk/trade/imports/non-compliance/">report any suspicions</a> of the pests or diseases to the relevant authority.</p>
+      
+
+
+  
+    {% endif %}
+
+   
+
+    
+  <!--COPY BACK THE CODE HERE if prohibited vs unprohibited separate content logic doesn't work-->
+ 
+  {% if country is not defined or country != 'United States'%}
+  
+
+  
+    <table class="govuk-table">
+      <!--<caption class="govuk-table__caption govuk-table__caption--s">High priority pest</caption> -->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Scientific name</th>
+          <th scope="col" class="govuk-table__header">Common names</th>
+          <th scope="col" class="govuk-table__header">Affected formats of {{data['plantName']}}
+          </th>
+          
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">Anoplophora chinensis</a></td>
+              <td class="govuk-table__cell">Black and white longhorn, Citrus longhorn, Citrus longhorn beetle, Citrus root
+                cerambycid</td>
+              <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">Coleosporium eupatorii</a></td>
+              <td class="govuk-table__cell">Coleosporium eupatorii</td>
+              <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">Coleosporium phellodendri</a></td>
+              <td class="govuk-table__cell">Coleosporium phellodendri</td>
+              <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="#">Dendrolimus spectabilis</a></td>
+              <td class="govuk-table__cell">Japanese pine caterpillar, Pine caterpillar, Pine moth</td>
+              <td class="govuk-table__cell"></td>
+        </tr>
+      </tbody>
+      </table>
+
+
+
+
+
+
+
+
+
+    {% elif country == 'United States'%}
+
+    <table class="govuk-table">
+      <!--<caption class="govuk-table__caption govuk-table__caption--s">High priority pest</caption> -->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header">Scientific name</th>
+          <th scope="col" class="govuk-table__header">Common names</th>
+          <th scope="col" class="govuk-table__header">Affected formats of {{data['plantName']}}</th>
+          
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          
+          <td class="govuk-table__cell"><a class="govuk-link" href="/{{version}}/pests/anoplophora-glabripennis">Anoplophora glabripennis</a> <br><br>This pest is only a concern in <a class="govuk-link" href="#">certain areas of Great Britain.</a></td>
+          <td class="govuk-table__cell">Asian longhorn beetle, Starry sky beetle</td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          
+          <td class="govuk-table__cell">Choristoneura rosaceana</td>
+          <td class="govuk-table__cell">Oblique banded leaf roller, Rosaceous leaf roller</td>
+          <td class="govuk-table__cell">Wood with bark</td>
+        </tr>
+        <tr class="govuk-table__row">
+          
+          <td class="govuk-table__cell">Eotetranychus sexmaculatus </td>
+          <td class="govuk-table__cell">Citrus spider mite, six-spotted mite, six-spotted spider mite</td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          
+          <td class="govuk-table__cell">Lopholeucaspis japonica</td>
+          <td class="govuk-table__cell">Japanese long scale, japanese maple scale</td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+        <tr class="govuk-table__row">
+          
+          <td class="govuk-table__cell">Popillia japonica</td>
+          <td class="govuk-table__cell">Japanese beetle</td>
+          <td class="govuk-table__cell">All formats</td>
+        </tr>
+
+
+
+
+    </table>
+    {% endif %}
+
+    <br>
+    <br>
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button" >
+        Find another plant or pest
+      </button>
+      <p class="govuk-heading-s">Get help with this service</p>
+      <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

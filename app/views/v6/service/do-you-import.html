@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Where are you importing your plant or plant product to? — Check plant health information and import rules — GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if error %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#import">Select where you are importing your plant, plant product or seeds to</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+    <form class="form" method="post">
+      <div class="govuk-form-group {% if error %} govuk-form-group--error {% endif %}">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading" id="import-h1">
+              Where are you importing your plant, plant product or seeds to?
+            </h1>
+          </legend>
+
+          {% if error %}
+          <span id="user-type-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select where you are importing your plant, plant product or seeds to
+          </span>
+          {% endif %}
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="import" name="import" type="radio" value="great-britain" {{
+                checked("import", "great-britain" ) }}>
+              <label class="govuk-label govuk-radios__label" for="great-britain">
+                Great Britain (England, Scotland and Wales)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="import-2" name="import" type="radio" value="northern-ireland" {{
+                checked("import", "northern-ireland" ) }}>
+              <label class="govuk-label govuk-radios__label" for="northern-ireland">
+                Northern Ireland
+              </label>
+            </div>
+            <!--
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="import-3" name="import" type="radio" value="not-importing" {{
+                checked("import", "not-importing" ) }}>
+              <label class="govuk-label govuk-radios__label" for="not-importing">
+                I am not importing it
+              </label>
+            </div>
+            -->
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+      <p class="govuk-heading-s">Get help with this service</p>
+      <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
+      </p>
+    </form>
+  </div>
+
+  {% endblock %}

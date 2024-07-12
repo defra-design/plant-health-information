@@ -16,6 +16,7 @@ require('./routes/v2.js')(router);
 require('./routes/v3.js')(router);
 require('./routes/v4.js')(router);
 require('./routes/v5.js')(router);
+require('./routes/v6.js')(router);
 
 
 

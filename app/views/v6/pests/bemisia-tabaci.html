@@ -1,0 +1,277 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Bemisia tabaci - Check plant health information and import rules — GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">
+      Pest or disease
+    </span>
+    <h1 class="govuk-heading-xl">
+      Bemisia tabaci
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must <a class="govuk-link"
+          href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">report any
+          sightings or suspicions</a> of Bemisia tabaci on certain plants in certain formats. These are listed at the bottom of the page. 
+
+      </strong>
+    </div>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Cassava whitefly
+      </li>
+      <li>
+        Cotton whitefly
+      </li>
+      <li>
+        Sweet potato whitefly
+      </li>
+      <li>
+        Tobacco whitefly
+      </li>
+    </ul>
+
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <p>None</p>
+<br>
+    <!--<div class="govuk-grid-row govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-half govuk-body">
+        <a href="https://gd.eppo.int/taxon/BEMITA" rel="noreferrer noopener" target="_blank">
+          <img src="/public/BEMITA_283.png" alt="View plant pest factsheet on Xylella fastidiosa (PDF)">
+        </a>
+      </div>
+      
+    </div>-->
+    <div class="govuk-body">You can
+      <a href="https://gd.eppo.int/taxon/BEMITA" class="govuk-link govuk-body govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">view photos of Xylella fastidiosa in the EPPO Global Database (opens in a new tab).
+      </a>
+    </div>
+
+
+    <h2 class="govuk-heading-m">
+      Plant health publications about Bemisia tabaci
+    </h2>
+    <p class="'govuk-body">These files may not be suitable for users of assistive technology.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Request an accessible format
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you use assistive technology (such as a screen reader) and need a version of this document in a more
+        accessible format, please email plantpestsrisks@defra.gov.uk. Please tell us what format you need. It
+        will help us if you say what assistive technology you use. </div>
+    </details>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
+
+      <div class="govuk-grid-column-one-quarter">
+        <a href="/public/factsheets/Bemisia-tabaci.pdf" rel="noreferrer noopener" target="_blank">
+          <img src="/public/doc_image.png" alt="View plant pest factsheet on Bemisia tabaci (PDF)">
+        </a>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <a href="/public/factsheets/Bemisia-tabaci.pdf"
+          class="govuk-link govuk-body-l govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Plant pest factsheet
+        </a>
+        <div id="file-hint" class="govuk-hint govuk-!-margin-top-2">
+          February 2017
+          <br>
+          PDF, 402KB, 6 pages
+        </div>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">
+      Reporting suspicions of Bemisia tabaci
+    </h2>
+    <p class="govuk-body">You only need to report sightings or suspicions of Bemisia tabaci if found on certain plants in certain formats. These are listed at the bottom of the page. ​
+      You do not need to report this pest if you find it on other plant-format combinations. 
+    </p>
+    <p class="govuk-body">
+      If Bemisia tabaci is found on any of the listed plant-format combinations during routine plant health inspections, you will be asked to take action.
+      </p>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            
+            <th scope="col" class="govuk-table__header">Scientific name</th>
+            <th scope="col" class="govuk-table__header">Common names</th>
+            <th scope="col" class="govuk-table__header">Affected formats</th>
+            
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Abelmoschus esculentus (L.) Moench</th>
+            <td class="govuk-table__cell">Abelmoschus esculentus (L.) Moench</td>
+                <td class="govuk-table__cell">Seed potatoes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Ajuga L.</th>
+            <td class="govuk-table__cell">Ajuga L.</td>
+                <td class="govuk-table__cell">Seed of oil and fibre plants</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Arachis hypogaea L.</th>
+            <td class="govuk-table__cell">Arachis hypogaea L.</td>
+                <td class="govuk-table__cell">Seed of oil and fibre plants</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Begonia L.</th>
+            <td class="govuk-table__cell">Begonia L.</td>
+                <td class="govuk-table__cell">Seed of oil and fibre plants</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Borago officinalis L.</th>
+            <td class="govuk-table__cell">Borago officinalis L.</td>
+                <td class="govuk-table__cell">Seed potatoes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Cajanus cajan (L.) Millsp./Huth</th>
+            <td class="govuk-table__cell">Cajanus cajan (L.) Millsp./Huth</td>
+                <td class="govuk-table__cell">Seed of oil and fibre plants</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Capsicum annuum L.</th>
+            <td class="govuk-table__cell">Capsicum annuum L.</td>
+                <td class="govuk-table__cell">Seed potatoes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Cucumis sativus L.</th>
+            <td class="govuk-table__cell">Cucumis sativus L.</td>
+                <td class="govuk-table__cell">Seed potatoes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Cucurbita pepo L.</th>
+            <td class="govuk-table__cell">Cucurbita pepo L.</td>
+                <td class="govuk-table__cell">Seed potatoes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Cucurbitaceae</th>
+            <td class="govuk-table__cell">Cucurbitaceae</td>
+                <td class="govuk-table__cell">Seed potatoes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Dipladenia A.Dc.</th>
+            <td class="govuk-table__cell">Dipladenia A.Dc.</td>
+                <td class="govuk-table__cell">Seed potatoes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Euphorbia pulcherrima</th>
+            <td class="govuk-table__cell">Euphorbia pulcherrima</td>
+                <td class="govuk-table__cell">Seed potatoes</td>
+          </tr>
+          </tbody>
+        </table>
+
+    <!--<ul class="govuk-list">
+      
+      
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li>Ficus L.</li>
+      <li>Gerbera jamesonii H.Bolus Ex Hook.F.</li>
+      <li>Glycine max (L.) Merr.</li>
+      <li>Gossypium L.</li>
+      <li>Hibiscus L.</li>
+      <li>Ipomoea batatas (L.) Poir./Lam.</li>
+      <li>Lactuca sativa L.</li>
+      <li>Lavandula stricta Del.</li>
+      <li>Solanum lycopersicum L.</li>
+      <li>Majorana hortensis Moench</li>
+      <li>Mandevilla Lindl.</li>
+      <li>Manihot esculenta Crantz</li>
+      <li>Melissa officinalis L.</li>
+      <li>Mentha L.</li>
+      <li>Nerium oleander L.</li>
+      <li>Nicotiana Linnaeus</li>
+      <li>Nicotiana tabacum L.</li>
+      <li>Ocimum basilicum L.</li>
+      <li>Phaseolus L.</li>
+      <li>Piper nigrum L.</li>
+      <li>Salvia L.</li>
+      <li>Salvia officinalis L.</li>
+      <li>Sinningia Nees</li>
+      <li>Sinningia speciosa (Lodd.) Hiern</li>
+      <li>Solanum L.</li>
+      <li>Solanum melongena L.</li>
+      <li>Tagetes erecta L.</li>
+      <li>Thymus serpyllum L. em. Mill.</li>
+      <li>Crossandra</li>
+      <li>Euphorbiaceae (family)</li>
+      <li>Malvaceae (family)</li>
+      <li>Solanaceae (family)</li>
+      <li>Asteraceae (family)</li>
+      <li>Brassicaceae (family)</li>
+      <li>Convolvulaceae (family)</li>
+      <li>Fabaceae (family)</li>
+      <li>Gossypium hirsutum</li>
+    </ul>-->
+
+    
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Find another plant or pest
+      </button>
+      <p class="govuk-heading-s">Get help with this service</p>
+      <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+
+<style>
+  @media only screen and (max-width: 640px) {
+    img {
+      width: 30%
+    }
+  }
+
+  @media only screen and (min-width: 641px) {
+    img {
+      width: 110%
+    }
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,290 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Agrilus bilineatus - Check plant health information and import rules — GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">
+      Pest or disease
+    </span>
+    <h1 class="govuk-heading-xl">
+      Agrilus bilineatus
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must <a class="govuk-link"
+        href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">report any
+        suspicions</a> of Agrilus bilineatus, wherever found.
+        </strong>
+    </div>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Preferred name
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Agrilus bilineatus
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Common names
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Two-lined chestnut borer		
+      </li>
+    </ul>
+
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Synonyms
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        Buprestis aurolineatus
+      </li>
+      <li>
+      Buprestis bilineatus
+      </li>
+      <li>
+      Buprestis bivittatus
+      </li>
+      <li>
+      Buprestis flavolineatus
+      </li>
+    </ul>
+
+    <!--<div class="govuk-grid-row govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-half govuk-body">
+        <a href="https://gd.eppo.int/taxon/XYLEFA/" rel="noreferrer noopener" target="_blank">
+          <img src="/public/XYLEFA_1791.jpg" alt="View plant pest factsheet on Xylella fastidiosa (PDF)">
+        </a>
+      </div>
+   
+    </div>-->
+    <div class="govuk-inset-text">You can
+      <a href="https://gd.eppo.int/taxon/AGRLBL/photos" class="govuk-link govuk-body govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">view photos of Anoplophora bilineatus in the EPPO Global Database (opens in a new tab).
+      </a>
+    </div>
+
+    <!--
+    <h2 class="govuk-heading-m">
+      Plant health publications about Agrilus bilineatus
+    </h2>
+    <p class="'govuk-body">These files may not be suitable for users of assistive technology.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Request an accessible format
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you use assistive technology (such as a screen reader) and need a version of this document in a more
+        accessible format, please email plantpestsrisks@defra.gov.uk. Please tell us what format you need. It
+        will help us if you say what assistive technology you use. </div>
+    </details>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
+
+      <div class="govuk-grid-column-one-quarter">
+        <a href="/public/factsheets/xylella_fact_sheet.pdf" rel="noreferrer noopener" target="_blank">
+          <img src="/public/doc_image.png" alt="View plant pest factsheet on Xylella fastidiosa (PDF)">
+        </a>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <a href="/public/factsheets/anolgl_fact_sheet.pdf"
+          class="govuk-link govuk-body-l govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Plant pest factsheet
+        </a>
+        <div id="file-hint" class="govuk-hint govuk-!-margin-top-2">
+          March 2023
+          <br>
+          PDF, 303KB, 5 pages
+        </div>
+      </div>
+    </div>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--s">Other publications (Need updated data)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Title</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">November 2021</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/alerts/Pest_alert_Xylella_on_olive_trees.pdf">Pest alert: Olive trees, risk to trade
+              from
+              Xylella fastidiosa<span class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF, 6
+            pages)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">October 2020</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/factsheets/xylella_fact_sheet.pdf">Supplementary data on Xylella fastidiosa<span
+                class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF, 6
+            pages)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">July 2019</td>
+          <td class="govuk-table__cell"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="/public/infoNote/Xylella-hostinfonote.pdf">Information note: Xylella high risk hosts <span
+                class="govuk-visually-hidden">(opens in new tab)</span></a><br>(PDF, 5
+            pages)</td>
+        </tr>
+      </tbody>
+    </table>-->
+
+
+    <h2 class="govuk-heading-m">
+      Plants that are known to carry Agrilus bilineatus
+    </h2>
+
+<!--PLANT LIST-->
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Scientific name</th>
+      <th scope="col" class="govuk-table__header">Common names</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Castanea dentata</td>
+      <td class="govuk-table__cell">American chestnut	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus alba</td>
+      <td class="govuk-table__cell">eastern white oak, white oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus coccinea</td>
+      <td class="govuk-table__cell">scarlet oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus ellipsoidalis</td>
+      <td class="govuk-table__cell">Hill's oak, jack oak, northern pin oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus lyrata</td>
+      <td class="govuk-table__cell">overcup oak, water white oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus macrocarpa</td>
+      <td class="govuk-table__cell">bur oak, mossy-cup oak, scrub oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus marilandica</td>
+      <td class="govuk-table__cell">blackjack oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus michauxii</td>
+      <td class="govuk-table__cell">basket oak, cow oak, swamp chestnut oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus muehlenbergii</td>
+      <td class="govuk-table__cell">chinkapin oak, chinquapin oak, yellow chestnut oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus nigra</td>
+      <td class="govuk-table__cell">water oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus palustris</td>
+      <td class="govuk-table__cell">pin oak, swamp oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus prinus</td>
+      <td class="govuk-table__cell">basket oak, chestnut oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus robur</td>
+      <td class="govuk-table__cell">common oak, English oak	</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus rubra</td>
+      <td class="govuk-table__cell">American red oak, northern red oak, red oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus shumardii var. texana</td>
+      <td class="govuk-table__cell">Nuttall's oak, 
+        southern red oak, 
+        Texas oak, 
+        Texas red oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus stellata</td>
+      <td class="govuk-table__cell">post oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus velutina</td>
+      <td class="govuk-table__cell">black oak, dyer's oak, 
+        eastern black oak</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Quercus virginiana</td>
+      <td class="govuk-table__cell">live oak, 
+        southern live oak</td>
+    </tr>
+    </tbody>
+</table>
+
+    
+    <form class="form" method="post">
+      <button class="govuk-button" data-module="govuk-button" href="purpose">
+        Find another plant or pest
+      </button>
+      <p class="govuk-heading-s">Get help with this service</p>
+      <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+<style>
+  @media only screen and (max-width: 640px) {
+    img {
+      width: 30%
+    }
+  }
+
+  @media only screen and (min-width: 641px) {
+    img {
+      width: 110%
+    }
+  }
+</style>
+
+{% endblock %}

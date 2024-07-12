@@ -1,0 +1,374 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What plant or plant product are you importing? — Check plant health information and import rules — GOV.UK
+{% endblock %}
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- ***************   Error Handling ***************** -->
+
+    {% if error %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#searchQuery">Enter the name of the plant, plant product or seeds you are importing</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+<!-- ***************   Error Handling ends here ***************** -->
+
+    {% endif %}
+    <form class="form" method="post">
+      <div class="govuk-form-group {% if error %} govuk-form-group--error {% endif %}">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading" id="search-h1">
+              What plant, plant product or seeds are you importing?
+            </h1>
+            <!--
+            <div id="event-name-hint" class="govuk-hint">
+              You can enter the scientific name or any synonyms or common names
+            </div> -->
+          </legend>
+          <div id="dob-hint" class="govuk-hint">You can enter the scientific name or any synonyms or common names.</div>
+          <!-- <p class="govuk-body">You can enter the scientific name or any synonyms or common names.</p> -->
+
+          {% if error %}
+          <span id="search-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the name of the plant, plant product or seeds you are importing
+          </span>
+          {% endif %}
+          {{ xGovukAutocomplete({
+          id: "searchQuery",
+          name: "searchQuery",
+          value: data['searchQuery'],
+          allowEmpty: false,
+          showNoOptionsFound: true,
+          classes: "govuk-!-width-full",
+          items: [
+          { "text": "Acalypha hispida (Chenille Plant)" },
+          { "text": "Acer Macrophyllum (Bigleaf maple)" },
+          { "text": "Achillea millefolium (Common Yarrow)" },
+          { "text": "Akebia quinata (Chocolate Vine)" },
+          { "text": "Albizia julibrissin (Mimosa Tree)" },
+          { "text": "Allium ampeloprasum (Leek)" },
+          { "text": "Allium cepa (Onion)" },
+          { "text": "Allium chinense" },
+          { "text": "Allium sativum (Garlic)" },
+          { "text": "Allium schoenoprasum (Chives)" },
+          { "text": "Alnus firma" },
+          { "text": "Alnus japonica" },
+          { "text": "Alnus rubra (Red Alder)" },
+          { "text": "Amaranthus retroflexus (Redroot Pigweed)" },
+          { "text": "Amaranthus" },
+          { "text": "Amaryllis belladonna (Lily)" },
+          { "text": "Anacardium occidentale (Cashew)" },
+          { "text": "Apium graveolens (Celery)" },
+          { "text": "Aralia elata (Japanese Angelica Tree)" },
+          { "text": "Arceuthobium abietinum (Fir dwarf mistletoe)" },
+          { "text": "Arceuthobium americanum (Lodgepole pine dwarf mistletoe)" },
+          { "text": "Arceuthobium campylopodum (Western dwarf mistletoe)" },
+          { "text": "Arceuthobium douglasii (Douglas fir dwarf mistletoe)" },
+          { "text": "Arceuthobium laricis (Larch dwarf mistletoe)" },
+          { "text": "Arceuthobium minutissimum (Himalayan dwarf mistletoe)" },
+          { "text": "Arceuthobium occidentale (Digger pine dwarf mistletoe)" },
+          { "text": "Arceuthobium pusillum (Eastern dwarf mistletoe)" },
+          { "text": "Arceuthobium tsugense (Hemlock dwarf mistletoe)" },
+          { "text": "Arceuthobium vaginatum (Southwestern dwarf mistletoe)" },
+          { "text": "Ardisia" },
+          { "text": "Artocarpus" },
+          { "text": "Aschistonyx eppoi (juniper gall midge)" },
+          { "text": "Asplenium" },
+          { "text": "Avena fatua (Wild Oat)" },
+          { "text": "Betula alba (European White Birch)" },
+          { "text": "Betula alleghaniensis (Yellow Birch)" },
+          { "text": "Betula ermanii (Erman's Birch)" },
+          { "text": "Betula jacquemontii (Himalayan Birch)" },
+          { "text": "Betula lenta (Sweet Birch)" },
+          { "text": "Betula maximowicziana (Monarch Birch)" },
+          { "text": "Betula nigra (River Birch)" },
+          { "text": "Betula occidentalis (Water Birch)" },
+          { "text": "Betula papyrifera (Paper Birch)" },
+          { "text": "Betula pendula (Silver Birch)" },
+          { "text": "Betula platyphylla (Japanese White Birch)" },
+          { "text": "Betula populifolia (Gray Birch)" },
+          { "text": "Betula pubescens (Downy Birch)" },
+          { "text": "Betula utilis (Himalayan Birch)" },
+          { "text": "Bischofia trifoliata (Sumu)" },
+          { "text": "Bombax ceiba (Red Silk Cotton Tree)" },
+          { "text": "Borago officinalis (Borage)" },
+          { "text": "Bougainvillea" },
+          { "text": "Brassica oleracea (Wild Cabbage)" },
+          { "text": "Brassica oleracea var. italica (Broccoli)" },
+          { "text": "Brassica rapa (Field Mustard)" },
+          { "text": "Briedelia (Bridelia)" },
+          { "text": "Bromus inermis (Smooth Brome)" },
+          { "text": "Cactodera cacti" },
+          { "text": "Cajanus cajan (Pigeon Pea)" },
+          { "text": "Callistephus chinensis (China Aster)" },
+          { "text": "Calluna (Heather)" },
+          { "text": "Camellia japonica (Japanese Camellia)" },
+          { "text": "Camellia sasanqua" },
+          { "text": "Camellia sinensis (Tea Plant)" },
+          { "text": "Camellia williamsii (C. x williamsii)" },
+          { "text": "Capsicum annuum (Bell Pepper)" },
+          { "text": "Capsicum frutescens (Chili Pepper)" },
+          { "text": "Carica papaya (Papaya)" },
+          { "text": "Carpinus betulus (European Hornbeam)" },
+          { "text": "Celtis" },
+          { "text": "Ceratonia siliqua (Carob)" },
+          { "text": "Chamaedorea" },
+          { "text": "Choisya (Mexican Orange)" },
+          { "text": "Christella" },
+          { "text": "Chrysanthemum carinatum (Chrysanthemums)" },
+          { "text": "Chrysanthemum stunt viroid (Measles of chrysanthemum, Stunt of chrysanthemum)" },
+          { "text": "Chrysanthemum" },
+          { "text": "Cichorium intybus (Chicory)" },
+          { "text": "Cinnamomum" },
+          { "text": "Citrofortunella microcarpa (Calamondin)" },
+          { "text": "Citroncirus" },
+          { "text": "Citrus aurantifolia (Key Lime)" },
+          { "text": "Citrus aurantium subsp. aurantium (Bitter Orange)" },
+          { "text": "Citrus hystrix (Kaffir Lime)" },
+          { "text": "Citrus jambhiri (Rough Lemon)" },
+          { "text": "Citrus limettioides (Sweet Lemon)" },
+          { "text": "Citrus limon (Lemon)" },
+          { "text": "Citrus maxima (Pomelo)" },
+          { "text": "Citrus medica (Citron)" },
+          { "text": "Citrus paradisi (Grapefruit)" },
+          { "text": "Citrus reticulata (Mandarin Orange)" },
+          { "text": "Citrus reticulata (s.l.)" },
+          { "text": "Citrus sinensis (Sweet Orange)" },
+          { "text": "Citrus x limonia (Rangpur Lime)" },
+          { "text": "Citrus x tangelo (Tangelo)" },
+          { "text": "Clausena lansium (Wampee)" },
+          { "text": "Clausena" },
+          { "text": "Clematis vitalba (Old Man's Beard)" },
+          { "text": "Clover phyllody phytoplasma" },
+          { "text": "Coccoloba uvifera (Seagrape)" },
+          { "text": "Cocos nucifera (Coconut Palm)" },
+          { "text": "Cocos nucifera; Musa (Coconut Palm; Banana)" },
+          { "text": "Coleosporium asterum (Needle cast: red pine, Rust: aster, Rust: Solidago spp.)" },
+          { "text": "Columnea latent viroid (CLVd)" },
+          { "text": "Convolvulus arvensis (Field Bindweed)" },
+          { "text": "Corylus avellana (Common Hazel)" },
+          { "text": "Cucumis melo (Cantaloupe)" },
+          { "text": "Cucumis sativus (Cucumber)" },
+          { "text": "Cucurbita maxima (Winter Squash)" },
+          { "text": "Cucurbita moschata (Butternut Squash)" },
+          { "text": "Cucurbita pepo (Zucchini)" },
+          { "text": "Cydonia oblonga (Quince)" },
+          { "text": "Cynodon dactylon (Bermuda Grass)" },
+          { "text": "Dahlia pinnata (Dahlias)" },
+          { "text": "Dahlia" },
+          { "text": "Daucus carota (Carrot)" },
+          { "text": "Dendrocalamus asper (Giant Bamboo)" },
+          { "text": "Dendrocalamus strictus (Solid Bamboo)" },
+          { "text": "Desmoncus" },
+          { "text": "Dianthus caryophyllus (Carnations)" },
+          { "text": "Dimocarpus" },
+          { "text": "Diospyros kaki (Persimmon)" },
+          { "text": "Diospyros virginiana (American Persimmon)" },
+          { "text": "Elaeagnus" },
+          { "text": "Elaeis guineensis (African Oil Palm)" },
+          { "text": "Epidendrum" },
+          { "text": "Euonymus" },
+          { "text": "Euphorbia pulcherrima (Poinsettia)" },
+          { "text": "Forsythia suspensa var. suspensa (Forsythia)" },
+          { "text": "Fortunella margarita (Kumquat)" },
+          { "text": "Fragaria ananassa (F. x ananassa) (Strawberry)" },
+          { "text": "Fuchsia hybrids (Fuchsia)" },
+          { "text": "Fuchsia magellanica (Hardy Fuchsia)" },
+          { "text": "Fusarium circinatum (Pitch canker of pine)" },
+          { "text": "Gaultheria phillyreifolia (Snowberry)" },
+          { "text": "Geranium pilosum (Geraniums)" },
+          { "text": "Gomphocarpus fruticosus (Swan Plant)" },
+          { "text": "Helianthus annuus (Sunflower)" },
+          { "text": "Hibiscus" },
+          { "text": "Hordeum vulgare (Barley)" },
+          { "text": "Howea sp." },
+          { "text": "Hydrangea macrophylla (Bigleaf Hydrangea)" },
+          { "text": "Hymenoscyphus fraxineus (Ash dieback)" },
+          { "text": "Illicium anisatum (Japanese Anise)" },
+          { "text": "Inga ingoides (Ice Cream Bean)" },
+          { "text": "Ipomoea batatas (Sweet Potato)" },
+          { "text": "Jasminum" },
+          { "text": "Juglans ailanthifolia var. ailanthifolia (Japanese Walnut)" },
+          { "text": "Juglans mandshurica (Manchurian Walnut)" },
+          { "text": "Juglans regia (Common Walnut)" },
+          { "text": "Juglans" },
+          { "text": "Juniperus (Juniper)" },
+          { "text": "Lagerstroemia indica (Crape Myrtle)" },
+          { "text": "Laguncularia racemosa (White Mangrove)" },
+          { "text": "Lavandula angustifolia (Lavender)" },
+          { "text": "Lavandula" },
+          { "text": "Ligustrum vulgare (Common Privet)" },
+          { "text": "Ligustrum" },
+          { "text": "Lilium lancifolium (Devil lily, Kentan, lily, tiger)" },
+          { "text": "Liquidambar styraciflua (Sweetgum)" },
+          { "text": "Liquidambar styraciflua (Sweetgum)" },
+          { "text": "Litchi chinensis (Lychee)" },
+          { "text": "Litchi" },
+          { "text": "Lonicera tatarica (Tartarian Honeysuckle)" },
+          { "text": "Lupinus" },
+          { "text": "Lycium chinense (chinensis) (Chinese Boxthorn)" },
+          { "text": "Lycium halimifolium (Duke's Thorn)" },
+          { "text": "Macadamia integrifolia (Macadamia Nut)" },
+          { "text": "Maclura pomifera (Osage Orange)" },
+          { "text": "Magnolia grandiflora (Southern Magnolia)" },
+          { "text": "Mallotus japonicus (Kusagi)" },
+          { "text": "Malpighia punicifolia (Acerola)" },
+          { "text": "Malus domestica (Apple)" },
+          { "text": "Mangifera indica (Mango)" },
+          { "text": "Margarodes vitis (grape ground pearl)" },
+          { "text": "Medicago sativa (Alfalfa)" },
+          { "text": "Melia azadirachata (Neem)" },
+          { "text": "Metathelypteris" },
+          { "text": "Miconia calvescens (Miconia)" },
+          { "text": "Miscanthus" },
+          { "text": "Moringa oleifera (Drumstick Tree)" },
+          { "text": "Morus alba (White Mulberry)" },
+          { "text": "Morus nigra (Black Mulberry)" },
+          { "text": "Morus rubra (Red Mulberry)" },
+          { "text": "Musa acuminata (Banana)" },
+          { "text": "Musa x paradisiaca (Plantain)" },
+          { "text": "Mycodiella laricis-leptolepidis (Needle cast of Japanese larch)" },
+          { "text": "Myrica cerifera (Southern Wax Myrtle)" },
+          { "text": "Myristica fragrans (Nutmeg)" },
+          { "text": "Myrtus (Myrtle)" },
+          { "text": "Nephrolepis (Sword Fern)" },
+          { "text": "Nerium oleander (Oleander)" },
+          { "text": "Olea europaea (Olive)" },
+          { "text": "Onoclea sensibilis (Sensitive Fern)" },
+          { "text": "Opuntia ficus-indica (Prickly Pear)" },
+          { "text": "Opuntia" },
+          { "text": "Orchidaceae" },
+          { "text": "Origanum (Oregano)" },
+          { "text": "Ornithogalum (Star of Bethlehem)" },
+          { "text": "Pachira aquatica (Money Tree)" },
+          { "text": "Pachira" },
+          { "text": "Paeonia (Peony)" },
+          { "text": "Papaver somniferum (Opium Poppy)" },
+          { "text": "Parthenocissus quinquefolia (Virginia Creeper)" },
+          { "text": "Parthenocissus" },
+          { "text": "Passiflora caerulea (Blue Passionflower)" },
+          { "text": "Paulownia tomentosa (Royal Paulownia)" },
+          { "text": "Peach rosette phytoplasma (Rosette of peach)" },
+          { "text": "Peach yellows phytoplasma (Little peach, Red suture of peach, Yellows of peach)" },
+          { "text": "Pelargonium (Geranium)" },
+          { "text": "Pelargonium x hortorum. (Pelargonium, zonal)" },
+          { "text": "Peltiphyllum peltatum (Indian Rhubarb)" },
+          { "text": "Pennisetum (Fountain Grass)" },
+          { "text": "Pentas" },
+          { "text": "Perovskia atriplicifolia (Russian Sage)" },
+          { "text": "Persea americana (Avocado)" },
+          { "text": "Persea borbonia (Redbay)" },
+          { "text": "Petunia × hybrida (Petunia)" },
+          { "text": "Petunia" },
+          { "text": "Phalaenopsis (Moth Orchid)" },
+          { "text": "Philodendron bipinnatifidum (Tree Philodendron)" },
+          { "text": "Phoenix canariensis (Canary Island Date Palm)" },
+          { "text": "Phomopsis vaccinii (Fruit rot of blueberry, Phomopsis canker and dieback of blueberry, Storage rot of blueberry, Twig blight of blueberry, Viscid rot of blueberry)" },
+          { "text": "Phormium (New Zealand Flax)" },
+          { "text": "Phyllanthus acidus (Otaheite Gooseberry)" },
+          { "text": "Phyllostachys aurea (Golden Bamboo)" },
+          { "text": "Phyllostachys bambusoides (Madake Bamboo)" },
+          { "text": "Phyllostachys nigra (Black Bamboo)" },
+          { "text": "Phyllostachys pubescens (Moso Bamboo)" },
+          { "text": "Phyllosticta solitaria (Blotch of apple, Fruit blotch of pome fruits, Leaf spot of pome fruits, Teig cancer of pome fruits)" },
+          { "text": "Phymatotrichopsis omnivora (Phymatotrichum root rot, Root rot of conifers, Root rot of soybean, Soft rot of cotton, Texas root rot of alfalfa, Texas root rot of bean, Texas root rot of cotton, Texas root rot of grapevine)" },
+          { "text": "Pinus contorta (Lodgepole Pine)" },
+          { "text": "Pinus densiflora (Japanese Red Pine)" },
+          { "text": "Pinus mugo (Mountain Pine)" },
+          { "text": "Pinus nigra (European Black Pine)" },
+          { "text": "Pinus palustris (Longleaf Pine)" },
+          { "text": "Pinus pentaphylla" },
+          { "text": "Pinus pinea (Pine stone, Pine umbrella)" },
+          { "text": "Pinus ponderosa (Ponderosa Pine)" },
+          { "text": "Pinus radiata (Monterey Pine)" },
+          { "text": "Pinus sylvestris (Scots Pine)" },
+          { "text": "Pinus taeda (Loblolly Pine)" },
+          { "text": "Pistacia vera (Pistachio)" },
+          { "text": "Platanus occidentalis (American Sycamore)" },
+          { "text": "Platanus orientalis (Oriental Plane)" },
+          { "text": "Plumbago auriculata (Cape Leadwort)" },
+          { "text": "Plumeria rubra (Frangipani)" },
+          { "text": "Polyscias fruticosa (Ming Aralia)" },
+          { "text": "Polystichum acrostichoides (Christmas Fern)" },
+          { "text": "Populus alba (White Poplar)" },
+          { "text": "Populus deltoides (Eastern Cottonwood)" },
+          { "text": "Populus grandidentata (Bigtooth Aspen)" },
+          { "text": "Populus nigra (Black Poplar)" },
+          { "text": "Populus tremula (European Aspen)" },
+          { "text": "Populus tremuloides (Quaking Aspen)" },
+          { "text": "Portulaca oleracea (Common Purslane)" },
+          { "text": "Primula acaulis (Primrose)" },
+          { "text": "Prunus armeniaca (Apricot)" },
+          { "text": "Prunus avium (Sweet Cherry)" },
+          { "text": "Prunus cerasifera (Cherry Plum)" },
+          { "text": "Prunus domestica (Plum)" },
+          { "text": "Prunus dulcis (Almond)" },
+          { "text": "Prunus persica (Peach)" },
+          { "text": "Prunus salicina (Japanese Plum)" },
+          { "text": "Prunus serotina (Black Cherry)" },
+          { "text": "Prunus serrulata (Japanese Cherry)" },
+          { "text": "Prunus subhirtella (Weeping Cherry)" },
+          { "text": "Prunus yedoensis (Yoshino Cherry)" },
+          { "text": "Pseudomonas savastanoi pv. savastanoi (Bacterial canker of olive, Olive knot)" },
+          { "text": "Quercus robur (Oak)" },
+          { "text": "Rosa rugosa (Rosa, Ramanas, Rose, hedge-row)" },
+          { "text": "Solanum ciliatum" },
+          { "text": "Solanum erianthum (Nightshade, Tobacco tree)" },
+          { "text": "Solanum lycopersicum (Tomato)" },
+          { "text": "Solanum malacoxylon" },
+          { "text": "Solanum muricatum (Melonpear)" },
+          { "text": "Solanum nigrum (Nightshade, black (berry), Nightshade, Sunberry)" },
+          { "text": "Solanum rostratum (Buffalobur, Kansas-thistle, Nightshade, Beaked)" },
+          { "text": "Solanum tuberosum (Potato)" },
+          { "text": "Tulipa (Tulips)" }
+          ]
+          }) }}
+
+
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+      <p class="govuk-heading-s">Get help with this service</p>
+      <p class="govuk-body">If you have any queries or you need technical support, email <a href="mailto:planthealth.Info@apha.gov.uk" class="govuk-link">planthealth.info@apha.gov.uk</a>
+      </p>
+    </form>
+  </div>
+
+  {% endblock %}

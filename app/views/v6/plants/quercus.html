@@ -33,7 +33,7 @@ href: "javascript:window.history.back()"
       <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
         Preferred name
       </h2>
-      <p>
+      <p class="govuk-body">
         Quercus robur </p>
 
 
@@ -65,7 +65,7 @@ href: "javascript:window.history.back()"
     <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
       EPPO code
     </h2>
-    <p>
+    <p class="govuk-body">
       QUERO</p>
 
 
@@ -196,7 +196,7 @@ href: "javascript:window.history.back()"
       These pests and diseases are considered a risk to Great Britain's agriculture, horticulture, wildlife or forests. If one of these pests or diseases is found during plant health inspections, action will be taken. This could result in consignments being delayed or destroyed.
       </p>
     <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-        href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries"> report any suspicions</a> of the pests or diseases to the relevant authority.</p>
+        href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/"> report any suspicions</a> of the pests or diseases to the relevant authority.</p>
     <!-- <p class="govuk-body">You can <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://planthealthportal.defra.gov.uk/trade/imports/non-compliance/">find out how often inspections at the border have resulted in the destruction of goods (opens in a new tab).</a></p> -->
 
     <table class="govuk-table">
@@ -227,72 +227,88 @@ href: "javascript:window.history.back()"
  Importing {{data['plantName']}} from {{data['country']}}
 </h2>
 
-<h3 class="govuk-heading-s" >
-  Wood where Agrilus bilineatus is known to be present
+<h2 class="govuk-heading-m">Import rules</h2>
+<h3 class="govuk-heading-s">Wood (other than wood packaging) where {{data['plantName']}} is known to occur 
 </h3>
 
-<p>To import {{data['plantName']}} from {{data['country']}} in the above format, you will need to (the following links open in a new tab):</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>
-        <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#get-a-phytosanitary-certificate-pc">register to import</a> if you're a first-time importer
-      </li>
-      <li>
-        get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-          href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">phytosanitary certificate from the National Plant Protection Organisation of the exporting country</a>
-      </li>
-      <li>
-        meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-        href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">ISPM 15 international standard</a> for any wood packaging material you use
-      </li>
-      <li>
-        <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">notify the relevant authorities about your import</a>
-      </li>
-      <li>
-        comply with <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">documentary, identity and physical checks</a> at the border
-      </li>
-      <li>
-        pay fees, which will include<a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#"> plant health checks</a>
-      </li>
-    </ul>
-    <div class="govuk-inset-text">
-      The phytosanitary certificate may need an additional declaration. To find out,  <a class="govuk-link"
-        rel="noreferrer noopener" target="_blank"
-        href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/requirement-for-additional-declarations-ads-on-phytosanitary-certificate-pcs/">check the additional declaration tool (opens in a new tab).</a>
-    </div>
+<p>To import {{data['plantName']}} from {{data['country']}} in the above format, you will need to:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>
+    <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+      href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-non-eu-countries-to-great-britain#register-to-import">register to import</a> if you're a first-time importer
+  </li>
+  <li>
+    get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+      href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-non-eu-countries-to-great-britain#get-a-phytosanitary-certificate">phytosanitary certificate from the National Plant Protection Organisation of the exporting country</a>
+  </li>
+  <li>
+    meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
+    href="https://www.gov.uk/guidance/import-or-export-wood-packaging-material">ISPM 15 international standard</a> for any wood packaging material you use
+  </li>
+  <li>
+    <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-non-eu-countries-to-great-britain#notify-the-relevant-authorities-about-your-import">notify the relevant authorities about your import</a>
+  </li>
+  <li>
+    comply with  <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-non-eu-countries-to-great-britain#fees-for-plant-health-checks">documentary, identity and physical checks</a> at the border
+  </li>
+  <li>
+    pay fees, which will include​<a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-non-eu-countries-to-great-britain#fees-for-plant-health-checks"> plant health checks</a>
+  </li>
+</ul>
+<div class="govuk-inset-text">
+  The phytosanitary certificate may need an additional declaration. To find out,  <a class="govuk-link"
+    rel="noreferrer noopener" target="_blank"
+    href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/requirement-for-additional-declarations-ads-on-phytosanitary-certificate-pcs/">check the additional declaration tool.</a>
+</div>
 
     <h3 class="govuk-heading-s" >
-      Wood packaging or wood where Agrilus bilineatus is known not to be present 
+      Wood packaging 
     </h3>
     
-    <p>To import {{data['plantName']}} from {{data['country']}} in the above formats, you will need to (the following links open in a new tab):</p>
+    <p>To import {{data['plantName']}} from {{data['country']}} in the above format, you will need to:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>
             get a <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-              href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">phytosanitary certificate from the National Plant Protection Organisation of the exporting country</a>
+              href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-non-eu-countries-to-great-britain#get-a-phytosanitary-certificate">phytosanitary certificate from the National Plant Protection Organisation of the exporting country</a>
           </li>
           <li>
             meet the <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-            href="https://www.gov.uk/guidance/importing-plants-fruit-vegetables-or-plant-material-to-the-uk#making-a-pre-notification">ISPM 15 international standard</a> for any wood packaging material you use
+            href="https://www.gov.uk/guidance/import-or-export-wood-packaging-material">ISPM 15 international standard</a> for any wood packaging material you use
           </li>
           
         </ul>
         <div class="govuk-inset-text">
           The phytosanitary certificate may need an additional declaration. To find out,  <a class="govuk-link"
             rel="noreferrer noopener" target="_blank"
-            href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/requirement-for-additional-declarations-ads-on-phytosanitary-certificate-pcs/">check the additional declaration tool (opens in a new tab).</a>
+            href="https://planthealthportal.defra.gov.uk/trade/imports/imports-from-the-eu/import-requirements/import-special-requirements/imports-special-requirements-tool-and-user-guide-for-plants-for-planting/">check the additional declaration tool.</a>
         </div>
+        
+    <h3 class="govuk-heading-s" >
+      Wood (other than wood packaging) where {{data['plantName']}} is known not to occur 
+    </h3>
+      <p class="govuk-body">To import {{data['plantName']}} from {{data['country']}} in the above format,, you will need to meet the <a class="govuk-link"
+        rel="noreferrer noopener" target="_blank"
+        href="https://www.gov.uk/guidance/import-or-export-wood-packaging-material">ISPM 15 international standard</a> for any wood packaging material you use. 
+        Your goods will be exempt from systematic controls at the border.
+      </p>
+        
+      <p class="govuk-body">You can <a class="govuk-link"
+          rel="noreferrer noopener" target="_blank"
+          href="https://planthealthportal.defra.gov.uk/trade/imports/non-compliance/">find out how often inspections at the border have resulted in the destruction of goods</a>
+      </p>
+        
+
+
 
         <h2 class="govuk-heading-l">
         Pests and diseases you must report
       </h2>
       <p class="govuk-body">Different formats of {{data['plantName']}} might carry the pests or diseases from {{data['country']}} listed at the bottom of the page.
-        These pests and diseases are considered a risk to Great Britain's agriculture, horticulture or wildlife. If one of these pests or diseases is found during plant health inspections, action will be taken. This could result in consignments being delayed or destroyed.
+        These pests and diseases are considered a risk to Great Britain's agriculture, horticulture, wildlife or forests. If one of these pests or diseases is found during plant health inspections, action will be taken. This could result in consignments being delayed or destroyed.
         </p>
       <p class="govuk-body">You must <a class="govuk-link" rel="noreferrer noopener" target="_blank"
-          href="https://www.gov.uk/guidance/contact-apha#plant-health-reports-and-other-queries">report any suspicions of
-          these pests or diseases to the relevant authority.</a></p>
-      <p class="govuk-body">You can <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://planthealthportal.defra.gov.uk/trade/imports/non-compliance/">find out how often inspections at the border have resulted in the destruction of goods (opens in a new tab).</a></p>
+          href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">report any suspicions </a>of
+          these pests or diseases to the relevant authority.</p>
   
       <table class="govuk-table">
         <thead class="govuk-table__head">

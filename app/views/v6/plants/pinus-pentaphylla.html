@@ -356,14 +356,38 @@ href: "javascript:window.history.back()"
             <td class="govuk-table__cell">Deodar weevil, Northern pine weevil</td>
             <td class="govuk-table__cell">Seeds</td>
           </tr>
-          <tr class="govuk-table__row">
+          <!-- <tr class="govuk-table__row">
             
             <td class="govuk-table__cell">Pissodes nitidus</td>
             <td class="govuk-table__cell">Yellow spotted pine weevil</td>
             <td class="govuk-table__cell">Seeds</td>
-          </tr>
+          </tr> -->
           </tbody>
         </table>
+
+<!--PAGINATION COMPONENT-->
+
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{{ govukPagination({
+  previous: {
+    href: ""
+  },
+  next: {
+    href: "pinus-pentaphylla-2"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "pinus-pentaphylla-2"
+    }
+  ]
+}) }}
 
 <!--ELSE STATEMENT FOR DEFAULT COUNTRY LOOP-->
 

@@ -237,7 +237,7 @@ module.exports = function (router) {
 
     router.post('/' + version + '/service/country-select', function (req, res) {
         let country = req.session.data['country']
-        const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
+       // const searchQuery = req.session.data['searchQuery'].trim().toLowerCase();
         
 
 
@@ -475,6 +475,32 @@ router.post('/' + version + '/plants/pinus-pentaphylla', function (req, res) {
     res.redirect('/' + version + '/service/purpose');
 });
 
+// Pinus Pentaphylla 2
+router.get('/' + version + '/plants/pinus-pentaphylla-2', function (req, res) {
+    const country = req.session.data['country'] || 'Default Country';
+
+    res.render(version + '/plants/pinus-pentaphylla-2', {
+        'version': version,
+        'doYouImport': req.session.data['import'],
+        'country': country,
+        'format': req.session.data['format'],
+        //'inEU': req.session.data['isEU']
+    });
+});
+
+router.post('/' + version + '/plants/pinus-pentaphylla-2', function (req, res) {
+
+    req.session.destroy(function(err) {
+        if (err) {
+            console.error('Error destroying session:', err);
+        } else {
+            console.log('Session destroyed');
+        }
+    });
+
+    res.redirect('/' + version + '/service/purpose');
+});
+
 
 
     // Pests
@@ -543,6 +569,8 @@ router.post('/' + version + '/plants/pinus-pentaphylla', function (req, res) {
         res.redirect('/' + version + '/service/purpose');
     });
 
+   // ***********  GB Quarantine Pest Pages   ***********  
+
     // Anoplophora Glabripennis
     router.get('/' + version + '/pests/anoplophora-glabripennis', function (req, res) {
         res.render(version + '/pests/anoplophora-glabripennis', {
@@ -564,6 +592,76 @@ router.post('/' + version + '/plants/pinus-pentaphylla', function (req, res) {
 
         res.redirect('/' + version + '/service/purpose');
     });
+
+       // Anoplophora Glabripennis 2
+       router.get('/' + version + '/pests/anoplophora-glabripennis-2', function (req, res) {
+        res.render(version + '/pests/anoplophora-glabripennis-2', {
+            'version': version,
+
+        });
+
+    });
+
+    router.post('/' + version + '/pests/anoplophora-glabripennis-2', function (req, res) {
+
+        req.session.destroy(function (err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/purpose');
+    });
+
+// Anoplophora Glabripennis 3
+router.get('/' + version + '/pests/anoplophora-glabripennis-3', function (req, res) {
+    res.render(version + '/pests/anoplophora-glabripennis-3', {
+        'version': version,
+
+    });
+
+});
+
+router.post('/' + version + '/pests/anoplophora-glabripennis-3', function (req, res) {
+
+    req.session.destroy(function (err) {
+        if (err) {
+            console.error('Error destroying session:', err);
+        } else {
+            console.log('Session destroyed');
+        }
+    });
+
+    res.redirect('/' + version + '/service/purpose');
+});
+
+// Anoplophora Glabripennis 4
+router.get('/' + version + '/pests/anoplophora-glabripennis-4', function (req, res) {
+    res.render(version + '/pests/anoplophora-glabripennis-4', {
+        'version': version,
+
+    });
+
+});
+
+router.post('/' + version + '/pests/anoplophora-glabripennis-4', function (req, res) {
+
+    req.session.destroy(function (err) {
+        if (err) {
+            console.error('Error destroying session:', err);
+        } else {
+            console.log('Session destroyed');
+        }
+    });
+
+    res.redirect('/' + version + '/service/purpose');
+});
+
+
+// ************** GB Quarantine page ends here    *****************
+
 
     // Agrilus bilineatus
     router.get('/' + version + '/pests/agrilus-bilineatus', function (req, res) {
@@ -619,6 +717,50 @@ router.post('/' + version + '/plants/pinus-pentaphylla', function (req, res) {
     });
 
     router.post('/' + version + '/pests/parabemisia-myricae', function (req, res) {
+
+        req.session.destroy(function (err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/purpose');
+    });
+
+    // Parabemisia Myricae 2
+    router.get('/' + version + '/pests/parabemisia-myricae-2', function (req, res) {
+        res.render(version + '/pests/parabemisia-myricae-2', {
+            'version': version,
+
+        });
+
+    });
+
+    router.post('/' + version + '/pests/parabemisia-myricae-2', function (req, res) {
+
+        req.session.destroy(function (err) {
+            if (err) {
+                console.error('Error destroying session:', err);
+            } else {
+                console.log('Session destroyed');
+            }
+        });
+
+        res.redirect('/' + version + '/service/purpose');
+    });
+
+    // Parabemisia Myricae 3
+    router.get('/' + version + '/pests/parabemisia-myricae-3', function (req, res) {
+        res.render(version + '/pests/parabemisia-myricae-3', {
+            'version': version,
+
+        });
+
+    });
+
+    router.post('/' + version + '/pests/parabemisia-myricae-3', function (req, res) {
 
         req.session.destroy(function (err) {
             if (err) {
